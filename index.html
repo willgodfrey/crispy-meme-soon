@@ -1,84 +1,118 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--  
-    Document Title
-    =============================================
-    -->
-    <title>Coming Soon! | willgodfrey.com</title>
-    <!--  
-    Favicons
-    =============================================
-    -->
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!--  
-    Stylesheets
-    =============================================
-    
-    -->
-    <!-- Default stylesheets-->
-    <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Main stylesheet and color file-->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link id="color-scheme" href="assets/css/colors/default.css" rel="stylesheet">
-  </head>
-  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
-    <main><img id="image-background" src="assets/images/3.jpg">
-      <section class="main">
-        <div class="content">
-          <div class="container">
-            <div class="content2">
-              <h1>Coming Soon!</h1>
-            </div>
-            <div class="counter" id="countdown">
-              <h2>Launching in <span class="days timenumbers">00 </span>&nbsp;days <span class="hours timenumbers">00 </span>h <span class="minutes timenumbers">00 </span>m <span class="seconds timenumbers yellow-text">00 </span>s</h2>
-              <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                  <p>We are very exicted to show you what we have in store for this site!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <!--  
-    JavaScripts
-    =============================================
-    -->
-    <script src="assets/lib/jquery/dist/jquery.js"></script>
-    <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
-  <footer>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQMR51RTHC">
-    </script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Will Godfrey – Entrepreneur | CTO & Co‑Founder, Huper</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Will Godfrey – Entrepreneur, technologist and CTO & Co‑Founder of Huper, an enterprise AI agent orchestration platform.">
 
-      gtag('config', 'G-RQMR51RTHC');
-    </script>
-  </footer>
-  </html>
+<!-- Inline SVG favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23003B4C'/%3E%3Ctext x='50%25' y='54%25' font-family='Inter,Helvetica Neue,Arial,sans-serif' font-size='34' font-weight='700' text-anchor='middle' fill='white'%3EWG%3C/text%3E%3C/svg%3E">
+
+<!-- Legacy icon set -->
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32"  href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16"  href="icons/favicon-16.png">
+<link rel="manifest" href="icons/site.webmanifest">
+
+<style>
+:root{
+  --accent:#003B4C;--fg:#0f0f0f;--bg:#fafafa;
+  --radius:.5rem;--avatar:128px;
+  --font:'Inter','Helvetica Neue',Arial,sans-serif
+}
+*{box-sizing:border-box}
+body{
+  margin:0;padding:2rem;max-width:720px;margin-inline:auto;
+  font-family:var(--font);color:var(--fg);background:var(--bg);line-height:1.55
+}
+h1{font-size:2.25rem;margin-top:0;color:var(--accent)}
+header{display:flex;gap:1.5rem;align-items:center;margin-bottom:2rem}
+.avatar{position:relative;width:var(--avatar);height:var(--avatar);
+  border-radius:50%;overflow:hidden;display:inline-flex;align-items:center;
+  justify-content:center;background:#dfe6e9;font-weight:700;font-size:2.5rem}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.avatar.fallback img{display:none}.avatar .initials{display:none}
+.avatar.fallback .initials{display:block;color:#2d3436}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+a:hover{border-color:var(--accent)}
+button.connect{
+  all:unset;cursor:pointer;color:var(--accent);
+  border-bottom:1px dotted var(--accent)
+}
+button.connect:hover{border-style:solid}
+footer{font-size:.925rem;border-top:1px solid #e1e1e1;padding-top:1rem}
+.social a{margin-right:.75rem}
+</style>
+</head>
+<body>
+<header>
+  <figure class="avatar" id="avatar" aria-label="Portrait of Will Godfrey">
+    <img src="images/will-godfrey.jpg" alt="Will Godfrey portrait"
+         onerror="this.parentNode.classList.add('fallback');">
+    <span class="initials" aria-hidden="true">WG</span>
+  </figure>
+  <div>
+    <h1>Will Godfrey</h1>
+    <p>
+      <strong>CTO & Co‑Founder, <em>Huper</em> (stealth)</strong><br>
+      Entrepreneur &amp; ex‑McKinsey<br>
+      Iowa City ・ Atlanta roots
+    </p>
+    <p class="social">
+      <a href="https://www.linkedin.com/in/willgodfrey" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/willgodfrey" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
+  </div>
+</header>
+
+<section id="about">
+  <h2>Profile</h2>
+  <p>Seasoned technology leader blending Fortune 500 advisory pedigree with hands‑on startup execution. I architect scalable AI systems, build high‑calibre teams, and translate strategy into shipping code. Currently spearheading <strong>Huper</strong>, an enterprise AI agent orchestration platform designed to operationalize multi‑agent LLM workflows for global enterprises (in stealth).</p>
+</section>
+
+<section id="capabilities">
+  <h2>Core Competencies</h2>
+  <ul>
+    <li>End‑to‑end product development: vision → MVP → scale</li>
+    <li>AI/ML engineering (LLMs, retrieval‑augmented generation, orchestration)</li>
+    <li>Cloud &amp; DevOps (AWS, GCP, Kubernetes, IaC)</li>
+    <li>Cybersecurity &amp; network observability (IoT included)</li>
+    <li>Revenue‑centric leadership; P&amp;L accountability</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Let’s Talk</h2>
+  <p>
+    <button class="connect" id="contactBtn" aria-label="Reveal contact address">
+      Click to connect
+    </button>
+  </p>
+</section>
+
+<footer>
+  <p>&copy; <span id="year"></span> Will Godfrey. All rights reserved.</p>
+</footer>
+
+<script>
+// Obfuscation: assemble only after interaction
+(() => {
+  const btn = document.getElementById('contactBtn');
+  const p1 = 'hello';
+  const p2 = 'willgodfrey';
+  const p3 = 'com';
+  btn.addEventListener('click', () => {
+    const addr = `${p1}@${p2}.${p3}`;
+    const link = document.createElement('a');
+    link.href = `mailto:${addr}`;
+    link.textContent = addr;
+    btn.replaceWith(link);
+  });
+})();
+
+// Auto‑update year
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
