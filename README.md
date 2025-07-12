@@ -1,98 +1,123 @@
 # Will Godfrey - Personal Website
 
-A minimalist single-page portfolio website for Will Godfrey, entrepreneur and CTO & Co-Founder of Huper.
+A modern, minimalist portfolio website featuring a dark theme design with smooth animations and privacy-focused contact implementation.
 
 ## Overview
 
-This repository contains a clean, lightweight personal website built with vanilla HTML, CSS, and JavaScript. The entire site is self-contained in a single `index.html` file with no external dependencies, making it perfect for edge deployment on Cloudflare Workers.
+This repository contains a single-page portfolio website built with vanilla HTML, CSS, and JavaScript. The site features a sophisticated dark theme with animated backgrounds, smooth scrolling navigation, and zero external dependencies, making it perfect for edge deployment on Cloudflare Pages.
+
+### Live Site
+
+🌐 [willgodfrey.com](https://willgodfrey.com)
 
 ### Key Features
 
-- **Zero dependencies** - No frameworks, build tools, or external libraries
-- **Single file architecture** - Everything in one HTML file for maximum simplicity
-- **Privacy-focused** - Email address obfuscation to prevent scraping
-- **Responsive design** - Works seamlessly across all devices
-- **Fast loading** - Minimal footprint with inline styles and scripts
-- **Accessibility** - Semantic HTML with ARIA labels where needed
+- **Modern Dark Theme** - Sophisticated design with animated grid background and gradient effects
+- **Zero Dependencies** - No frameworks, build tools, or external libraries
+- **Privacy-First Contact** - Advanced email obfuscation with delayed loading
+- **Smooth Animations** - Intersection observer for scroll animations, hover effects
+- **Fast Performance** - Single HTML file with inline styles and scripts
+- **Full Accessibility** - Semantic HTML with proper ARIA labels
+- **Analytics Ready** - Google Analytics integration (GA4)
+- **Responsive Design** - Mobile-first approach that works on all devices
+
+## Technology Stack
+
+- **Frontend**: Vanilla HTML5, CSS3, JavaScript (ES6+)
+- **Styling**: CSS custom properties, Grid, Flexbox, animations
+- **Analytics**: Google Analytics 4 (G-RQMR51RTHC)
+- **Deployment**: Cloudflare Pages with automatic Git integration
+- **Icons**: Custom SVG favicons and social media icons
+
+## Project Structure
+
+```
+.
+├── index.html          # Complete website (HTML, CSS, JS inline)
+├── favicon.ico         # Multi-resolution icon (16x16, 32x32, 48x48)
+├── favicon.svg         # Vector favicon with WG logo
+├── favicon-16.png      # 16x16 PNG favicon
+├── favicon-32.png      # 32x32 PNG favicon
+├── icons/              # Social media icons
+│   ├── linkedin.svg    # LinkedIn icon (white fill)
+│   └── github.svg      # GitHub icon (white fill)
+├── images/             # Portfolio images
+│   └── will-godfrey.jpg # Professional headshot (400x400)
+├── README.md           # This file
+├── CLAUDE.md           # AI assistant development guidance
+└── LICENSE             # GPL v3.0 license
+```
 
 ## Deployment
 
-This site is automatically deployed to Cloudflare Workers/Pages whenever changes are pushed to the repository.
+This site automatically deploys to Cloudflare Pages whenever changes are pushed to the repository.
 
-### Automatic Deployment Setup
+### Automatic Deployment
 
-1. **Connect Repository**: The GitHub repository is connected to Cloudflare Pages
-2. **Automatic Builds**: Every push to the `main` branch triggers an automatic deployment
-3. **Preview Deployments**: Pull requests receive unique preview URLs for testing
+1. **Git Integration**: Connected to GitHub repository
+2. **Branch Deployments**: 
+   - `main` branch → Production (willgodfrey.com)
+   - Other branches → Preview URLs
+3. **Build Configuration**:
+   - Build command: `exit 0` (no build required)
+   - Output directory: `/` (root)
 
-### Manual Deployment
-
-For local development and testing:
+### Local Development
 
 ```bash
 # Clone the repository
 git clone https://github.com/willgodfrey/crispy-meme-soon.git
 cd crispy-meme-soon
 
-# Open directly in browser
+# Open in browser
 open index.html
 
-# Or serve with a local HTTP server
+# Or serve with HTTP server
 python -m http.server 8000
 # Visit http://localhost:8000
 ```
 
-### Cloudflare Configuration
+## Features in Detail
 
-The site is configured for Cloudflare Pages with:
-- **Production branch**: `main`
-- **Build command**: `exit 0` (no build required)
-- **Build output directory**: `/` (root directory)
+### Email Protection
 
-## Structure
+The site uses advanced email obfuscation:
+- Email address constructed dynamically after page load
+- Multiple obfuscation layers (character codes, string splitting)
+- Loading state prevents immediate scraping
+- Smooth transition when revealing contact information
 
-```
-.
-├── index.html          # Complete website (HTML, CSS, JS inline)
-├── README.md           # This file
-├── CLAUDE.md           # Development guidance for AI assistants
-├── LICENSE             # GPL v3.0 license
-├── icons/              # Favicon and touch icons (to be added)
-│   ├── favicon-16.png
-│   ├── favicon-32.png
-│   ├── apple-touch-icon.png
-│   └── site.webmanifest
-└── images/             # Portrait image (to be added)
-    └── will-godfrey.jpg
-```
+### Performance Optimizations
 
-## Development
+- Single HTTP request (everything inline)
+- Optimized images (400x400 headshot)
+- CSS animations use GPU-accelerated properties
+- Lazy-loaded contact button via JavaScript
 
-### Making Changes
-
-1. Edit `index.html` directly - no build process required
-2. Test locally by opening the file in a browser
-3. Commit and push changes to trigger automatic deployment
-
-### Adding Assets
-
-If adding the missing image and icon files:
-- Portrait image: `images/will-godfrey.jpg` (128x128px minimum recommended)
-- Icons: Generate from the inline SVG design using a favicon generator
-
-### Customization
-
-The site uses CSS custom properties for easy theming:
+### Design System
 
 ```css
-:root {
-  --accent: #003B4C;      /* Primary accent color */
-  --fg: #0f0f0f;          /* Text color */
-  --bg: #fafafa;          /* Background color */
-  --radius: .5rem;        /* Border radius */
-  --avatar: 128px;        /* Avatar size */
-}
+/* Core Colors */
+--blue-600: #0EA5E9;    /* Primary accent */
+--orange-500: #F97316;  /* Secondary accent */
+--black: #000000;       /* Background */
+--white: #FFFFFF;       /* Text */
+
+/* Typography */
+--font-sans: System font stack
+--font-mono: Monospace stack for dates
 ```
+
+## Browser Support
+
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+- Mobile browsers (iOS Safari, Chrome Android)
+
+## Contributing
+
+While this is a personal portfolio site, suggestions and bug reports are welcome. Please open an issue for any problems you encounter.
 
 ## License
 
@@ -100,4 +125,4 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 
 ## Contact
 
-For inquiries, please visit the website and use the contact section.
+Visit [willgodfrey.com](https://willgodfrey.com) and use the contact section to get in touch.

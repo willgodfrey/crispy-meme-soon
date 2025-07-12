@@ -4,57 +4,144 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a minimalist single-page portfolio website for Will Godfrey. The entire site is self-contained in a single `index.html` file with inline CSS and minimal JavaScript. No build process or external dependencies are required.
+This is a modern single-page portfolio website for Will Godfrey featuring a dark theme design with animated backgrounds. The entire site is self-contained in a single `index.html` file with inline CSS and JavaScript. No build process or external dependencies are required.
+
+## Current Implementation Details
+
+### Design Features
+- **Dark theme** with black background and white/blue accent colors
+- **Animated grid background** that moves subtly
+- **Gradient blur effects** in corners for visual depth
+- **Smooth scroll animations** using Intersection Observer
+- **Hover effects** on all interactive elements
+
+### Technical Stack
+- **Zero dependencies**: No frameworks, libraries, or build tools
+- **Single file**: Everything in `index.html` (HTML + inline CSS + inline JS)
+- **Modern JavaScript**: ES6+ features, async/await patterns
+- **CSS animations**: GPU-accelerated transforms for performance
+- **Google Analytics**: GA4 tracking integrated (ID: G-RQMR51RTHC)
+
+### Key Components
+
+1. **Navigation Bar**
+   - Fixed position with backdrop blur
+   - Smooth scroll to sections
+   - Responsive (hidden on mobile)
+
+2. **Hero Section**
+   - Animated avatar with fallback to initials
+   - Professional headshot (400x400px)
+   - Social links (LinkedIn, GitHub)
+
+3. **Contact Implementation**
+   - Advanced email obfuscation
+   - Delayed loading (800ms) to prevent scraping
+   - Multi-part string construction
+   - Character codes for special characters
+   - Smooth transition animations
+
+4. **Favicon System**
+   - SVG favicon with "WG" text on black background
+   - PNG fallbacks (16x16, 32x32)
+   - Multi-resolution ICO file
+   - Inline base64 PNG for immediate loading
 
 ## Development Commands
 
-- **Run locally**: Open `index.html` directly in a browser or use a simple HTTP server:
-  - `python -m http.server 8000`
-  - `npx serve`
-  - `php -S localhost:8000`
+- **Run locally**: 
+  ```bash
+  open index.html
+  # or
+  python -m http.server 8000
+  ```
 
-## Architecture & Structure
+## File Structure
 
-### Design Philosophy
-- **Zero dependencies**: No external CSS, JS libraries, or frameworks
-- **Single file**: Everything contained in `index.html`
-- **Inline everything**: CSS and JS are embedded directly
-- **Privacy-focused**: Email address is obfuscated and only revealed on user interaction
-
-### Key Features
-1. **Responsive design** using CSS custom properties and flexbox
-2. **Avatar with fallback**: Shows initials "WG" if image fails to load
-3. **Email obfuscation**: Contact email assembled only after button click
-4. **Inline SVG favicon**: No external favicon file needed for primary icon
-
-### Missing Assets
-The following files are referenced but not present:
-- `images/will-godfrey.jpg` - Portrait photo
-- `icons/apple-touch-icon.png` - Apple touch icon (180x180)
-- `icons/favicon-32.png` - 32x32 favicon
-- `icons/favicon-16.png` - 16x16 favicon
-- `icons/site.webmanifest` - Web app manifest
+```
+/
+├── index.html           # Complete website
+├── favicon.ico          # Multi-res icon
+├── favicon.svg          # Vector favicon
+├── favicon-16.png       # Small PNG
+├── favicon-32.png       # Medium PNG
+├── icons/
+│   ├── linkedin.svg     # White-filled icon
+│   ├── github.svg       # White-filled icon
+└── images/
+    └── will-godfrey.jpg # Headshot (400x400)
+```
 
 ## Deployment Workflow
 
-### Automatic Deployment
-This site is automatically deployed to Cloudflare Pages:
-- **Trigger**: Every push to the `main` branch
-- **Build command**: `exit 0` (no build required)
-- **Output directory**: `/` (root)
-- **Preview deployments**: Pull requests get unique preview URLs
+### Cloudflare Pages Configuration
+- **Production branch**: `main`
+- **Build command**: `exit 0`
+- **Output directory**: `/`
+- **Auto-deploy**: On every push
+- **Preview URLs**: For non-main branches
 
-### Important Deployment Notes
-1. **No build step**: Since everything is in one HTML file, Cloudflare uses `exit 0` as the build command
-2. **Git integration**: The repository is connected directly to Cloudflare Pages
-3. **Branch deployments**: Non-main branches create preview deployments
-4. **Instant updates**: Changes go live within seconds of pushing to GitHub
+### Important URLs
+- **Production**: willgodfrey.com
+- **Repository**: github.com/willgodfrey/crispy-meme-soon
 
-## Important Considerations
+## Code Style Guidelines
 
-1. **License**: GPL v3 licensed - ensure modifications comply
-2. **CSS Variables**: Theme customization via CSS custom properties at `:root`
-3. **No Build Process**: Direct edits to `index.html` - no compilation needed
-4. **Email Protection**: Contact email split into parts and assembled on click to prevent scraping
-5. **Performance**: The single-file approach ensures minimal network requests and fastest possible load times
-6. **Edge Deployment**: Optimized for Cloudflare's edge network with no server-side requirements
+1. **No external dependencies** - Everything must be self-contained
+2. **Inline everything** - CSS and JS stay in the HTML file
+3. **Modern but compatible** - Use modern features with good browser support
+4. **Performance first** - Minimize reflows, use GPU-accelerated animations
+5. **Privacy conscious** - Obfuscate contact information properly
+
+## Common Tasks
+
+### Updating Contact Email
+The email is constructed in the JavaScript section:
+```javascript
+const p1 = 'hel';
+const p2 = 'lo';
+const d1 = 'will';
+const d2 = 'godfrey';
+const ext = 'com';
+```
+
+### Modifying Colors
+Update CSS custom properties in the `:root` selector:
+```css
+--blue-600: #0EA5E9;
+--orange-500: #F97316;
+--black: #000000;
+```
+
+### Adding Experience Items
+Add new `.experience-item` divs in the experience section following the existing pattern.
+
+## Performance Considerations
+
+1. **Single file approach** ensures one HTTP request
+2. **Inline SVG favicon** prevents extra favicon requests
+3. **Optimized animations** use `transform` and `opacity` only
+4. **Lazy-loaded contact** reduces initial JavaScript execution
+5. **System fonts** prevent web font downloads
+
+## Security Features
+
+1. **Email obfuscation** with multiple layers:
+   - Split string construction
+   - Character code generation
+   - Delayed rendering
+   - No email in source HTML
+
+2. **CSP-friendly** - No inline event handlers except necessary ones
+3. **HTTPS-only** resources (GA script)
+
+## Browser Compatibility
+
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile responsive
+- Fallbacks for missing images
+- Progressive enhancement approach
+
+## License
+
+GPL v3 - Ensure any modifications comply with license terms.
