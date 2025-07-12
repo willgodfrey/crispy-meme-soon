@@ -41,6 +41,13 @@
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
+<!-- Performance & 2025 Standards -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<meta name="format-detection" content="telephone=no">
+
 <!-- Favicons -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
@@ -75,6 +82,24 @@
   
   --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
   --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+}
+
+/* Accessibility: Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--blue-600);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  z-index: 100;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /* Base */
@@ -661,12 +686,43 @@ footer {
   "description": "Serial entrepreneur and technologist. Ex-McKinsey. Building the future of enterprise AI infrastructure."
 }
 </script>
+
+<!-- FAQ Schema for Voice Search Optimization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What does Will Godfrey do?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Will Godfrey is a CTO and Co-Founder building enterprise AI infrastructure. He leads technical vision for autonomous AI agent orchestration platforms, combining his Fortune 500 advisory experience from McKinsey with hands-on technical execution."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What is Will Godfrey's background?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Will Godfrey has extensive experience including serving as an Expert at McKinsey & Company from 2015 to 2024, where he advised Fortune 500 companies on technology strategy. He's also the Managing Director of Miniature Systems, focusing on AI-powered sales systems."
+    }
+  }, {
+    "@type": "Question",
+    "name": "What are Will Godfrey's technical skills?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Will Godfrey specializes in AI/ML Engineering, Agent Orchestration, LLMOps, Distributed Systems, Cloud Architecture including AWS, GCP, and Kubernetes, DevOps, and System Design. He has deep expertise in building scalable AI systems and enterprise software."
+    }
+  }]
+}
+</script>
 </head>
 <body>
-<div class="gradient-blur gradient-blur-1"></div>
-<div class="gradient-blur gradient-blur-2"></div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="gradient-blur gradient-blur-1" aria-hidden="true"></div>
+<div class="gradient-blur gradient-blur-2" aria-hidden="true"></div>
 
-<nav class="nav">
+<nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="#" class="nav-logo">Will Godfrey</a>
     <div class="nav-links">
@@ -677,8 +733,8 @@ footer {
   </div>
 </nav>
 
-<main>
-  <section class="hero">
+<main role="main">
+  <section class="hero" role="banner" aria-label="Introduction">
     <div class="container">
       <div class="hero-inner">
         <div class="avatar-wrapper fade-in">
@@ -701,11 +757,11 @@ footer {
           <span>Atlanta roots</span>
         </div>
         
-        <div class="social-links fade-in fade-in-delay-3">
-          <a href="https://www.linkedin.com/in/willgodfrey" class="social-link" target="_blank" rel="noopener noreferrer">
+        <div class="social-links fade-in fade-in-delay-3" role="navigation" aria-label="Social media links">
+          <a href="https://www.linkedin.com/in/willgodfrey" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
             <img src="icons/linkedin.svg" alt="LinkedIn" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'icon-fallback\'>in</span>'">
           </a>
-          <a href="https://github.com/willgodfrey" class="social-link" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/willgodfrey" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
             <img src="icons/github.svg" alt="GitHub" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'icon-fallback\'>gh</span>'">
           </a>
         </div>
@@ -713,7 +769,7 @@ footer {
     </div>
   </section>
 
-  <div class="main-content">
+  <div class="main-content" id="main-content">
     <section class="section" id="about">
       <div class="container">
         <div class="section-label">About</div>
