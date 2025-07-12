@@ -1,0 +1,59 @@
+# Will Godfrey
+
+> Personal portfolio website for Will Godfrey - Entrepreneur, technologist, and CTO & Co-Founder building the next generation of enterprise AI infrastructure.
+
+## About
+
+Will Godfrey is an experienced technology leader who combines Fortune 500 advisory experience from McKinsey with hands-on technical execution. Currently focused on building enterprise AI agent orchestration platforms as CTO & Co-Founder of a stealth startup.
+
+## Core Information
+
+- **Current Role**: CTO & Co-Founder, Stealth Startup (Jun 2025 - Present)
+- **Location**: Iowa City (Remote-first, Atlanta roots)
+- **Previous**: McKinsey & Company Expert (Nov 2015 - Jul 2024)
+- **Contact**: Available through website contact form
+
+## Expertise
+
+### Technical Skills
+- AI/ML Engineering
+- Agent Orchestration
+- LLMOps
+- Distributed Systems
+- Cloud Architecture (AWS, GCP, Kubernetes)
+- DevOps and System Design
+
+### Business Skills
+- Product Strategy
+- Team Leadership
+- P&L Management
+- M&A Integration
+- Revenue System Automation
+
+## Professional Experience
+
+### CTO & Co-Founder, Stealth Startup (Jun 2025 - Present)
+Leading technical vision for a platform orchestrating autonomous AI agents across enterprise workflows—bringing "single pane of glass" control to LLM-powered operations.
+
+### Managing Director, Miniature Systems (Jan 2025 - Present)
+Designed and delivered an AI-powered sales-systems audit and playbook now adopted by five B2B firms, cutting rep time-to-value and automating revenue workflows end-to-end.
+
+### Expert, McKinsey & Company (Nov 2015 - Jul 2024)
+Advised executive teams and PE investors on commercial GTM tech; built a CRM performance diagnostic deployed at 10+ enterprises to unlock multi-million-dollar revenue lifts.
+
+### Senior Consultant, Appirio (Apr 2013 - Oct 2015)
+Led Salesforce architecture and GTM redesigns for Fortune 100 and high-growth clients—rebuilding loyalty platforms and sales-enablement systems.
+
+## Website Structure
+
+- **Homepage** (https://willgodfrey.com/): Complete portfolio with all information
+- **Sections**: About, Experience, Skills, Contact
+
+## Key Links
+
+- LinkedIn: https://www.linkedin.com/in/willgodfrey
+- GitHub: https://github.com/willgodfrey
+
+## Last Updated
+
+2025-07-12

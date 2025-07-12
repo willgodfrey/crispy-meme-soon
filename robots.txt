@@ -1,0 +1,8 @@
+# Robots.txt for willgodfrey.com
+# Allow all search engines and AI crawlers to access the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://willgodfrey.com/sitemap.xml
