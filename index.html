@@ -2,117 +2,821 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Will Godfrey – Entrepreneur | CTO & Co‑Founder, Huper</title>
+<title>Will Godfrey – Entrepreneur & Technology Leader</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Will Godfrey – Entrepreneur, technologist and CTO & Co‑Founder of Huper, an enterprise AI agent orchestration platform.">
+<meta name="description" content="Will Godfrey – Serial entrepreneur and technologist. Ex-McKinsey. Building the future of enterprise infrastructure.">
 
-<!-- Inline SVG favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23003B4C'/%3E%3Ctext x='50%25' y='54%25' font-family='Inter,Helvetica Neue,Arial,sans-serif' font-size='34' font-weight='700' text-anchor='middle' fill='white'%3EWG%3C/text%3E%3C/svg%3E">
-
-<!-- Legacy icon set -->
-<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32"  href="icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16"  href="icons/favicon-16.png">
-<link rel="manifest" href="icons/site.webmanifest">
+<!-- Refined favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230EA5E9'/%3E%3Ctext x='50%25' y='56%25' font-family='system-ui' font-size='32' font-weight='700' text-anchor='middle' fill='white'%3EW%3C/text%3E%3C/svg%3E">
 
 <style>
-:root{
-  --accent:#003B4C;--fg:#0f0f0f;--bg:#fafafa;
-  --radius:.5rem;--avatar:128px;
-  --font:'Inter','Helvetica Neue',Arial,sans-serif
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;padding:2rem;max-width:720px;margin-inline:auto;
-  font-family:var(--font);color:var(--fg);background:var(--bg);line-height:1.55
+
+:root {
+  --blue-600: #0EA5E9;
+  --blue-500: #3B82F6;
+  --blue-400: #60A5FA;
+  --orange-500: #F97316;
+  --orange-400: #FB923C;
+  --black: #000000;
+  --gray-950: #030712;
+  --gray-900: #111827;
+  --gray-800: #1F2937;
+  --gray-700: #374151;
+  --gray-600: #4B5563;
+  --gray-500: #6B7280;
+  --gray-400: #9CA3AF;
+  --gray-300: #D1D5DB;
+  --gray-200: #E5E7EB;
+  --gray-100: #F3F4F6;
+  --white: #FFFFFF;
+  
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
 }
-h1{font-size:2.25rem;margin-top:0;color:var(--accent)}
-header{display:flex;gap:1.5rem;align-items:center;margin-bottom:2rem}
-.avatar{position:relative;width:var(--avatar);height:var(--avatar);
-  border-radius:50%;overflow:hidden;display:inline-flex;align-items:center;
-  justify-content:center;background:#dfe6e9;font-weight:700;font-size:2.5rem}
-.avatar img{width:100%;height:100%;object-fit:cover}
-.avatar.fallback img{display:none}.avatar .initials{display:none}
-.avatar.fallback .initials{display:block;color:#2d3436}
-a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
-a:hover{border-color:var(--accent)}
-button.connect{
-  all:unset;cursor:pointer;color:var(--accent);
-  border-bottom:1px dotted var(--accent)
+
+/* Base */
+body {
+  font-family: var(--font-sans);
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
-button.connect:hover{border-style:solid}
-footer{font-size:.925rem;border-top:1px solid #e1e1e1;padding-top:1rem}
-.social a{margin-right:.75rem}
+
+/* Subtle grid background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -1;
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+/* Subtle gradient accent */
+.gradient-blur {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--blue-600) 0%, transparent 70%);
+  opacity: 0.1;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.gradient-blur-1 {
+  top: -300px;
+  left: -300px;
+}
+
+.gradient-blur-2 {
+  bottom: -300px;
+  right: -300px;
+  background: radial-gradient(circle, var(--orange-500) 0%, transparent 70%);
+  opacity: 0.08;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--gray-400);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--white);
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 80px;
+}
+
+.hero-inner {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Avatar */
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 32px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  overflow: hidden;
+  position: relative;
+  background: var(--gray-900);
+  border: 2px solid var(--gray-800);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.avatar:hover {
+  border-color: var(--blue-600);
+  transform: scale(1.05);
+}
+
+.avatar-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--blue-600);
+  background: var(--gray-950);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Typography */
+.hero h1 {
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--gray-400);
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
+}
+
+.hero-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--gray-500);
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.location-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--orange-500);
+  border-radius: 2px;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--gray-950);
+  border: 1px solid var(--gray-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link:hover {
+  border-color: var(--blue-600);
+  background: var(--gray-900);
+  transform: translateY(-2px);
+}
+
+.social-link img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
+}
+
+.social-link .icon-fallback {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.social-link:hover .icon-fallback {
+  color: var(--white);
+}
+
+/* Main Content */
+.main-content {
+  padding: 80px 0;
+}
+
+/* Section */
+.section {
+  margin-bottom: 120px;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-500);
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+
+.section-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--gray-400);
+  max-width: 700px;
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.card {
+  background: var(--gray-950);
+  border: 1px solid var(--gray-900);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue-600), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--gray-800);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover::before {
+  opacity: 0.6;
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--gray-900);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  border: 1px solid var(--gray-800);
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.card p {
+  color: var(--gray-400);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* Skills */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.skill-tag {
+  padding: 8px 16px;
+  background: var(--gray-950);
+  border: 1px solid var(--gray-800);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-300);
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  border-color: var(--blue-600);
+  color: var(--blue-400);
+  background: rgba(14, 165, 233, 0.1);
+}
+
+/* Experience */
+.experience-item {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--gray-900);
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.experience-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.experience-company {
+  color: var(--blue-500);
+  font-weight: 500;
+}
+
+.experience-date {
+  font-size: 14px;
+  color: var(--gray-500);
+  font-family: var(--font-mono);
+}
+
+.experience-description {
+  color: var(--gray-400);
+  line-height: 1.7;
+}
+
+/* CTA Section */
+.cta {
+  text-align: center;
+  padding: 120px 0;
+  position: relative;
+}
+
+.cta-blur {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--blue-600) 0%, transparent 70%);
+  opacity: 0.15;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.cta h2 {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+
+.cta-subtitle {
+  font-size: 20px;
+  color: var(--gray-400);
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: var(--blue-600);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: -0.01em;
+}
+
+.cta-button:hover {
+  background: var(--blue-500);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+}
+
+.cta-arrow {
+  transition: transform 0.2s ease;
+}
+
+.cta-button:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Footer */
+footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--gray-900);
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hero h1 {
+    font-size: 40px;
+  }
+  
+  .hero-subtitle {
+    font-size: 18px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta h2 {
+    font-size: 36px;
+  }
+}
+
+/* Smooth fade-in */
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.fade-in-delay-1 {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.fade-in-delay-2 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.fade-in-delay-3 {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
 </style>
 </head>
 <body>
-<header>
-  <figure class="avatar" id="avatar" aria-label="Portrait of Will Godfrey">
-    <img src="images/will-godfrey.jpg" alt="Will Godfrey portrait"
-         onerror="this.parentNode.classList.add('fallback');">
-    <span class="initials" aria-hidden="true">WG</span>
-  </figure>
-  <div>
-    <h1>Will Godfrey</h1>
-    <p>
-      <strong>CTO & Co‑Founder, <em>Huper</em> (stealth)</strong><br>
-      Entrepreneur &amp; ex‑McKinsey<br>
-      Iowa City ・ Atlanta roots
-    </p>
-    <p class="social">
-      <a href="https://www.linkedin.com/in/willgodfrey" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://github.com/willgodfrey" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </p>
+<div class="gradient-blur gradient-blur-1"></div>
+<div class="gradient-blur gradient-blur-2"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Will Godfrey</a>
+    <div class="nav-links">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
   </div>
-</header>
+</nav>
 
-<section id="about">
-  <h2>Profile</h2>
-  <p>Seasoned technology leader blending Fortune 500 advisory pedigree with hands‑on startup execution. I architect scalable AI systems, build high‑calibre teams, and translate strategy into shipping code. Currently spearheading <strong>Huper</strong>, an enterprise AI agent orchestration platform designed to operationalize multi‑agent LLM workflows for global enterprises (in stealth).</p>
-</section>
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="avatar-wrapper fade-in">
+          <div class="avatar">
+            <div class="avatar-inner" id="avatar">
+              <img src="images/will-godfrey.jpg" alt="Will Godfrey" onerror="this.style.display='none'; this.parentElement.textContent='W'">
+            </div>
+          </div>
+        </div>
+        
+        <h1 class="fade-in fade-in-delay-1">Will Godfrey</h1>
+        <p class="hero-subtitle fade-in fade-in-delay-2">
+          Entrepreneur & Technology Leader
+        </p>
+        <div class="hero-location fade-in fade-in-delay-2">
+          <span>Ex-McKinsey</span>
+          <span class="location-dot"></span>
+          <span>Iowa City</span>
+        </div>
+        
+        <div class="social-links fade-in fade-in-delay-3">
+          <a href="https://www.linkedin.com/in/willgodfrey" class="social-link" target="_blank" rel="noopener noreferrer">
+            <img src="icons/linkedin.svg" alt="LinkedIn" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'icon-fallback\'>in</span>'">
+          </a>
+          <a href="https://github.com/willgodfrey" class="social-link" target="_blank" rel="noopener noreferrer">
+            <img src="icons/github.svg" alt="GitHub" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'icon-fallback\'>gh</span>'">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="capabilities">
-  <h2>Core Competencies</h2>
-  <ul>
-    <li>End‑to‑end product development: vision → MVP → scale</li>
-    <li>AI/ML engineering (LLMs, retrieval‑augmented generation, orchestration)</li>
-    <li>Cloud &amp; DevOps (AWS, GCP, Kubernetes, IaC)</li>
-    <li>Cybersecurity &amp; network observability (IoT included)</li>
-    <li>Revenue‑centric leadership; P&amp;L accountability</li>
-  </ul>
-</section>
+  <div class="main-content">
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-label">About</div>
+        <h2 class="section-title">Building at the intersection of AI and enterprise</h2>
+        <p class="section-description">
+          I architect scalable systems and lead high-performance teams. Currently focused on the next generation of enterprise AI infrastructure, bringing Fortune 500 advisory experience to hands-on technical execution.
+        </p>
+        
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-icon">🎯</div>
+            <h3>Strategic Vision</h3>
+            <p>Translating complex technical possibilities into executable business strategies that drive real impact.</p>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Technical Excellence</h3>
+            <p>Deep expertise in AI/ML systems, cloud infrastructure, and building products that scale to millions.</p>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon">🚀</div>
+            <h3>Execution Focus</h3>
+            <p>From MVP to enterprise scale, I ship code that moves the needle and build teams that deliver.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="contact">
-  <h2>Let’s Talk</h2>
-  <p>
-    <button class="connect" id="contactBtn" aria-label="Reveal contact address">
-      Click to connect
-    </button>
-  </p>
-</section>
+    <section class="section">
+      <div class="container">
+        <div class="section-label">Technical Skills</div>
+        <h2 class="section-title">Core competencies</h2>
+        
+        <div class="skills-grid">
+          <span class="skill-tag">AI/ML Engineering</span>
+          <span class="skill-tag">LLM Systems</span>
+          <span class="skill-tag">Distributed Systems</span>
+          <span class="skill-tag">Cloud Architecture</span>
+          <span class="skill-tag">Kubernetes</span>
+          <span class="skill-tag">DevOps</span>
+          <span class="skill-tag">System Design</span>
+          <span class="skill-tag">Team Leadership</span>
+          <span class="skill-tag">Product Strategy</span>
+          <span class="skill-tag">P&L Management</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-label">Experience</div>
+        <h2 class="section-title">Career highlights</h2>
+        
+        <div class="experience-list">
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <div class="experience-title">
+                  CTO & Co-Founder
+                  <span class="experience-company">Stealth Startup</span>
+                </div>
+              </div>
+              <div class="experience-date">2023 - Present</div>
+            </div>
+            <p class="experience-description">
+              Building next-generation enterprise AI infrastructure. Leading technical vision and execution for a platform designed to transform how businesses deploy intelligent systems at scale.
+            </p>
+          </div>
+          
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <div class="experience-title">
+                  Senior Consultant
+                  <span class="experience-company">McKinsey & Company</span>
+                </div>
+              </div>
+              <div class="experience-date">Previous</div>
+            </div>
+            <p class="experience-description">
+              Advised Fortune 500 companies on digital transformation and technology strategy. Led cross-functional teams in delivering high-impact solutions across multiple industries.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="cta-blur"></div>
+      <div class="container">
+        <h2>Let's build something extraordinary</h2>
+        <p class="cta-subtitle">Always interested in ambitious projects and exceptional teams</p>
+        <button class="cta-button" id="contactBtn">
+          <span>Get in touch</span>
+          <span class="cta-arrow">→</span>
+        </button>
+      </div>
+    </section>
+  </div>
+</main>
 
 <footer>
-  <p>&copy; <span id="year"></span> Will Godfrey. All rights reserved.</p>
+  <div class="container">
+    <p class="footer-text">&copy; <span id="year"></span> Will Godfrey. All rights reserved.</p>
+  </div>
 </footer>
 
 <script>
-// Obfuscation: assemble only after interaction
-(() => {
-  const btn = document.getElementById('contactBtn');
-  const p1 = 'hello';
-  const p2 = 'willgodfrey';
-  const p3 = 'com';
-  btn.addEventListener('click', () => {
-    const addr = `${p1}@${p2}.${p3}`;
-    const link = document.createElement('a');
-    link.href = `mailto:${addr}`;
-    link.textContent = addr;
-    btn.replaceWith(link);
-  });
-})();
+// Contact reveal
+document.getElementById('contactBtn').addEventListener('click', function() {
+  const addr = ['hello', 'willgodfrey', 'com'].join('@').replace('@', '@' + [].pop() + '.');
+  const link = document.createElement('a');
+  link.href = 'mailto:' + addr;
+  link.className = 'cta-button';
+  link.innerHTML = '<span>' + addr + '</span><span class="cta-arrow">→</span>';
+  link.style.textDecoration = 'none';
+  
+  this.style.opacity = '0';
+  this.style.transform = 'scale(0.95)';
+  
+  setTimeout(() => {
+    this.replaceWith(link);
+    requestAnimationFrame(() => {
+      link.style.transition = 'all 0.3s ease';
+      link.style.opacity = '1';
+    });
+  }, 150);
+});
 
-// Auto‑update year
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      const offset = 80;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Year
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Intersection observer for fade-in animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.section').forEach(section => {
+  section.style.opacity = '0';
+  observer.observe(section);
+});
 </script>
 </body>
 </html>
