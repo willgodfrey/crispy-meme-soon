@@ -61,13 +61,13 @@ This is a modern single-page portfolio website for Will Godfrey featuring a dark
 ```
 /
 ├── index.html           # Complete website
-├── favicon.ico          # Multi-res icon
-├── favicon.svg          # Vector favicon
-├── favicon-16.png       # Small PNG
-├── favicon-32.png       # Medium PNG
-├── icons/
+├── favicon.ico          # Multi-res icon (root for compatibility)
+├── icons/               # All icon files
+│   ├── favicon.svg      # Vector favicon
+│   ├── favicon-16.png   # Small PNG
+│   ├── favicon-32.png   # Medium PNG
 │   ├── linkedin.svg     # White-filled icon
-│   ├── github.svg       # White-filled icon
+│   └── github.svg       # White-filled icon
 └── images/
     └── will-godfrey.jpg # Headshot (400x400)
 ```

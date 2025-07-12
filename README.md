@@ -34,11 +34,11 @@ This repository contains a single-page portfolio website built with vanilla HTML
 ```
 .
 ├── index.html          # Complete website (HTML, CSS, JS inline)
-├── favicon.ico         # Multi-resolution icon (16x16, 32x32, 48x48)
-├── favicon.svg         # Vector favicon with WG logo
-├── favicon-16.png      # 16x16 PNG favicon
-├── favicon-32.png      # 32x32 PNG favicon
-├── icons/              # Social media icons
+├── favicon.ico         # Multi-resolution icon in root for compatibility
+├── icons/              # All icon files
+│   ├── favicon.svg     # Vector favicon with WG logo
+│   ├── favicon-16.png  # 16x16 PNG favicon
+│   ├── favicon-32.png  # 32x32 PNG favicon
 │   ├── linkedin.svg    # LinkedIn icon (white fill)
 │   └── github.svg      # GitHub icon (white fill)
 ├── images/             # Portfolio images
