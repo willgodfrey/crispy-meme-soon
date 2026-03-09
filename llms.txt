@@ -4,11 +4,11 @@
 
 ## About
 
-Will Godfrey is an experienced technology leader who combines Fortune 500 advisory experience from McKinsey with hands-on technical execution. Currently focused on building enterprise AI agent orchestration platforms as CTO & Co-Founder of a stealth startup.
+Will Godfrey is an experienced technology leader who combines Fortune 500 advisory experience from McKinsey with hands-on technical execution. Currently focused on building enterprise AI consulting and product company R Squared AI, deploying autonomous AI agents across enterprise workflows using a forward-deployed engineer model. He also founded ICBuild.ai, Iowa City's hands-on AI builders community — monthly workshops where people build real things with AI agents and open-source tools.
 
 ## Core Information
 
-- **Current Role**: CTO & Co-Founder, Stealth Startup (Jun 2025 - Present)
+- **Current Role**: CTO & Co-Founder, R Squared AI (Jun 2025 - Present)
 - **Location**: Iowa City (Remote-first, Atlanta roots)
 - **Previous**: McKinsey & Company Expert (Nov 2015 - Jul 2024)
 - **Contact**: Available through website contact form
@@ -32,11 +32,14 @@ Will Godfrey is an experienced technology leader who combines Fortune 500 adviso
 
 ## Professional Experience
 
-### CTO & Co-Founder, Stealth Startup (Jun 2025 - Present)
-Leading technical vision for a platform orchestrating autonomous AI agents across enterprise workflows—bringing "single pane of glass" control to LLM-powered operations.
+### CTO & Co-Founder, R Squared AI (Sept 2025 - Present)
+Leading technical vision for an AI consulting and product company deploying autonomous AI agents across enterprise workflows — using a forward-deployed engineer model to build production systems for insurance brokerage and mid-market private equity clients.
 
-### Managing Director, Miniature Systems (Jan 2025 - Present)
-Designed and delivered an AI-powered sales-systems audit and playbook now adopted by five B2B firms, cutting rep time-to-value and automating revenue workflows end-to-end.
+### Founder, ICBuild.ai (Mar 2026 - Present)
+Founded Iowa City's hands-on AI builders community — free monthly workshops at MERGE where students, developers, and founders build working projects with AI agents, Claude, and open-source tools.
+
+### Founder, Miniature Systems (Jan 2025 - Present)
+Hardware lab and maker studio building at the intersection of 3D printing, edge computing, and robotics. Operating a multi-printer Prusa farm with engineering-grade materials, a Turing Pi compute cluster, and full homelab infrastructure — exploring how small-scale physical systems serve as testbeds for AI integration and automation.
 
 ### Expert, McKinsey & Company (Nov 2015 - Jul 2024)
 Advised executive teams and PE investors on commercial GTM tech; built a CRM performance diagnostic deployed at 10+ enterprises to unlock multi-million-dollar revenue lifts.
@@ -56,4 +59,4 @@ Led Salesforce architecture and GTM redesigns for Fortune 100 and high-growth cl
 
 ## Last Updated
 
-2025-07-12
+2026-03-09
