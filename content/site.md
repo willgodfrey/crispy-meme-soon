@@ -26,7 +26,7 @@ meta:
     description: Five things I have designed and built, from a corporate venture build to two ventures of my own.
   about:
     title: About Will Godfrey, venture architect
-    description: Architect of applications, then of enterprises, then of ventures. Nine years at McKinsey. Author of the Carve-forward method.
+    description: Architect of applications, then of enterprises, then of ventures. Nine years at McKinsey. Author of a method for building AI-native ventures.
   contact:
     title: Start a conversation. Will Godfrey, venture architect
     description: Tell me what you are weighing. I read everything myself.
@@ -55,12 +55,12 @@ images:
   aerialWork:
     alt: "[[TODO: aerial 2 alt text]]"
     caption: "[[TODO: aerial 2 caption: place, month, year]]"
-verification: "[[TODO: ICONIQ figures verified]]"
+verification: "ICONIQ 2026 State of AI figures verified 2026-09-20"
 ---
 
 ## Closing block, shown at the foot of every page
 
-Will Godfrey is a venture architect: the architect of record for new AI-native businesses. He spent nine years at McKinsey, where he served as CTO of North America's first large-scale digital business build. He wrote the Carve-forward method and runs two ventures of his own, Sightline Geospatial and Miniature Systems, from Iowa City.
+Will Godfrey is a venture architect: the architect of record for new AI-native businesses. He spent nine years at McKinsey, where he served as CTO of North America's first large-scale digital business build. He wrote a method for building AI-native ventures and runs two ventures of his own, Sightline Geospatial and Miniature Systems, from Iowa City.
 
 Link: Start a conversation
 
@@ -83,6 +83,6 @@ Links: Home. What is a venture architect?
 
 ## Bios, for reuse outside the site
 
-25 words: Will Godfrey is a venture architect: the architect of record for new AI-native businesses. Nine years at McKinsey. Author of the Carve-forward method.
+25 words: Will Godfrey is a venture architect: the architect of record for new AI-native businesses. Nine years at McKinsey. Author of a method for building AI-native ventures.
 
-60 words: Will Godfrey is a venture architect. He designs new AI-native businesses before they are built, proves the design in a working system, and hands it over on a date. He spent nine years at McKinsey, where he served as CTO of North America's first large-scale digital business build. He wrote the Carve-forward method and runs two ventures of his own.
+60 words: Will Godfrey is a venture architect. He designs new AI-native businesses before they are built, proves the design in a working system, and hands it over on a date. He spent nine years at McKinsey, where he served as CTO of North America's first large-scale digital business build. He wrote a method for building AI-native ventures and runs two ventures of his own.

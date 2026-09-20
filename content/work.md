@@ -29,10 +29,10 @@ openingImage: aerialWork
 ## Miniature Systems
 
 - The seat: founder.
-- What it is: NDAA-compliant payload accessories for uncrewed aircraft, built for [[TODO: Skydio naming]].
+- What it is: NDAA-compliant payload accessories for uncrewed aircraft, built for a leading US drone platform.
 - What it shows: a hardware venture with a regulated buyer, where what you inherit from a larger platform is the whole design question.
 
-## The Carve-forward method
+## The method I work from
 
 - The seat: author.
 - What it is: a written method for standing up an AI-native venture next to a PE-backed services firm. It runs in gated phases, with a written way to stop at each gate, and it has a full practitioner's guide behind it.
@@ -40,4 +40,4 @@ openingImage: aerialWork
 
 ## Foot line
 
-Earlier: nine years at McKinsey as an expert in front-office technology, two years at Appirio as a lead architect, and two startups I co-founded in Atlanta[[TODO: Atlanta startups]].
+Earlier: nine years at McKinsey as an expert in front-office technology, two years at Appirio as a lead architect, and two startups I co-founded in Atlanta, Live & Breathing and Modern Furniture Collection. I was also the third employee at ShootQ, a company I named.

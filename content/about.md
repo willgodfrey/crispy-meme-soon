@@ -17,6 +17,6 @@ Before McKinsey I was a founder and an operator. I co-founded a media company th
 
 I have built AI systems hands-on since 2021, before ChatGPT. Most recently I designed and built an agent for a $6B insurance brokerage, which is now in production.
 
-Today I run two ventures of my own from Iowa City: Sightline Geospatial, which does aerial reality capture for the built environment, and Miniature Systems, which makes NDAA-compliant payload accessories for uncrewed aircraft. I take a small number of commissions each year as venture architect for sponsors and founders. I wrote the Carve-forward method for that work.
+Today I run two ventures of my own from Iowa City: Sightline Geospatial, which does aerial reality capture for the built environment, and Miniature Systems, which makes NDAA-compliant payload accessories for uncrewed aircraft. I take a small number of commissions each year as venture architect for sponsors and founders. I wrote my own method for that work.
 
 I hold an MBA in the management of technology from Georgia Tech. I work largely remote, with scheduled blocks on site.

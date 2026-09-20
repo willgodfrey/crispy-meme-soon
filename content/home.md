@@ -85,7 +85,7 @@ I take a small number of commissions each year.
 ## Where this comes from
 
 - CTO of North America's first large-scale digital business build, during nine years at McKinsey
-- Author of the Carve-forward method for standing up an AI-native venture next to a PE-backed services firm
+- Author of my own method for standing up an AI-native venture next to a PE-backed services firm
 - Building AI systems hands-on since 2021, including an agent now in production at a $6B insurance brokerage
 - Founder of two ventures of my own, Sightline Geospatial and Miniature Systems
 

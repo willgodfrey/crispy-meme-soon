@@ -36,7 +36,7 @@ An architect of record is a single, senior point of accountability. There is one
 
 For a long time a strategist could write the business case and hand it to engineers. Software margins were forgiving enough to allow it.
 
-AI-native businesses are different, because every request carries a real cost. In [ICONIQ's January 2026 State of AI survey](https://cdn.prod.website-files.com/65d0d38fc4ec8ce8a8921654/6979532decf89bd3df2163b0_ICONIQ_Analytics_Insights_2026_State_of_AI_Bi-Annual_Snapshot.pdf) of about 300 software executives building AI products, average gross margin on those products was 41% in 2024 and is projected at 52% for 2026. Inference runs at 23% of revenue for companies at scale. Pricing is unsettled too: more than a third of those companies expect to change how they price within a year.
+AI-native businesses are different, because every request carries a real cost. In [ICONIQ's January 2026 State of AI survey](https://cdn.prod.website-files.com/65d0d38fc4ec8ce8a8921654/6979532decf89bd3df2163b0_ICONIQ_Analytics_Insights_2026_State_of_AI_Bi-Annual_Snapshot.pdf) of about 300 software executives building AI products, average gross margin on those products was 41% in 2024 and is projected at 52% for 2026. For companies at scale, model inference is about 23% of the cost of delivering those products, and it becomes the dominant cost as talent's share declines. Pricing is unsettled too: more than a third of those companies expect to change how they price within a year.
 
 So the choices an engineer makes about models, routing and human review set the gross margin. The choice between an agent that does the work and a copilot that helps someone do it sets the price. Those are business decisions made in technical language, and they are made before the first line of code. In an AI-native business, the architecture is the business model. Someone has to hold both.
 
@@ -60,7 +60,7 @@ I do not supply a build team. I do not serve as chief executive. I do not stay p
 
 I have been an architect of one kind or another for more than a decade: of applications, then of the front-office systems of large enterprises during nine years at McKinsey, then of whole ventures. At McKinsey I served as CTO of North America's first large-scale digital business build, a new company stood up next to an industrial parent.
 
-I wrote the Carve-forward method for standing up an AI-native venture next to a PE-backed services firm. I also run two ventures of my own, which keeps me honest about what design decisions cost to live with.
+I wrote my own method for standing up an AI-native venture next to a PE-backed services firm. I also run two ventures of my own, which keeps me honest about what design decisions cost to live with.
 
 ## Questions I get asked
 
