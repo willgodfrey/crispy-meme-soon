@@ -1,201 +1,57 @@
-# CLAUDE.md
+# Project instructions: willgodfrey.com
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+You are rebuilding the personal site of Will Godfrey, a venture architect. Read `docs/PRD.md`, `docs/DESIGN.md`, `docs/TECH_SPEC.md` and `docs/BUILD_PLAN.md` before any task. Work one phase at a time and stop where the build plan says to stop.
 
-## Project Overview
+## The one rule that outranks the rest
 
-This is a modern single-page portfolio website for Will Godfrey featuring a dark theme design with animated backgrounds. The entire site is self-contained in a single `index.html` file with inline CSS and JavaScript. No build process or external dependencies are required.
+If you do not know, do not guess. Ask Will, or state the assumption at the top of your reply and in the pull request. This applies to facts about him, to Cloudflare behavior, and to library versions. Check current documentation before relying on memory.
 
-### Recent Transformation (2025)
-The site underwent a complete transformation from a Bootstrap-based "coming soon" page to a modern, zero-dependency portfolio implementing 2025 web standards including AI compatibility (llms.txt), voice search optimization (FAQ schema), and enhanced accessibility.
+## Words
 
-## Current Implementation Details
+- `content/` is the source of truth for every visible word, every title tag and every meta description.
+- You may restructure content files to fit the stack. You may not change, add, cut or reorder words without Will's approval. Propose copy changes in the pull request description, never in the diff.
+- Never invent a claim, a number, a client name, a testimonial, a logo or a date.
+- Never write any of these into the site: a McKinsey client name, McKinsey-internal figures, "leading global expert," R-Squared AI as a current role, ICBuild, "serial entrepreneur," "thought leader." The word "fractional" appears only where `content/` uses it on purpose, in the FAQ.
+- Punctuation: no em dashes, no curly quotes, straight apostrophes only. En dashes are allowed only inside numeric or date ranges. `npm run lint:copy` enforces this and must pass.
+- Headings are sentence case. No all-caps labels. No emoji anywhere.
 
-### Design Features
-- **Dark theme** with black background and white/blue accent colors
-- **Animated grid background** that moves subtly
-- **Gradient blur effects** in corners for visual depth
-- **Smooth scroll animations** using Intersection Observer
-- **Hover effects** on all interactive elements
-- **Skip navigation** link for accessibility
-- **Scroll offset handling** for fixed navigation (100px offset)
+## Code
 
-### Technical Stack
-- **Zero dependencies**: No frameworks, libraries, or build tools
-- **Single file**: Everything in `index.html` (HTML + inline CSS + inline JS)
-- **Modern JavaScript**: ES6+ features, async/await patterns
-- **CSS animations**: GPU-accelerated transforms for performance
-- **Google Analytics**: GA4 tracking integrated (ID: G-RQMR51RTHC)
-- **SEO Enhancements**: robots.txt, sitemap.xml, llms.txt
-- **Structured Data**: JSON-LD for Organization and FAQPage schemas
-- **Meta Tags**: Comprehensive Open Graph, Twitter cards, security headers
+- Static output only. No server rendering, no database, no CMS.
+- Zero client-side JavaScript by default. Any script needs a one-line justification in the pull request.
+- No third-party scripts, trackers, cookies, chat widgets, newsletter forms or embedded social feeds.
+- Self-host fonts. No requests to font CDNs at runtime.
+- Accessibility target is WCAG 2.2 AA. Semantic HTML first, ARIA only when HTML cannot express it.
+- Pin exact dependency versions. Keep dependencies few. Justify each new one.
 
-### Key Components
+## Git and deploys
 
-1. **Navigation Bar**
-   - Fixed position with backdrop blur
-   - Smooth scroll to sections with 100px offset
-   - Responsive (hidden on mobile)
-   - Accessibility: Skip to main content link
+- Work on the `venture-architect` branch. Open a pull request into the production branch. Never push to the production branch and never force-push.
+- Small commits with plain messages that say what changed and why.
+- Do not change DNS, Cloudflare settings, domains, redirects at the zone level, or repository settings. Write down what Will needs to change and where.
+- Every push should produce a Cloudflare Pages preview. Put the preview link in your report at each stop.
 
-2. **Hero Section**
-   - Animated avatar with fallback to initials
-   - Professional headshot (400x400px)
-   - Social links (LinkedIn, GitHub)
+## Commands
 
-3. **Contact Implementation**
-   - Advanced email obfuscation
-   - Delayed loading (800ms) to prevent scraping
-   - Multi-part string construction
-   - Character codes for special characters
-   - Smooth transition animations
+Define these in `package.json` and keep them working:
 
-4. **Favicon System**
-   - SVG favicon with "WG" text on black background
-   - PNG fallbacks (16x16, 32x32)
-   - Multi-resolution ICO file in root for compatibility
-   - Inline base64 PNG for immediate loading
-   - White text on black background for visibility
+- `npm run dev` starts local development
+- `npm run build` runs the copy lint, then builds static output
+- `npm run lint:copy` runs `scripts/lint-copy.mjs`
+- `npm run check` runs type checks, the copy lint and the link check
 
-## Development Commands
+## How to report at each stop
 
-- **Run locally**: 
-  ```bash
-  open index.html
-  # or
-  python -m http.server 8000
-  ```
+Lead with what is done and the preview link. Then list open questions, each answerable with a short reply. Then list risks. Keep it scannable: short lists, no long paragraphs.
 
-## File Structure
+## Current deployment (the site being replaced)
 
-```
-/
-├── index.html           # Complete website
-├── favicon.ico          # Multi-res icon (root for compatibility)
-├── robots.txt           # Crawler instructions (allows all)
-├── sitemap.xml          # XML sitemap
-├── llms.txt             # AI/LLM-friendly content
-├── icons/               # All icon files
-│   ├── favicon.svg      # Vector favicon
-│   ├── favicon-16.png   # Small PNG
-│   ├── favicon-32.png   # Medium PNG
-│   ├── linkedin.svg     # White-filled icon
-│   └── github.svg       # White-filled icon
-└── images/
-    └── will-godfrey.jpg # Headshot (400x400)
-```
+The repo currently deploys a single-page site (`index.html` with inline CSS and JavaScript) to Cloudflare Pages. These recorded settings are the starting point for the Phase 0 audit and must be re-verified there:
 
-## Deployment Workflow
+- Repository: github.com/willgodfrey/crispy-meme-soon
+- Production branch: `main`
+- Build command: `exit 0`
+- Output directory: `/`
+- A Google Analytics GA4 tag (`G-RQMR51RTHC`) is present on the current site. The rebuild removes it, per the no-third-party-trackers rule above; analytics in the new site is Cloudflare Web Analytics only.
 
-### Cloudflare Pages Configuration
-- **Production branch**: `main`
-- **Build command**: `exit 0`
-- **Output directory**: `/`
-- **Auto-deploy**: On every push
-- **Preview URLs**: For non-main branches
-
-### Important URLs
-- **Production**: willgodfrey.com
-- **Repository**: github.com/willgodfrey/crispy-meme-soon
-
-## Code Style Guidelines
-
-1. **No external dependencies** - Everything must be self-contained
-2. **Inline everything** - CSS and JS stay in the HTML file
-3. **Modern but compatible** - Use modern features with good browser support
-4. **Performance first** - Minimize reflows, use GPU-accelerated animations
-5. **Privacy conscious** - Obfuscate contact information properly
-
-## Common Tasks
-
-### Updating Contact Email
-The email is constructed in the JavaScript section:
-```javascript
-const p1 = 'hel';
-const p2 = 'lo';
-const d1 = 'will';
-const d2 = 'godfrey';
-const ext = 'com';
-```
-
-### Updating llms.txt
-The llms.txt file provides AI-friendly content in markdown format. Update when:
-- Professional information changes
-- New roles or projects
-- Contact information updates
-
-### Managing Structured Data
-Two JSON-LD blocks in index.html:
-1. Organization schema - Company/personal brand info
-2. FAQPage schema - Voice search optimization
-
-### Modifying Colors
-Update CSS custom properties in the `:root` selector:
-```css
---blue-600: #0EA5E9;
---orange-500: #F97316;
---black: #000000;
-```
-
-### Adding Experience Items
-Add new `.experience-item` divs in the experience section following the existing pattern.
-
-## Performance Considerations
-
-1. **Single file approach** ensures one HTTP request
-2. **Inline SVG favicon** prevents extra favicon requests
-3. **Optimized animations** use `transform` and `opacity` only
-4. **Lazy-loaded contact** reduces initial JavaScript execution
-5. **System fonts** prevent web font downloads
-6. **Resource hints** - preconnect to Google Analytics
-7. **Smooth scroll offset** - 100px compensation for fixed nav
-8. **Base64 favicon** - immediate icon display, no FOUC
-
-## Security Features
-
-1. **Email obfuscation** with multiple layers:
-   - Split string construction
-   - Character code generation
-   - Delayed rendering
-   - No email in source HTML
-
-2. **CSP-friendly** - No inline event handlers except necessary ones
-3. **HTTPS-only** resources (GA script)
-
-## Browser Compatibility
-
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- Mobile responsive
-- Fallbacks for missing images
-- Progressive enhancement approach
-- Voice assistants (Google, Alexa, Siri) via FAQ schema
-- AI crawlers via llms.txt
-- Screen readers with proper ARIA labels
-
-## License
-
-GPL v3 - Ensure any modifications comply with license terms.
-
-## 2025 Standards Implementation
-
-### AI Compatibility
-- **llms.txt**: Structured markdown content for LLM consumption
-- Located at root, follows emerging standard
-- Updates automatically with site content
-
-### Voice Search
-- **FAQ Schema**: Structured data for voice assistants
-- Answers common questions about Will
-- Improves discoverability in voice searches
-
-### SEO Enhancements
-- **Meta Tags**: Complete Open Graph and Twitter cards
-- **Security Headers**: Via meta tags (X-Frame-Options, etc.)
-- **robots.txt**: Allows all crawlers including AI bots
-- **sitemap.xml**: Standard XML format with monthly updates
-
-### Accessibility
-- **Skip Navigation**: Hidden link for keyboard users
-- **ARIA Labels**: Proper labeling for screen readers
-- **Semantic HTML**: Proper heading hierarchy
-- **Focus Management**: Visible focus indicators
+The full documentation of the old single-page site is preserved in git history.
