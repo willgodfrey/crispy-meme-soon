@@ -18,7 +18,7 @@ The production build is blocked until every `[[TODO` in `content/` is filled. Pr
 | --- | --- | --- |
 | `content/work.md` | `[[TODO: brokerage workflow]]` | Open. Will to supply one sentence on the workflow the agent runs in. |
 | `content/work.md` | `[[TODO: Skydio naming]]` | Resolved. Replace with "a leading US drone platform" (decision 3). |
-| `content/work.md` | `[[TODO: Atlanta startups]]` | Names given verbally but garbled in transcription ("shoot cue live, breathing, and modern furniture collection"). Best guess: the band-film media company may be "Live & Breathing"; the furniture importer name is unconfirmed. Will to confirm exact spelling and capitalization of both before they enter copy. |
+| `content/work.md` | `[[TODO: Atlanta startups]]` | Confirmed names: **ShootQ**, **Live & Breathing**, **Modern Furniture Collection**. Note: that is three names, but the Work foot line says "two startups I co-founded in Atlanta" and About names only a band-film media company and a furniture importer. Reconcile the count and confirm which were co-founded when proposing wording in the PR. |
 | `content/venture-architect.md` | `[[TODO: launch date]]` | Resolved to "September 2026" for display. Set the exact ISO date on launch day for the Article JSON-LD `datePublished` / `dateModified`. |
 | `content/site.md` | `[[TODO: ICONIQ figures verified]]` | Verified against the report by Claude 2026-09-20. Three of four figures correct; the inference figure needs a wording fix (23% is share of AI-product cost, not of revenue). See notes below. Delete marker once Will approves the fix. |
 
