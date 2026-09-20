@@ -2,25 +2,35 @@
 
 The production build is blocked until every `[[TODO` in `content/` is filled. Preview builds are not blocked.
 
-## Decisions
+## Decisions (resolved 2026-09-20)
 
-| # | Decision | Default if Will says nothing |
-| --- | --- | --- |
-| 1 | Publish "North America's first" in the CTO line | Keep it. It is the firm bio's wording. |
-| 2 | Name the Carve-forward method publicly | Keep it |
-| 3 | Name Skydio on the Miniature Systems card | Do not name it. Use "a leading US drone platform." |
-| 4 | Canonical host | `https://willgodfrey.com`, with `www` redirecting to it |
-| 5 | Enable Cloudflare Web Analytics | Yes |
+| # | Decision | Default | Will's decision |
+| --- | --- | --- | --- |
+| 1 | Publish "North America's first" in the CTO line | Keep it | Keep it. Agreed. |
+| 2 | Name the Carve-forward method publicly | Keep it | **Do not name it.** Do not put the method's name or its label in public copy. Say only that he works from a written method of his own. Requires a copy change everywhere "Carve-forward" appears (site.md x4, venture-architect.md x2, work.md card title + body, about.md x1). Exact wording to be proposed in the PR. |
+| 3 | Name Skydio on the Miniature Systems card | Do not name it | Do not name it. Use "a leading US drone platform." Agreed. |
+| 4 | Canonical host | `https://willgodfrey.com`, `www` redirecting | Will is indifferent; Cloudflare currently serves the `www` subdomain. Decision: make `https://www.willgodfrey.com` canonical to match the live setup, so no Cloudflare/DNS change is needed. Update `canonicalHost` in `content/site.md` accordingly. |
+| 5 | Enable Cloudflare Web Analytics | Yes | Yes. **Open conflict:** Will also has Google Analytics enabled, but the rebuild rules remove all third-party trackers (see REMOVALS #11-adjacent, N8, CLAUDE.md). Must confirm: drop GA per the spec, or keep it and accept the privacy/performance tradeoff. |
 
 ## Brackets to fill in `content/`
 
-| File | Marker | What is needed |
+| File | Marker | Status |
 | --- | --- | --- |
-| `content/work.md` | `[[TODO: brokerage workflow]]` | One sentence, in Will's words, on the workflow the agent works in |
-| `content/work.md` | `[[TODO: Skydio naming]]` | Decision 3 above |
-| `content/work.md` | `[[TODO: Atlanta startups]]` | Name them in one line each, or delete the clause |
-| `content/venture-architect.md` | `[[TODO: launch date]]` | The publish date, set on launch day |
-| `content/site.md` | `[[TODO: ICONIQ figures verified]]` | Will confirms the four figures against the ICONIQ report, then deletes the marker |
+| `content/work.md` | `[[TODO: brokerage workflow]]` | Open. Will to supply one sentence on the workflow the agent runs in. |
+| `content/work.md` | `[[TODO: Skydio naming]]` | Resolved. Replace with "a leading US drone platform" (decision 3). |
+| `content/work.md` | `[[TODO: Atlanta startups]]` | Names given verbally but garbled in transcription ("shoot cue live, breathing, and modern furniture collection"). Best guess: the band-film media company may be "Live & Breathing"; the furniture importer name is unconfirmed. Will to confirm exact spelling and capitalization of both before they enter copy. |
+| `content/venture-architect.md` | `[[TODO: launch date]]` | Resolved to "September 2026" for display. Set the exact ISO date on launch day for the Article JSON-LD `datePublished` / `dateModified`. |
+| `content/site.md` | `[[TODO: ICONIQ figures verified]]` | Verified against the report by Claude 2026-09-20. Three of four figures correct; the inference figure needs a wording fix (23% is share of AI-product cost, not of revenue). See notes below. Delete marker once Will approves the fix. |
+
+## ICONIQ verification (2026-09-20)
+
+Source confirmed real: **ICONIQ Analytics, "2026 State of AI: Bi-Annual Snapshot"** (published ~January 2026), based on ICONIQ GenAI surveys of ~300 software-company executives run April 2025 and December 2025. The link already in `venture-architect.md` resolves to this 2.7 MB PDF.
+
+- **41% gross margin in 2024** — correct. Report: aggregated gross margin on AI products, 41% (2024), 45% (2025), 52% (2026P), N=269.
+- **52% projected for 2026** — correct. Report: "reaching a projected average gross margin of ~52% in 2026 on aggregate."
+- **Inference at 23% of revenue at scale** — INCORRECT as written. The 23% is inference's share of the **cost of delivering AI products** at scale (the dominant cost driver as talent's share declines), not 23% of revenue. Reword to "23% of the cost to deliver" or similar.
+- **More than a third change pricing within a year** — correct, and precise: the report says 37% "plan to change their AI pricing model in the next year," N=298.
+- Minor: the essay calls it "ICONIQ's January 2026 State of AI survey." It is the January 2026 *report* built from April 2025 and December 2025 surveys. Consider tightening the phrasing.
 
 ## Assets
 
