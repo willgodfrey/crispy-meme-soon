@@ -1,0 +1,28 @@
+---
+// Drawing-sheet title block. Phase 1 placeholder; labels/values from content/site.md in Phase 2.
+interface Props {
+  sheet?: string;
+}
+const { sheet } = Astro.props;
+---
+
+<footer class="title-block">
+  <dl>
+    <div>
+      <dt>Practice</dt>
+      <dd>Will Godfrey, venture architect</dd>
+    </div>
+    <div>
+      <dt>Sheet</dt>
+      <dd>{sheet ?? '—'}</dd>
+    </div>
+    <div>
+      <dt>Contact</dt>
+      <dd><a href="/contact/">Start a conversation</a></dd>
+    </div>
+    <div>
+      <dt>Elsewhere</dt>
+      <dd><a href="https://www.linkedin.com/in/willgodfrey" rel="noopener">LinkedIn</a></dd>
+    </div>
+  </dl>
+</footer>

@@ -1,0 +1,4 @@
+# Path redirects for dead URLs from the old site. Populated in Phase 4.
+# Note: the bare-host -> www redirect is a Cloudflare zone setting, not handled here.
+# Note: old in-page anchors (/#about, /#experience, /#contact) are fragments and
+# cannot be redirected server-side; they land on the home page.

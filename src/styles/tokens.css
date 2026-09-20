@@ -1,0 +1,28 @@
+/* Design tokens. Two schemes: Paper (light) and Blueprint (dark).
+   Values from docs/DESIGN.md. Contrast to be re-checked for AA in Phase 3. */
+:root {
+  --paper: #f6f4ee;
+  --ink: #15181c;
+  --ink-soft: #4a4f57;
+  --rule: #c8c3b8;
+  --accent: #b5361c;
+  --wash: #ece8df;
+
+  --font-serif: 'Source Serif 4 Variable', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Barlow', system-ui, -apple-system, sans-serif;
+  --font-condensed: 'Barlow Semi Condensed', var(--font-sans);
+
+  --content-max: 1120px;
+  --gutter: 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0e2a47;
+    --ink: #eaf1f8;
+    --ink-soft: #b7c7d8;
+    --rule: #3e5c7c;
+    --accent: #ffb38a;
+    --wash: #143656;
+  }
+}

@@ -1,0 +1,56 @@
+---
+import '@fontsource-variable/source-serif-4';
+import '@fontsource/barlow/400.css';
+import '@fontsource/barlow/600.css';
+import '@fontsource/barlow-semi-condensed/400.css';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import Header from '../components/Header.astro';
+import ClosingBlock from '../components/ClosingBlock.astro';
+import TitleBlock from '../components/TitleBlock.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  sheet?: string;
+}
+const { title, description, sheet } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/images/will-godfrey.jpg', Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <ClosingBlock />
+    <TitleBlock sheet={sheet} />
+
+    <!-- Google Analytics: the single third-party script, loaded last per site owner. -->
+    <script is:inline defer src="https://www.googletagmanager.com/gtag/js?id=G-RQMR51RTHC"
+    ></script>
+    <script is:inline defer src="/ga.js"></script>
+  </body>
+</html>
