@@ -1,0 +1,39 @@
+---
+// Content-backed JSON-LD. Only facts present in the content; no invented dates.
+import { common, practice } from '../lib/content';
+const site = 'https://www.willgodfrey.com';
+const path = Astro.url.pathname;
+
+const person = {
+  '@type': 'Person',
+  name: common.person.name,
+  jobTitle: common.person.jobTitle,
+  url: `${site}/`,
+  email: common.emailHref,
+  alumniOf: { '@type': 'CollegeOrUniversity', name: common.person.alumniOf },
+  knowsAbout: common.person.knowsAbout,
+  address: { '@type': 'PostalAddress', addressLocality: 'Iowa City', addressRegion: 'Iowa' },
+  sameAs: [common.linkedin.href],
+};
+const website = { '@type': 'WebSite', name: common.siteName, url: `${site}/` };
+
+const graph: Record<string, unknown>[] = [website, person];
+
+if (path === '/about/') {
+  graph.push({ '@type': 'ProfilePage', mainEntity: person });
+}
+if (path === '/venture-architect/') {
+  graph.push({
+    '@type': 'FAQPage',
+    mainEntity: (practice.faq.items as { question: string; answer: string[] }[]).map((q) => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: { '@type': 'Answer', text: q.answer.join(' ') },
+    })),
+  });
+}
+
+const jsonLd = { '@context': 'https://schema.org', '@graph': graph };
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />

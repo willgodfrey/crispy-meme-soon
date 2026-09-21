@@ -5,6 +5,7 @@ import '../styles/base.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ContactBand from '../components/ContactBand.astro';
+import StructuredData from '../components/StructuredData.astro';
 import { common } from '../lib/content';
 
 interface Props {
@@ -50,6 +51,7 @@ const analytics = import.meta.env.PUBLIC_ENABLE_ANALYTICS === 'true';
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={ogImage} />
+    <StructuredData />
   </head>
   <body class:list={[bodyClass]}>
     <a class="skip" href="#main">{common.accessibility.skipLink}</a>
