@@ -1,13 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
-// Phase 1 placeholder. Contact copy wired from content/contact.md in Phase 2.
+import { getEntry, render } from 'astro:content';
+import { getSite } from '../lib/site';
+
+const site = await getSite();
+const entry = await getEntry('pages', 'contact');
+const { Content } = await render(entry!);
+const meta = site.meta.contact;
 ---
 
-<Base
-  title="Start a conversation. Will Godfrey, venture architect"
-  description="Tell me what you are weighing. I read everything myself."
-  sheet="Contact"
->
-  <h1>Start a conversation</h1>
-  <p>Scaffold placeholder. Contact copy is wired from content/contact.md in Phase 2.</p>
+<Base title={meta.title} description={meta.description} sheet={entry!.data.sheet}>
+  <Content />
 </Base>

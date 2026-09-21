@@ -1,8 +1,12 @@
 ---
-// Phase 1 placeholder. The real closing text comes from content/site.md in Phase 2.
+interface Props {
+  text: string;
+  link: string;
+}
+const { text, link } = Astro.props;
 ---
 
 <section class="closing-block" aria-label="About Will Godfrey">
-  <p>Closing block placeholder. Wired to content/site.md in Phase 2.</p>
-  <p><a href="/contact/">Start a conversation</a></p>
+  <p>{text}</p>
+  <p><a href="/contact/">{link}</a></p>
 </section>

@@ -1,10 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
-// Phase 1 placeholder. Text wired from content/site.md in Phase 2.
+import { getSite } from '../lib/site';
+
+const site = await getSite();
+const nf = site.notFound;
+const meta = site.meta.notFound;
 ---
 
-<Base title="Page not found. Will Godfrey" sheet="404">
-  <h1>This sheet is not in the set</h1>
-  <p>The page you were looking for does not exist, or it was part of an older version of this site.</p>
-  <p><a href="/">Home</a>. <a href="/venture-architect/">What is a venture architect?</a></p>
+<Base title={meta.title} sheet="404">
+  <h1>{nf.headline}</h1>
+  <p>{nf.body}</p>
+  <p>
+    {
+      nf.links.map((link, i) => (
+        <>
+          {i > 0 && <span>. </span>}
+          <a href={link.href}>{link.label}</a>
+        </>
+      ))
+    }
+  </p>
 </Base>

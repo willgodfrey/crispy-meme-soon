@@ -8,6 +8,7 @@ import '../styles/base.css';
 import Header from '../components/Header.astro';
 import ClosingBlock from '../components/ClosingBlock.astro';
 import TitleBlock from '../components/TitleBlock.astro';
+import { getSite } from '../lib/site';
 
 interface Props {
   title: string;
@@ -15,6 +16,7 @@ interface Props {
   sheet?: string;
 }
 const { title, description, sheet } = Astro.props;
+const site = await getSite();
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL('/images/will-godfrey.jpg', Astro.site).href;
 ---
@@ -41,12 +43,12 @@ const ogImage = new URL('/images/will-godfrey.jpg', Astro.site).href;
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <Header />
+    <Header nav={site.nav} />
     <main id="main">
       <slot />
     </main>
-    <ClosingBlock />
-    <TitleBlock sheet={sheet} />
+    <ClosingBlock text={site.closingBlock} link={site.closingLink} />
+    <TitleBlock site={site} sheet={sheet} />
 
     <!-- Google Analytics: the single third-party script, loaded last per site owner. -->
     <script is:inline defer src="https://www.googletagmanager.com/gtag/js?id=G-RQMR51RTHC"

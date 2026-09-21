@@ -10,7 +10,8 @@
     "prebuild": "node scripts/lint-copy.mjs",
     "build": "astro build",
     "lint:copy": "node scripts/lint-copy.mjs",
-    "check": "node scripts/lint-copy.mjs && astro build",
+    "lint:text": "node scripts/text-diff.mjs",
+    "check": "node scripts/lint-copy.mjs && astro build && node scripts/text-diff.mjs",
     "preview": "astro preview"
   },
   "dependencies": {

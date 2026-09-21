@@ -1,13 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
-// Phase 1 placeholder. Essay + FAQ wired from content/venture-architect.md in Phase 2.
+import { getEntry, render } from 'astro:content';
+import { getSite } from '../lib/site';
+
+const site = await getSite();
+const entry = await getEntry('pages', 'venture-architect');
+const { Content } = await render(entry!);
+const meta = site.meta.essay;
 ---
 
-<Base
-  title="What is a venture architect? By Will Godfrey"
-  description="A definition of the senior role: the architect of record for a new business, and why AI-native ventures need one."
-  sheet="Venture architecture"
->
-  <h1>What is a venture architect?</h1>
-  <p>Scaffold placeholder. Essay copy is wired from content/venture-architect.md in Phase 2.</p>
+<Base title={meta.title} description={meta.description} sheet={entry!.data.sheet}>
+  <Content />
 </Base>

@@ -8,4 +8,7 @@ export default defineConfig({
   trailingSlash: 'always',
   build: { format: 'directory' },
   integrations: [sitemap()],
+  // SmartyPants would turn straight quotes into curly quotes and -- into dashes,
+  // both banned by the copy rules. Keep GFM (tables) but leave text as authored.
+  markdown: { smartypants: false },
 });
