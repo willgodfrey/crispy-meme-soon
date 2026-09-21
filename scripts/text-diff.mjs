@@ -22,16 +22,18 @@ const decode = (s) =>
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
     .replace(/&#(?:39|x27);/g, "'")
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, h) => String.fromCodePoint(parseInt(h, 16)))
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)));
 
 const norm = (s) => decode(s).replace(/\s+/g, ' ').trim();
 
-// Visible text inside <main>.
+// Visible text inside <main>, minus design-only chrome marked data-diff-skip.
 function htmlText(file) {
   const html = readFileSync(join(root, 'dist', file), 'utf8');
   const m = html.match(/<main[^>]*>([\s\S]*?)<\/main>/);
   if (!m) throw new Error(`no <main> in ${file}`);
-  return norm(m[1].replace(/<[^>]*>/g, ' '));
+  const stripped = m[1].replace(/<(\w+)[^>]*\sdata-diff-skip[^>]*>[\s\S]*?<\/\1>/g, ' ');
+  return norm(stripped.replace(/<[^>]*>/g, ' '));
 }
 
 // Visible text from a markdown body (frontmatter stripped, syntax removed).
@@ -42,6 +44,16 @@ function mdText(file) {
   for (const raw of src.split('\n')) {
     let line = raw.replace(/<!--[\s\S]*?-->/g, '').trim();
     if (!line) continue;
+    if (/^Links?:/.test(line)) {
+      // "Link: label (/url/) | ..." renders as anchors showing only the labels.
+      const labels = line
+        .replace(/^Links?:/, '')
+        .split('|')
+        .map((s) => s.replace(/\(\/[^)]*\)/g, '').trim())
+        .filter(Boolean);
+      out.push(labels.join(' '));
+      continue;
+    }
     if (/^\|/.test(line)) {
       const cells = line.split('|').slice(1, -1).map((c) => c.trim());
       if (cells.every((c) => /^:?-+:?$/.test(c) || c === '')) {

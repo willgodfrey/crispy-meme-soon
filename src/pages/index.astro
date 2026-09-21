@@ -1,14 +1,69 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getEntry, render } from 'astro:content';
+import BlockContent from '../components/BlockContent.astro';
+import { getEntry } from 'astro:content';
 import { getSite } from '../lib/site';
+import { parseHome } from '../lib/home';
 
 const site = await getSite();
-const entry = await getEntry('pages', 'home');
-const { Content } = await render(entry!);
 const meta = site.meta.home;
+
+const entry = await getEntry('pages', 'home');
+const blocks = parseHome(entry?.body ?? '');
+
+const hero = blocks.find((b) => b.name === 'hero');
+const rest = blocks.filter((b) => b.name !== 'hero');
+
+const heroTitle = hero?.nodes.find((n) => n.type === 'h1');
+const heroParas = hero?.nodes.filter((n) => n.type === 'p') ?? [];
+const heroLinks = hero?.nodes.find((n) => n.type === 'links');
 ---
 
-<Base title={meta.title} description={meta.description} sheet={entry!.data.sheet}>
-  <Content />
+<Base title={meta.title} description={meta.description} sheet="Home">
+  <section class="hero">
+    <div class="hero__main">
+      <h1>{heroTitle?.type === 'h1' && heroTitle.text}</h1>
+      {heroParas[0]?.type === 'p' && <p class="eyebrow">{heroParas[0].text}</p>}
+      {heroParas[1]?.type === 'p' && <p class="lead">{heroParas[1].text}</p>}
+      {
+        heroLinks?.type === 'links' && (
+          <p class="link-row">
+            {heroLinks.links.map((l, i) => (
+              <a class:list={['pill', { 'pill--solid': i === 0 }]} href={l.href}>
+                {l.label}
+              </a>
+            ))}
+          </p>
+        )
+      }
+    </div>
+    <aside class="hero__rail" data-diff-skip>
+      <dl>
+        <div>
+          <dt>Discipline</dt>
+          <dd>{site.person.jobTitle}</dd>
+        </div>
+        <div>
+          <dt>Based</dt>
+          <dd>{site.location}</dd>
+        </div>
+        <div>
+          <dt>Contact</dt>
+          <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
+        </div>
+      </dl>
+    </aside>
+  </section>
+
+  <div class="sheet-body">
+    {
+      rest.map((b) => (
+        <section class:list={['block', `block--${b.name}`]} id={b.name}>
+          <div class="block__body">
+            <BlockContent nodes={b.nodes} />
+          </div>
+        </section>
+      ))
+    }
+  </div>
 </Base>

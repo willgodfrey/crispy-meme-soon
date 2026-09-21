@@ -1,23 +1,26 @@
-/* Design tokens. Two schemes: Paper (light) and Blueprint (dark).
-   Values from docs/DESIGN.md. Contrast to be re-checked for AA in Phase 3. */
+/* Design tokens. Direction: an architect's drawing set.
+   Paper (light) is warm drafting vellum; Blueprint (dark) is a cyanotype.
+   Serif for reading, technical mono for the drafting/label layer, one redline accent. */
 :root {
-  --paper: #f6f4ee;
-  --ink: #15181c;
-  --ink-soft: #4a4f57;
-  --rule: #c8c3b8;
-  --accent: #b5361c;
-  --wash: #ece8df;
+  --paper: #ebe7dc;
+  --paper-2: #e2ddce;
+  --ink: #17191c;
+  --ink-soft: #585d64;
+  --line: #c3bdad;
+  --grid: rgba(23, 25, 28, 0.05);
+  --accent: #b23a1e;
+  --on-accent: #f7f3ea;
+  --blue: #274b6d;
 
   --font-serif: 'Source Serif 4 Variable', Georgia, 'Times New Roman', serif;
-  --font-sans: 'Barlow', system-ui, -apple-system, sans-serif;
-  --font-condensed: 'Barlow Semi Condensed', var(--font-sans);
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
-  --content-max: 1120px;
-  --measure: 66ch;
-  --gutter: 24px;
-  --frame-inset: 24px;
+  --content-max: 1200px;
+  --measure: 64ch;
+  --gutter: clamp(20px, 5vw, 56px);
+  --frame-inset: 20px;
 
-  /* Type scale, 1.25 ratio (docs/DESIGN.md): 16 20 25 31 39 49 61 */
+  /* Type scale, 1.25 ratio: 16 20 25 31 39 49 61 76 */
   --fs-0: 1rem;
   --fs-1: 1.25rem;
   --fs-2: 1.5625rem;
@@ -25,15 +28,19 @@
   --fs-4: 2.4375rem;
   --fs-5: 3.0625rem;
   --fs-6: 3.8125rem;
+  --fs-7: 4.75rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #0e2a47;
-    --ink: #eaf1f8;
-    --ink-soft: #b7c7d8;
-    --rule: #3e5c7c;
-    --accent: #ffb38a;
-    --wash: #143656;
+    --paper: #0b2136;
+    --paper-2: #0e2a44;
+    --ink: #e7eff7;
+    --ink-soft: #9db4cb;
+    --line: #2c4a66;
+    --grid: rgba(255, 255, 255, 0.055);
+    --accent: #ff9e6b;
+    --on-accent: #0b2136;
+    --blue: #7fb2de;
   }
 }
