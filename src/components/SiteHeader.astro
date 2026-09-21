@@ -1,0 +1,22 @@
+---
+import { common } from '../lib/content';
+const path = Astro.url.pathname;
+const nav = common.navigation as { label: string; href: string }[];
+---
+
+<header class="nav wrap">
+  <a class="brand" href="/">{common.siteName}<span aria-hidden="true"></span></a>
+  <nav class="navlinks" aria-label={common.accessibility.primaryNavigation}>
+    {
+      nav.map((item, i) => (
+        <a
+          href={item.href}
+          class:list={{ talk: i === nav.length - 1 }}
+          aria-current={path === item.href ? 'page' : undefined}
+        >
+          {item.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>

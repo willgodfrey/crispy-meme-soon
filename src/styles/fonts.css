@@ -1,0 +1,17 @@
+/* Self-hosted variable fonts (SIL OFL 1.1; licenses in public/fonts/).
+   Manrope: use 400/500/600/700. Newsreader: 400 with variable optical size. */
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/manrope-latin-variable.woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Newsreader';
+  src: url('/fonts/newsreader-latin-variable.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-display: swap;
+}

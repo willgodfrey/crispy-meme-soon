@@ -1,0 +1,11 @@
+---
+import { common } from '../lib/content';
+const f = common.footer;
+const li = common.linkedin;
+---
+
+<footer class="site-footer-quiet wrap" aria-label={common.accessibility.footerNavigation}>
+  <p>{f.identity}</p>
+  <p>{common.location}</p>
+  <p><a href={li.href} rel="noopener">{li.label}</a></p>
+</footer>

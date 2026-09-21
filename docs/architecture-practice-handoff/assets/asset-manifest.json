@@ -1,0 +1,267 @@
+{
+  "version": "1.0",
+  "pathsRelativeTo": "Package root",
+  "status": "Complete reproduction assets for supplied mockups",
+  "assets": [
+    {
+      "id": "assembly",
+      "files": [
+        {
+          "path": "assets/images/assembly-1536.avif",
+          "bytes": 78466,
+          "sha256": "e46717fb500fdca7a726c0ad5326b95852ac290749eccdd80db0842a8ab35dce"
+        },
+        {
+          "path": "assets/images/assembly-1536.jpg",
+          "bytes": 166105,
+          "sha256": "ac48bed4b5db55bb5ee0573ccb389b48582d2baa80339877d73ebd643a117ae3"
+        },
+        {
+          "path": "assets/images/assembly-1536.webp",
+          "bytes": 66028,
+          "sha256": "1e2b6ca1f8ae3cab2bd240ce2282e86e4894712f21daea69ed3f6a3f3e3b872c"
+        },
+        {
+          "path": "assets/images/assembly-640.avif",
+          "bytes": 15078,
+          "sha256": "c324dee176450846520ae35ba755b10fcccbf0ce9a98f85aa07bf38f2ce73976"
+        },
+        {
+          "path": "assets/images/assembly-640.webp",
+          "bytes": 12414,
+          "sha256": "b47bfd087e4c60e467e897680382d35ba76d60529e60597a377dfec93432edcb"
+        },
+        {
+          "path": "assets/images/assembly-960.avif",
+          "bytes": 31906,
+          "sha256": "77ef89bdded969f41533e0f04504bebc02e8e00292be6c6a5ca784ccfa8755a5"
+        },
+        {
+          "path": "assets/images/assembly-960.webp",
+          "bytes": 25598,
+          "sha256": "1f1ec8098f05be9394c10e0f82367af6cb67df7c59915b41b0de0243f1c8ea05"
+        },
+        {
+          "path": "assets/images/assembly-master.png",
+          "bytes": 1947083,
+          "sha256": "3cb7b7df277d1f74e2c6fa16eaede7227333adbf1f6e6392555e1ef511e006f0"
+        }
+      ],
+      "kind": "concept-art",
+      "purpose": "Home hero; decorative Contact/404 detail",
+      "masterDimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "source": "Original generated concept artwork from the selected Architecture practice study, 2026-09-21.",
+      "production": "Use AVIF/WebP srcsets. JPEG final fallback. Keep PNG master out of routine public transfer.",
+      "alt": "Conceptual sculpture of graphite, stone and glass planes joined into one structure.",
+      "caption": "A study in three parts. Commercial. Technical. Institutional.",
+      "provenance": "assets/ARTWORK-PROVENANCE.md",
+      "crop": {
+        "desktop": "center 50%, cover",
+        "phone": "68% center; lower image field",
+        "contact": "80% center with readable scrim"
+      }
+    },
+    {
+      "id": "portrait",
+      "files": [
+        {
+          "path": "assets/images/will-godfrey.jpg",
+          "bytes": 30104,
+          "sha256": "4a2e9b55fb3783abebe8301ab66a5f1953383941163fecc6f58572420433a356"
+        }
+      ],
+      "kind": "photograph",
+      "purpose": "Home personal note and About portrait; preserved share-image URL",
+      "dimensions": {
+        "width": 400,
+        "height": 400
+      },
+      "source": "Copied unchanged from existing public/images/will-godfrey.jpg.",
+      "alt": "Will Godfrey",
+      "productionPath": "/images/will-godfrey.jpg",
+      "displayLimit": "About width about 320px; home 122px; preserve genuine source, no upscaling claim."
+    },
+    {
+      "id": "venture-boundary",
+      "files": [
+        {
+          "path": "assets/diagrams/parent-and-venture.svg",
+          "bytes": 968,
+          "sha256": "26741312225a3abce47043b496787b38e153c49a213777e192d3591e63a2b54b"
+        }
+      ],
+      "kind": "editable-svg",
+      "purpose": "Explanatory Work illustration; first three reused on Home",
+      "source": "Original conceptual SVG created for this design study; not project documentation.",
+      "alt": "A new venture is connected to an industrial parent across a defined boundary.",
+      "caption": "Illustrative model of the boundary between a parent and a new venture.",
+      "production": "Use same-origin image or inline safely with unique SVG IDs. Retain illustrative caption."
+    },
+    {
+      "id": "agent-system",
+      "files": [
+        {
+          "path": "assets/diagrams/agent-workflow.svg",
+          "bytes": 915,
+          "sha256": "0e8484d6d2bff623de9e74bbf24ea6296d6b44894e4b6951a5a35605b0a14f47"
+        }
+      ],
+      "kind": "editable-svg",
+      "purpose": "Explanatory Work illustration; first three reused on Home",
+      "source": "Original conceptual SVG created for this design study; not project documentation.",
+      "alt": "A conceptual agent workflow connects input, an AI system, human review and an outcome.",
+      "caption": "Conceptual workflow illustration. It does not disclose the client's system.",
+      "production": "Use same-origin image or inline safely with unique SVG IDs. Retain illustrative caption."
+    },
+    {
+      "id": "terrain-study",
+      "files": [
+        {
+          "path": "assets/diagrams/terrain-study.svg",
+          "bytes": 948,
+          "sha256": "4e6c7135997c38c6929f37a1cd8a7d77adc6aa2a3646824d86ed766660d6e335"
+        }
+      ],
+      "kind": "editable-svg",
+      "purpose": "Explanatory Work illustration; first three reused on Home",
+      "source": "Original conceptual SVG created for this design study; not project documentation.",
+      "alt": "Layered contour lines with a central measurement marker suggest terrain capture.",
+      "caption": "Illustrative terrain study. This is not a client survey or measured deliverable.",
+      "production": "Use same-origin image or inline safely with unique SVG IDs. Retain illustrative caption."
+    },
+    {
+      "id": "payload-study",
+      "files": [
+        {
+          "path": "assets/diagrams/payload-study.svg",
+          "bytes": 867,
+          "sha256": "d2cd63b1ae5313f04bbe83346afaba6b91ade0143eaf140b8e46527811983628"
+        }
+      ],
+      "kind": "editable-svg",
+      "purpose": "Explanatory Work illustration; first three reused on Home",
+      "source": "Original conceptual SVG created for this design study; not project documentation.",
+      "alt": "An abstract small component sits above a larger platform, with its connection indicated.",
+      "caption": "Conceptual assembly study. This is not a drawing of a Miniature Systems product.",
+      "production": "Use same-origin image or inline safely with unique SVG IDs. Retain illustrative caption."
+    },
+    {
+      "id": "method-study",
+      "files": [
+        {
+          "path": "assets/diagrams/method-study.svg",
+          "bytes": 1123,
+          "sha256": "0d12131ac0124e91a913b6299bfdf571f4d7484235ef3c9ee3e0213c9e32937b"
+        }
+      ],
+      "kind": "editable-svg",
+      "purpose": "Explanatory Work illustration; first three reused on Home",
+      "source": "Original conceptual SVG created for this design study; not project documentation.",
+      "alt": "Three connected decision gates form a sequence, with a stopping route at each gate.",
+      "caption": "Illustrative decision record. An introduction is available on request.",
+      "production": "Use same-origin image or inline safely with unique SVG IDs. Retain illustrative caption."
+    },
+    {
+      "id": "venture-layers",
+      "files": [
+        {
+          "path": "assets/diagrams/venture-layers.svg",
+          "bytes": 5266,
+          "sha256": "71444f6f6466cdf9b4ce7b6154434f1a414de6df4769014b4f6f370e77868745"
+        }
+      ],
+      "kind": "editable-svg",
+      "purpose": "Interactive Practice-layer model",
+      "source": "Original conceptual SVG from the design study, adapted to selected palette.",
+      "alt": "Three connected layers of a venture: commercial, technical and institutional. The design joins decisions across all three.",
+      "caption": "Conceptual model of a venture. Select a layer to explore its decisions.",
+      "production": "Inline for layer selection, retain data-plane identifiers commercial/technical/institutional; explanatory text remains HTML."
+    },
+    {
+      "id": "manrope",
+      "files": [
+        {
+          "path": "assets/fonts/manrope-latin-variable.woff2",
+          "bytes": 24576,
+          "sha256": "e310b55a7fd9677f5e3555e6c6c4d064fa1f1d24393f0ddbe217cea12a8c432f"
+        },
+        {
+          "path": "assets/fonts/manrope-OFL.txt",
+          "bytes": 4387,
+          "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+        }
+      ],
+      "kind": "font",
+      "purpose": "Self-hosted typography",
+      "license": "SIL Open Font License 1.1; bundled license controls use.",
+      "source": "Google Fonts; exact URLs and retrieval date in assets/fonts/sources.json",
+      "weights": "200-800"
+    },
+    {
+      "id": "newsreader",
+      "files": [
+        {
+          "path": "assets/fonts/newsreader-latin-variable.woff2",
+          "bytes": 57300,
+          "sha256": "e71a3bea5993009ab159b89d52d88ba515efd57e8d9324a94c681bfc72c9ac0f"
+        },
+        {
+          "path": "assets/fonts/newsreader-OFL.txt",
+          "bytes": 4394,
+          "sha256": "fdfad38143ec470553cae82a1e45320bdd1b9ec70415d37bd0171051d8a4ded8"
+        }
+      ],
+      "kind": "font",
+      "purpose": "Self-hosted typography",
+      "license": "SIL Open Font License 1.1; bundled license controls use.",
+      "source": "Google Fonts; exact URLs and retrieval date in assets/fonts/sources.json",
+      "weights": "400 only; variable optical size"
+    },
+    {
+      "id": "existing-favicon",
+      "files": [
+        {
+          "path": "assets/brand/favicon-16.png",
+          "bytes": 380,
+          "sha256": "15fe7519408c5f317869ef77c1adb674fb43d443b82f1e5f81952c73a2030ce3"
+        },
+        {
+          "path": "assets/brand/favicon-32.png",
+          "bytes": 550,
+          "sha256": "04e41cea24f37609346ff8a9d985dc5d79914052e83f9f92ee76017f5166da34"
+        },
+        {
+          "path": "assets/brand/favicon.ico",
+          "bytes": 15086,
+          "sha256": "2b9431ad843ea82f1b4ab2addf8916f8b2676187ca69181e166b60212baa2dfd"
+        },
+        {
+          "path": "assets/brand/favicon.svg",
+          "bytes": 301,
+          "sha256": "4845430d21fb44b0269ab033f27947489d041df3c0beac23924c1c67ca17d703"
+        }
+      ],
+      "kind": "existing-brand",
+      "purpose": "Carry forward favicon files",
+      "source": "Copied unchanged from existing repository public/favicon.ico and public/icons.",
+      "production": "Preserve existing routes and files. The header uses live text and a CSS wine square, not this favicon as a logo."
+    }
+  ],
+  "optionalNotRequired": [
+    {
+      "asset": "Environmental portrait",
+      "fallback": "Included genuine portrait, limited display size"
+    },
+    {
+      "asset": "Will-owned photography and geospatial captures",
+      "fallback": "Included labeled explanatory SVGs"
+    },
+    {
+      "asset": "Approved client interface or decision memo",
+      "fallback": "Included illustrative model and document study"
+    }
+  ]
+}

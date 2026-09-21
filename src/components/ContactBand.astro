@@ -1,0 +1,23 @@
+---
+import { common } from '../lib/content';
+import TextLink from './TextLink.astro';
+const inv = common.invitation;
+const f = common.footer;
+const li = common.linkedin;
+---
+
+<section class="contact wrap" aria-label={inv.eyebrow}>
+  <div class="contact-main">
+    <div>
+      <p class="eyebrow" style="color:var(--on-wine-soft)">{inv.eyebrow}</p>
+      <h2>{inv.title}</h2>
+      <p class="contact-body">{inv.body}</p>
+    </div>
+    <TextLink href={inv.link.href} label={inv.link.label} />
+  </div>
+  <div class="footer">
+    <p>{f.identity}</p>
+    <p>{common.location}</p>
+    <p><a href={li.href} rel="noopener">{li.label}</a></p>
+  </div>
+</section>

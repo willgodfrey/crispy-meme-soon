@@ -1,64 +1,83 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getEntry } from 'astro:content';
-import { getSite } from '../lib/site';
-import { parseMarkdown } from '../lib/home';
-import type { Node } from '../lib/home';
-import { inlineHtml } from '../lib/inline';
-
-const site = await getSite();
-const meta = site.meta.about;
-const entry = await getEntry('pages', 'about');
-const data = entry!.data;
-const nodes = parseMarkdown(entry?.body ?? '');
-
-const h1 = nodes.find((n) => n.type === 'h1');
-const paras = nodes.filter((n): n is Extract<Node, { type: 'p' }> => n.type === 'p');
-const lead = paras[0];
-const body = paras.slice(1);
-const portrait = site.images.portrait;
-const isTodo = (v?: string) => !!v && v.includes('[[TODO');
+import TextLink from '../components/TextLink.astro';
+import '../styles/inner.css';
+import { about, common } from '../lib/content';
 ---
 
-<Base
-  title={meta.title}
-  description={meta.description}
-  sheet={data.sheet}
-  revision={data.revision}
-  revised={data.revised}
->
-  <article>
-    <section class="section pad-x" style="padding-bottom:clamp(40px,5vw,72px)">
-      {h1?.type === 'h1' && <h1 class="display-xl" style="max-width:12ch">{h1.text}</h1>}
-      {
-        lead && (
-          <p class="lead" style="margin-top:clamp(24px,3vw,40px);max-width:30ch">
-            {lead.text}
-          </p>
-        )
-      }
-    </section>
-    <div class="pad-x">
-      <section
-        class="section section--rule split"
-        style="padding-block:clamp(40px,5vw,80px) clamp(56px,7vw,112px)"
-      >
-        <figure class="sticky" style="max-width:440px">
-          <div class="figure-slot">Portrait. 4:5, at least 1600px on the long edge.</div>
-          {
-            isTodo(portrait?.caption) ? (
-              <figcaption>
-                <span class="todo">{portrait.caption}</span>
-              </figcaption>
-            ) : (
-              portrait?.caption && <figcaption>{portrait.caption}</figcaption>
-            )
-          }
-        </figure>
-        <div class="body measure">
-          {body.map((p) => <p set:html={inlineHtml(p.text)} />)}
-        </div>
-      </section>
+<Base title={about.seo.title} description={about.seo.description} bodyClass="inner-page">
+  <section class="inner-intro about-opening wrap">
+    <div>
+      <p class="page-kicker">{about.hero.eyebrow}</p>
+      <h1>{about.hero.titleLines.map((l: string, i: number) => (i ? [<br />, l] : l))}</h1>
+      <p class="lead">{about.hero.body}</p>
     </div>
-  </article>
+    <figure class="about-portrait">
+      <img src={common.portrait.path} alt={common.portrait.alt} width="320" height="360" loading="lazy" />
+      <figcaption>
+        <strong>{common.siteName}</strong>{about.hero.portraitCaption}
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="career-arc wrap">
+    {
+      about.arc.items.map((a: { title: string; label: string; body: string }) => (
+        <article>
+          <p class="arc-label">{a.label}</p>
+          <h2>{a.title}</h2>
+          <p>{a.body}</p>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="biography white wrap">
+    <div class="bio-aside">
+      <h2 class="large">{about.opening.title}</h2>
+    </div>
+    <div class="bio-copy">
+      {about.opening.paragraphs.map((p: string) => <p>{p}</p>)}
+    </div>
+  </section>
+
+  <section class="biography wrap">
+    <div class="bio-aside">
+      <h2>{about.technicalSeat.title}</h2>
+      <p class="page-kicker">{about.technicalSeat.eyebrow}</p>
+    </div>
+    <div class="bio-copy">
+      {about.technicalSeat.paragraphs.map((p: string) => <p>{p}</p>)}
+      <TextLink href={about.technicalSeat.link.href} label={about.technicalSeat.link.label} />
+    </div>
+  </section>
+
+  <section class="about-pullquote wrap">
+    <div>
+      <p class="quote-label">{about.photographer.eyebrow}</p>
+    </div>
+    <div>
+      <blockquote>{about.photographer.title}</blockquote>
+      {about.photographer.paragraphs.map((p: string) => <p>{p}</p>)}
+    </div>
+  </section>
+
+  <section class="biography white wrap">
+    <div class="bio-aside">
+      <p class="page-kicker">{about.today.eyebrow}</p>
+      <h2>{about.today.title}</h2>
+      <dl class="today-facts">
+        {
+          about.today.facts.map((f: { label: string; value: string }) => [
+            <dt>{f.label}</dt>,
+            <dd>{f.value}</dd>,
+          ])
+        }
+      </dl>
+    </div>
+    <div class="bio-copy">
+      {about.today.paragraphs.map((p: string) => <p>{p}</p>)}
+      <TextLink href={about.today.link.href} label={about.today.link.label} />
+    </div>
+  </section>
 </Base>

@@ -1,53 +1,59 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getEntry } from 'astro:content';
-import { getSite } from '../lib/site';
-import { parseMarkdown } from '../lib/home';
-import type { Node } from '../lib/home';
-import { inlineHtml } from '../lib/inline';
-
-const site = await getSite();
-const meta = site.meta.contact;
-const entry = await getEntry('pages', 'contact');
-const data = entry!.data;
-const nodes = parseMarkdown(entry?.body ?? '');
-
-const h1 = nodes.find((n) => n.type === 'h1');
-const paras = nodes.filter((n): n is Extract<Node, { type: 'p' }> => n.type === 'p');
-const emailIdx = paras.findIndex((p) => /\S+@\S+/.test(p.text));
-const emailP = emailIdx >= 0 ? paras[emailIdx] : undefined;
-const emailM = emailP?.text.match(/^(.*?)\s*(\S+@\S+)\s*$/);
-const writeLabel = emailM?.[1] ?? 'Write to';
-const email = emailM?.[2] ?? site.email;
-const before = emailIdx >= 0 ? paras.slice(0, emailIdx) : paras;
-const after = emailIdx >= 0 ? paras.slice(emailIdx + 1) : [];
+import TextLink from '../components/TextLink.astro';
+import '../styles/inner.css';
+import { contact, common } from '../lib/content';
+const d = contact.details;
 ---
 
 <Base
-  title={meta.title}
-  description={meta.description}
-  sheet={data.sheet}
-  revision={data.revision}
-  revised={data.revised}
+  title={contact.seo.title}
+  description={contact.seo.description}
+  invitation={false}
+  bodyClass="inner-page"
 >
-  <article>
-    <section class="section pad-x" style="padding-bottom:clamp(40px,5vw,72px)">
-      {h1?.type === 'h1' && <h1 class="display-xl" style="max-width:12ch">{h1.text}</h1>}
-      <p class="label" style="margin-top:clamp(28px,3vw,48px)">{writeLabel}</p>
-      <p class="email-xl"><a href={`mailto:${email}`}>{email}</a></p>
-    </section>
-    <div class="pad-x">
-      <section
-        class="section section--rule split body"
-        style="padding-block:clamp(40px,5vw,80px) clamp(56px,7vw,112px)"
-      >
-        <div style="max-width:40ch">
-          {before.map((p) => <p set:html={inlineHtml(p.text)} />)}
-        </div>
-        <div style="max-width:40ch;color:var(--soft)">
-          {after.map((p) => <p set:html={inlineHtml(p.text)} />)}
-        </div>
-      </section>
+  <section class="contact-canvas">
+    <div class="contact-message">
+      <p class="page-kicker">{contact.hero.eyebrow}</p>
+      <h1>{contact.hero.titleLines.map((l: string, i: number) => (i ? [<br />, l] : l))}</h1>
+      <p class="lead">{contact.hero.body}</p>
+      <p class="availability">{d.emailHelp}</p>
     </div>
-  </article>
+    <div class="contact-direct">
+      <img
+        class="contact-detail"
+        src="/images/architecture-practice/assembly-960.webp"
+        alt=""
+        aria-hidden="true"
+        width="960"
+        height="640"
+        loading="lazy"
+      />
+      <p class="email-label">{contact.hero.eyebrow}</p>
+      <a class="email-link" href={contact.hero.primaryLink.href}>{contact.hero.primaryLink.label}</a>
+      <p class="contact-expectation">{contact.expectations.paragraphs[0]}</p>
+    </div>
+  </section>
+
+  <section class="contact-prompt-row wrap">
+    <div>
+      <p class="page-kicker">{contact.prompts.eyebrow}</p>
+      <h2>{contact.prompts.title}</h2>
+      <p>{contact.prompts.body}</p>
+      <p class="location-info">{d.locationLabel}: {d.location}. {d.working}</p>
+      <TextLink href={common.linkedin.href} label={d.linkedinLabel} />
+    </div>
+    <div>
+      <ul class="contact-prompts">
+        {contact.prompts.items.map((p: string) => <li>{p}</li>)}
+      </ul>
+      <p class="contact-expectation">{contact.expectations.paragraphs[1]}</p>
+    </div>
+  </section>
+
+  <div class="compact-footer wrap">
+    <p>{common.footer.identity}</p>
+    <p>{common.location}</p>
+    <p><a href={common.linkedin.href} rel="noopener">{common.linkedin.label}</a></p>
+  </div>
 </Base>

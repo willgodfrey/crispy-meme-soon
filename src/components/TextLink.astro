@@ -1,0 +1,20 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  class?: string;
+}
+const { href, label, class: cls } = Astro.props;
+const external = href.startsWith('http');
+---
+
+<a
+  class:list={['text-link', cls]}
+  href={href}
+  {...external ? { rel: 'noopener' } : {}}
+>
+  {label}
+  <svg viewBox="0 0 17 17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M4.5 12.5 12.5 4.5M6 4.5h6.5V11" stroke-linecap="round" stroke-linejoin="round"></path>
+  </svg>
+</a>

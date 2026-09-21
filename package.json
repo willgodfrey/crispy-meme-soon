@@ -10,14 +10,11 @@
     "prebuild": "node scripts/lint-copy.mjs",
     "build": "astro build",
     "lint:copy": "node scripts/lint-copy.mjs",
-    "lint:text": "node scripts/text-diff.mjs",
     "check": "node scripts/lint-copy.mjs && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "7.3.1",
     "@astrojs/sitemap": "3.7.4",
-    "@fontsource-variable/bricolage-grotesque": "5.2.7",
     "astro": "7.3.3"
   }
 }

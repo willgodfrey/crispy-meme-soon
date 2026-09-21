@@ -1,0 +1,16 @@
+[
+  {
+    "file": "manrope-latin-variable.woff2",
+    "cssSource": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap",
+    "binarySource": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSvfedN4.woff2",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/OFL.txt",
+    "retrieved": "2026-09-21"
+  },
+  {
+    "file": "newsreader-latin-variable.woff2",
+    "cssSource": "https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400&display=swap",
+    "binarySource": "https://fonts.gstatic.com/s/newsreader/v26/cY9VfjOCX1hbuyalUrK49dLafXjalZCsZBsgBgbNJYQ5ayZC.woff2",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/newsreader/OFL.txt",
+    "retrieved": "2026-09-21"
+  }
+]

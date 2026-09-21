@@ -1,15 +1,16 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import rehypeLinks from './src/lib/rehype-links.mjs';
 
 // Canonical host is www (bare host 301s to www at the Cloudflare zone).
 export default defineConfig({
   site: 'https://www.willgodfrey.com',
   trailingSlash: 'always',
   build: { format: 'directory' },
-  integrations: [sitemap()],
-  // SmartyPants would turn straight quotes into curly quotes and -- into dashes,
-  // both banned by the copy rules. Keep GFM (tables) but leave text as authored.
-  markdown: { smartypants: false, rehypePlugins: [rehypeLinks] },
+  integrations: [
+    sitemap({
+      // The 404 is not a sitemap entry.
+      filter: (page) => !page.endsWith('/404/') && !page.endsWith('/404.html'),
+    }),
+  ],
 });

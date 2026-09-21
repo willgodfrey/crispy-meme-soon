@@ -1,0 +1,1057 @@
+{
+  "meta": {
+    "schemaVersion": "1.0",
+    "status": "Proposed editorial content for design review; not approval to replace repository content",
+    "language": "en-US",
+    "publicTextPolicy": "Straight quotes and apostrophes; sentence case headings; no em dashes; no invented dates, customers, results or metrics",
+    "sourceFiles": [
+      "content/site.md",
+      "content/home.md",
+      "content/venture-architect.md",
+      "content/work.md",
+      "content/about.md",
+      "content/contact.md",
+      "docs/OPEN_ITEMS.md"
+    ],
+    "instructions": "Keys named meta, sourceFiles and implementationNotes are internal. All other prose is intended public content. Array order is display order. Use the line breaks shown by titleLines only for the indicated display layout; title is the accessible heading."
+  },
+  "common": {
+    "siteName": "Will Godfrey",
+    "descriptor": "Venture architect",
+    "canonicalHost": "https://www.willgodfrey.com",
+    "email": "will@willgodfrey.com",
+    "emailHref": "mailto:will@willgodfrey.com",
+    "linkedin": {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/willgodfrey"
+    },
+    "location": "Iowa City, Iowa",
+    "navigation": [
+      {
+        "label": "Venture architecture",
+        "href": "/venture-architect/"
+      },
+      {
+        "label": "Work",
+        "href": "/work/"
+      },
+      {
+        "label": "About",
+        "href": "/about/"
+      },
+      {
+        "label": "Start a conversation",
+        "href": "/contact/"
+      }
+    ],
+    "accessibility": {
+      "skipLink": "Skip to content",
+      "primaryNavigation": "Main navigation",
+      "footerNavigation": "Footer navigation",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "workSelector": "Select a project",
+      "stageSelector": "Explore the stages",
+      "diagramSelector": "Explore the layers",
+      "backToTop": "Back to top",
+      "currentPage": "Current page",
+      "tableOfContents": "On this page",
+      "sectionNavigation": "Page sections"
+    },
+    "caseLabels": {
+      "context": "The context",
+      "design": "What I designed",
+      "evidence": "What it shows",
+      "role": "The seat"
+    },
+    "invitation": {
+      "eyebrow": "Start a conversation",
+      "title": "What are you weighing?",
+      "body": "Tell me in two or three sentences. I read everything myself.",
+      "link": {
+        "label": "will@willgodfrey.com",
+        "href": "mailto:will@willgodfrey.com"
+      }
+    },
+    "footer": {
+      "identity": "Will Godfrey, venture architect",
+      "location": "Iowa City, Iowa",
+      "working": "Working largely remote, with scheduled blocks on site.",
+      "homeLink": "Home",
+      "emailLink": "Email Will",
+      "topLink": "Back to top"
+    },
+    "portrait": {
+      "path": "/images/will-godfrey.jpg",
+      "alt": "Will Godfrey",
+      "caption": "Will Godfrey. Architect and founder.",
+      "assetId": "portrait"
+    },
+    "share": {
+      "title": "Will Godfrey, venture architect",
+      "description": "I design AI-native businesses, prove them in a working system, and hand over on a date.",
+      "image": "/images/will-godfrey.jpg",
+      "imageAlt": "Will Godfrey"
+    },
+    "person": {
+      "name": "Will Godfrey",
+      "jobTitle": "Venture architect",
+      "alumniOf": "Georgia Institute of Technology",
+      "knowsAbout": [
+        "Venture architecture",
+        "AI-native business design",
+        "Corporate venture building",
+        "Enterprise architecture",
+        "Unit economics of AI products"
+      ]
+    },
+    "stages": [
+      {
+        "id": "design",
+        "number": "01",
+        "title": "Design",
+        "body": "Make the consequential decisions with the sponsor and founders. Record the alternatives, the evidence required and the conditions for stopping.",
+        "deliverable": {
+          "eyebrow": "Illustrative deliverable",
+          "title": "The decision record",
+          "items": [
+            "Customer and offer",
+            "Unit economics",
+            "Build, buy and inherit",
+            "Ownership and governance",
+            "Evidence and stopping conditions"
+          ],
+          "footer": "Decisions / alternatives / evidence",
+          "seal": "Design authority"
+        }
+      },
+      {
+        "id": "prove",
+        "number": "02",
+        "title": "Prove",
+        "body": "Hold the technical seat while the first version reaches committed customers. Report cost and quality at each gate, so capital follows evidence.",
+        "deliverable": {
+          "eyebrow": "Illustrative deliverable",
+          "title": "The working system",
+          "items": [
+            "Committed customers",
+            "First version in use",
+            "Cost per unit",
+            "Quality at each gate",
+            "Evidence for the next tranche"
+          ],
+          "footer": "Customers / cost / quality",
+          "seal": "Proven in use"
+        }
+      },
+      {
+        "id": "hand-over",
+        "number": "03",
+        "title": "Hand over",
+        "body": "Hire the permanent technical lead, transfer the design and leave on the date agreed at the start.",
+        "deliverable": {
+          "eyebrow": "Illustrative deliverable",
+          "title": "The handover",
+          "items": [
+            "Permanent technical lead",
+            "Decision record transferred",
+            "System ownership",
+            "Operating responsibilities",
+            "Agreed exit date"
+          ],
+          "footer": "Permanent lead / ownership / exit date",
+          "seal": "Ownership transferred"
+        }
+      }
+    ],
+    "diagrams": {
+      "venture-boundary": {
+        "assetId": "venture-boundary",
+        "sourceFile": "assets/diagrams/parent-and-venture.svg",
+        "title": null,
+        "description": null,
+        "titleId": null,
+        "descriptionId": null,
+        "role": "img",
+        "ariaLabel": "Illustrative diagram of a new business separated from its industrial parent",
+        "ariaLabelledBy": [],
+        "labels": [
+          {
+            "text": "Industrial parent",
+            "lines": [
+              "Industrial parent"
+            ]
+          },
+          {
+            "text": "New venture",
+            "lines": [
+              "New venture"
+            ]
+          }
+        ]
+      },
+      "agent-system": {
+        "assetId": "agent-system",
+        "sourceFile": "assets/diagrams/agent-workflow.svg",
+        "title": null,
+        "description": null,
+        "titleId": null,
+        "descriptionId": null,
+        "role": "img",
+        "ariaLabel": "Illustrative system diagram connecting an AI agent to human review and a business outcome",
+        "ariaLabelledBy": [],
+        "labels": [
+          {
+            "text": "Input",
+            "lines": [
+              "Input"
+            ]
+          },
+          {
+            "text": "Agent",
+            "lines": [
+              "Agent"
+            ]
+          },
+          {
+            "text": "Outcome",
+            "lines": [
+              "Outcome"
+            ]
+          },
+          {
+            "text": "Human review",
+            "lines": [
+              "Human review"
+            ]
+          }
+        ]
+      },
+      "terrain-study": {
+        "assetId": "terrain-study",
+        "sourceFile": "assets/diagrams/terrain-study.svg",
+        "title": null,
+        "description": null,
+        "titleId": null,
+        "descriptionId": null,
+        "role": "img",
+        "ariaLabel": "Illustrative drawing of terrain contour layers for geospatial capture",
+        "ariaLabelledBy": [],
+        "labels": [
+          {
+            "text": "Terrain / structure / context",
+            "lines": [
+              "Terrain / structure / context"
+            ]
+          }
+        ]
+      },
+      "payload-study": {
+        "assetId": "payload-study",
+        "sourceFile": "assets/diagrams/payload-study.svg",
+        "title": null,
+        "description": null,
+        "titleId": null,
+        "descriptionId": null,
+        "role": "img",
+        "ariaLabel": "An abstract small component sits above a larger platform, with its connection indicated.",
+        "ariaLabelledBy": [],
+        "labels": [
+          {
+            "text": "Accessory",
+            "lines": [
+              "Accessory"
+            ]
+          },
+          {
+            "text": "Interface",
+            "lines": [
+              "Interface"
+            ]
+          },
+          {
+            "text": "Platform",
+            "lines": [
+              "Platform"
+            ]
+          }
+        ]
+      },
+      "method-study": {
+        "assetId": "method-study",
+        "sourceFile": "assets/diagrams/method-study.svg",
+        "title": null,
+        "description": null,
+        "titleId": null,
+        "descriptionId": null,
+        "role": "img",
+        "ariaLabel": "Three connected decision gates form a sequence, with a stopping route at each gate.",
+        "ariaLabelledBy": [],
+        "labels": [
+          {
+            "text": "Decision",
+            "lines": [
+              "Decision"
+            ]
+          },
+          {
+            "text": "Evidence",
+            "lines": [
+              "Evidence"
+            ]
+          },
+          {
+            "text": "Proceed or stop",
+            "lines": [
+              "Proceed",
+              "or stop"
+            ]
+          },
+          {
+            "text": "Stop",
+            "lines": [
+              "Stop"
+            ]
+          },
+          {
+            "text": "Stop",
+            "lines": [
+              "Stop"
+            ]
+          },
+          {
+            "text": "Stop",
+            "lines": [
+              "Stop"
+            ]
+          }
+        ]
+      },
+      "venture-layers": {
+        "assetId": "venture-layers",
+        "sourceFile": "assets/diagrams/venture-layers.svg",
+        "title": "Three dimensions. One business.",
+        "description": "An exploded architectural model with commercial, technical, and institutional planes. Each plane depends on the others. Choose a dimension below to explore the connection.",
+        "titleId": "model-title",
+        "descriptionId": "model-description",
+        "role": "img",
+        "ariaLabel": null,
+        "ariaLabelledBy": [
+          "model-title",
+          "model-description"
+        ],
+        "labels": [
+          {
+            "text": "Commercial",
+            "lines": [
+              "Commercial"
+            ]
+          },
+          {
+            "text": "Technical",
+            "lines": [
+              "Technical"
+            ]
+          },
+          {
+            "text": "Institutional",
+            "lines": [
+              "Institutional"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "home": {
+    "route": "/",
+    "seo": {
+      "title": "Will Godfrey, venture architect",
+      "description": "Independent venture architect for new AI-native businesses. I design them, prove them in a working system, and hand over on a date."
+    },
+    "hero": {
+      "eyebrow": "Independent venture architect",
+      "title": "A business. By design.",
+      "titleLines": [
+        "A business.",
+        "By design."
+      ],
+      "body": "The architect of record for AI-native businesses. I design them, prove them in a working system, and hand over on a date.",
+      "primaryLink": {
+        "label": "Explore the work",
+        "href": "/work/"
+      },
+      "secondaryLink": {
+        "label": "The practice",
+        "href": "/venture-architect/"
+      },
+      "imageCaption": "A study in three parts. Commercial. Technical. Institutional.",
+      "imageAlt": "Conceptual sculpture of graphite, stone and glass planes joined into one structure.",
+      "assetId": "assembly"
+    },
+    "proof": {
+      "label": "Experience behind the practice",
+      "items": [
+        {
+          "title": "McKinsey",
+          "body": "Nine years. Architect and venture CTO."
+        },
+        {
+          "title": "In production",
+          "body": "AI agent for an insurance brokerage."
+        },
+        {
+          "title": "Founder",
+          "body": "Sightline Geospatial and Miniature Systems."
+        }
+      ]
+    },
+    "selectedWork": {
+      "eyebrow": "Selected work",
+      "title": "The design has to survive reality.",
+      "body": "From a new company to a working agent. Accountability through the first build.",
+      "caseIds": [
+        "venture-build",
+        "production-ai",
+        "sightline"
+      ],
+      "moreLink": {
+        "label": "See all five projects",
+        "href": "/work/"
+      },
+      "caseLinkLabel": "View the project",
+      "visualLabel": "Illustrative model"
+    },
+    "process": {
+      "eyebrow": "The engagement",
+      "title": "My name on the design. An end date in the letter.",
+      "titleLines": [
+        "My name on",
+        "the design.",
+        "An end date",
+        "in the letter."
+      ],
+      "body": "Working for the owner, through three clearly defined stages.",
+      "stageIds": [
+        "design",
+        "prove",
+        "hand-over"
+      ],
+      "link": {
+        "label": "Explore the practice",
+        "href": "/venture-architect/#engagement"
+      }
+    },
+    "personal": {
+      "eyebrow": "A note from Will",
+      "quote": "A design is only finished when someone else can run it.",
+      "body": "A career in architecture, two ventures of my own, and fifteen years behind a camera. I still think in pictures.",
+      "name": "Will Godfrey",
+      "role": "Architect. Founder.",
+      "location": "Iowa City, Iowa",
+      "link": {
+        "label": "More about me",
+        "href": "/about/"
+      }
+    },
+    "invitation": {
+      "ref": "common.invitation"
+    }
+  },
+  "practice": {
+    "route": "/venture-architect/",
+    "seo": {
+      "title": "Venture architecture. Will Godfrey",
+      "description": "One accountable architect for a new AI-native business: the commercial, technical and institutional decisions, the first build and a defined handover."
+    },
+    "hero": {
+      "eyebrow": "Venture architecture",
+      "title": "The whole venture. One accountable architect.",
+      "titleLines": [
+        "The whole venture.",
+        "One accountable",
+        "architect."
+      ],
+      "body": "A new business is a set of connected decisions. I hold the design together, work for the owner and stay accountable through the first build.",
+      "primaryLink": {
+        "label": "Explore the engagement",
+        "href": "#engagement"
+      },
+      "secondaryLink": {
+        "label": "Read the full definition",
+        "href": "#definition"
+      }
+    },
+    "layers": {
+      "eyebrow": "One design, three layers",
+      "title": "The important decisions meet at the joints.",
+      "body": "A price implies a delivery model. A delivery model implies a cost. Ownership determines who can change either. The venture has to work as a whole.",
+      "diagramAlt": "Three connected layers of a venture: commercial, technical and institutional. The design joins decisions across all three.",
+      "caption": "Conceptual model of a venture. Select a layer to explore its decisions.",
+      "items": [
+        {
+          "id": "commercial",
+          "title": "Commercial",
+          "question": "What is the business?",
+          "body": "Define the customer, the offer, the unit of sale and the economics of delivery.",
+          "decisions": [
+            "Customer and offer",
+            "Pricing unit",
+            "Cost and quality per unit"
+          ],
+          "joint": "The price and the cost to deliver have to describe the same unit."
+        },
+        {
+          "id": "technical",
+          "title": "Technical",
+          "question": "How will it work?",
+          "body": "Decide what to buy, build and inherit, and prove that the system can deliver at the required cost and quality.",
+          "decisions": [
+            "Build, buy and inherit",
+            "Models and routing",
+            "Human review and quality"
+          ],
+          "joint": "The technical design has to support the commercial promise."
+        },
+        {
+          "id": "institutional",
+          "title": "Institutional",
+          "question": "Who can make it happen?",
+          "body": "Set the ownership, governance, leadership and funding arrangements, including the evidence required to continue.",
+          "decisions": [
+            "Ownership and governance",
+            "Leadership and funding",
+            "Evidence and stopping conditions"
+          ],
+          "joint": "The people accountable for the result need the authority to make its decisions."
+        }
+      ]
+    },
+    "decisions": {
+      "eyebrow": "Before the build",
+      "title": "Cheap to change on paper. Expensive to change later.",
+      "body": "The design records the decision, the alternatives we rejected and the evidence behind the choice.",
+      "items": [
+        "What it sells, and to whom",
+        "What unit it prices in",
+        "What each unit costs to deliver",
+        "What it buys, builds and inherits",
+        "Who owns and governs it",
+        "How it is funded, and against what evidence",
+        "Who leads it",
+        "Under what measured conditions it stops"
+      ]
+    },
+    "engagement": {
+      "id": "engagement",
+      "eyebrow": "The engagement",
+      "title": "Design, prove, hand over.",
+      "body": "A bounded commission, with evidence at each gate and an exit date written at the start.",
+      "stageIds": [
+        "design",
+        "prove",
+        "hand-over"
+      ]
+    },
+    "modes": {
+      "eyebrow": "Two ways to work together",
+      "title": "The authority. Or the authority and the seat.",
+      "body": "The commission is shaped around the decisions and the people already in place.",
+      "items": [
+        {
+          "title": "Design authority",
+          "body": "The design decisions, the memo for your board, the gates and the founding hires.",
+          "duration": "Bounded by the design phase.",
+          "location": "Largely remote, with scheduled on-site blocks."
+        },
+        {
+          "title": "Design authority plus the seat",
+          "body": "The same design authority, with me as interim technical lead through the first build.",
+          "duration": "Until the handover date written into the letter.",
+          "location": "Largely remote, with scheduled on-site blocks."
+        }
+      ],
+      "note": "I take a small number of commissions each year.",
+      "link": {
+        "label": "Discuss a commission",
+        "href": "/contact/"
+      }
+    },
+    "standards": {
+      "eyebrow": "Standards of the practice",
+      "title": "What you can hold me to.",
+      "items": [
+        "The owner is my client. I take nothing from anyone who builds.",
+        "Every decision is written down with the alternatives we rejected.",
+        "The sponsor and the founders get the same memo on the same day.",
+        "The conditions for stopping are written before the build is funded.",
+        "Capital is released against evidence I report at each gate.",
+        "My exit has a date."
+      ],
+      "boundaryTitle": "The boundaries of the role",
+      "boundaries": [
+        "I do not supply a build team.",
+        "I do not serve as chief executive.",
+        "I do not stay past the handover date.",
+        "I do not recommend building when the evidence says stop."
+      ]
+    },
+    "definition": {
+      "id": "definition",
+      "eyebrow": "The full definition",
+      "title": "What is a venture architect?",
+      "byline": "By Will Godfrey",
+      "introduction": "A venture architect is the person accountable for the design of a new business before it exists, and for the integrity of that design through its first build.",
+      "sections": [
+        {
+          "title": "The architect of record",
+          "paragraphs": [
+            "I use the word architect in its building sense: one person working for the owner, accountable for how the parts fit together. The design comes before the build, the work is checked against it, and the engagement ends when the handover is complete.",
+            "A new business may have a strategist who wrote the case, a technical lead who chose the stack, lawyers who shaped the entity and a sponsor who approved the budget. Each has a part. The venture architect holds the whole."
+          ]
+        },
+        {
+          "title": "The decisions",
+          "paragraphs": [
+            "The design comes down to a small set of connected decisions: what the business sells, what it prices in, what each unit costs to deliver, what it buys or builds, what it inherits, who governs it and how it is funded.",
+            "These decisions sit in three layers: commercial, technical and institutional. Price may be set by one person and cost by another. The relationship with a parent may be negotiated by lawyers and lived by the product team. The joints are the architect's territory.",
+            "Each decision needs a record: the choice, the alternatives rejected, the reasons and the evidence that would cause us to change it."
+          ]
+        },
+        {
+          "title": "Why AI changes the design",
+          "paragraphs": [
+            "In an AI-native business, the architecture is the business model. Models, routing and human review affect the cost and quality of delivery. The choice between a system that does the work and one that helps a person do it affects the offer and the price.",
+            "These are business decisions made in technical language. They need to be made together, before the first build commits the venture to them."
+          ]
+        },
+        {
+          "title": "One accountable seat",
+          "paragraphs": [
+            "The venture architect works for the owner and brings no build team to sell. That independence matters when the evidence says to stop.",
+            "The role holds design authority across all three layers. It requires someone who has held the technical seat in a new business and lived with business design decisions as a founder."
+          ]
+        },
+        {
+          "title": "Design, prove, hand over",
+          "paragraphs": [
+            "In design, I make the decisions with the sponsor and founders. I write down the alternatives and the conditions for stopping before anyone is invested in the answer.",
+            "In prove, I hold the technical seat while the first version reaches committed customers. I report cost and quality at each gate so capital is released against evidence.",
+            "In handover, I hire the permanent technical lead and leave on the date written into the letter at the start. A fixed date gives the engagement a clear purpose: make the team capable of running what we designed."
+          ]
+        },
+        {
+          "title": "Where the practice comes from",
+          "paragraphs": [
+            "My work has moved from applications to enterprises to whole ventures. During nine years at McKinsey, I served as CTO of North America's first large-scale digital business build, stood up next to an industrial parent.",
+            "I have built AI systems hands-on since 2021, written my own method for standing up an AI-native venture next to a PE-backed services firm, and run two ventures of my own. The work keeps the design accountable to what it costs to live with."
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Questions about the practice",
+      "items": [
+        {
+          "question": "Is this a fractional CTO?",
+          "answer": [
+            "The technical seat is part of the engagement. The scope is the design of the whole business: what it sells, what it costs to deliver, who governs it and when it stops. I hold the technical seat only until the design is proven and a permanent lead is in place."
+          ]
+        },
+        {
+          "question": "How does this relate to a venture studio?",
+          "answer": [
+            "My role is to work for the owner as an independent design authority. I bring no build team to sell. If a studio or engineering team is part of the build, the same design decisions, evidence gates and stopping conditions still apply."
+          ]
+        },
+        {
+          "question": "We already have a strategy firm. Where do you fit?",
+          "answer": [
+            "I work alongside advisory firms. My focus is the design decisions that connect the business case to a working system, and accountability through the handover to a permanent technical lead."
+          ]
+        },
+        {
+          "question": "Can you work with the team we already have?",
+          "answer": [
+            "Yes. The commission starts with the decisions and capabilities already in place. Design authority can stand on its own, or include me holding the technical seat through the first build."
+          ]
+        },
+        {
+          "question": "What have you built?",
+          "answer": [
+            "A new digital business next to an industrial parent, as its CTO. An AI agent now in production at an insurance brokerage. Two ventures of my own. The work page has the detail."
+          ],
+          "link": {
+            "label": "Explore the work",
+            "href": "/work/"
+          }
+        },
+        {
+          "question": "How does a commission start?",
+          "answer": [
+            "With a thirty-minute conversation. Then we look at the options for the owner, including those with no venture in them, before anyone commits to a build."
+          ]
+        }
+      ]
+    },
+    "invitation": {
+      "ref": "common.invitation"
+    }
+  },
+  "work": {
+    "route": "/work/",
+    "seo": {
+      "title": "Work. Will Godfrey, venture architect",
+      "description": "Five things I have designed and built: a corporate venture, a production AI system, Sightline Geospatial, Miniature Systems and a written method."
+    },
+    "hero": {
+      "eyebrow": "Selected work",
+      "title": "The design has to survive reality.",
+      "titleLines": [
+        "The design has",
+        "to survive reality."
+      ],
+      "body": "A new company. A production agent. Two ventures of my own. A written practice behind the work.",
+      "primaryLink": {
+        "label": "Explore the projects",
+        "href": "#projects"
+      }
+    },
+    "index": {
+      "id": "projects",
+      "label": "Project index",
+      "items": [
+        {
+          "label": "A digital business next to an industrial parent",
+          "href": "#venture-build",
+          "number": "01"
+        },
+        {
+          "label": "An AI agent for an insurance brokerage",
+          "href": "#production-ai",
+          "number": "02"
+        },
+        {
+          "label": "Sightline Geospatial",
+          "href": "#sightline",
+          "number": "03"
+        },
+        {
+          "label": "Miniature Systems",
+          "href": "#miniature",
+          "number": "04"
+        },
+        {
+          "label": "The method I work from",
+          "href": "#written-method",
+          "number": "05"
+        }
+      ]
+    },
+    "cases": [
+      {
+        "id": "venture-build",
+        "number": "01",
+        "category": "Venture build",
+        "title": "A new business, from the ground up.",
+        "subtitle": "A digital business next to an industrial parent",
+        "role": "Venture CTO at McKinsey",
+        "summary": "A digital business stood up alongside an industrial parent. One technical seat, held through the first build.",
+        "context": "During nine years at McKinsey, I served as CTO of North America's first large-scale digital business build. I was brought in for two weeks as product owner and stayed as CTO.",
+        "design": "I designed the new company's technology from scratch: its architecture, enterprise security posture, engineering environment and the boundary between the parent's legacy systems and the new company's stack.",
+        "evidence": "I have held the technical seat in a venture built next to a parent, and worked the boundary with the parent's CIO.",
+        "visualId": "venture-boundary",
+        "visualCaption": "Illustrative model of the boundary between a parent and a new venture.",
+        "visualAlt": "A new venture is connected to an industrial parent across a defined boundary.",
+        "labels": [
+          "Industrial parent",
+          "Defined boundary",
+          "New venture"
+        ],
+        "tags": [
+          "Architecture",
+          "Enterprise boundary",
+          "Technical leadership"
+        ]
+      },
+      {
+        "id": "production-ai",
+        "number": "02",
+        "category": "Production AI",
+        "title": "An agent that made it into production.",
+        "subtitle": "An AI agent for an insurance brokerage",
+        "role": "Independent designer and builder",
+        "summary": "An AI agent designed and built for an insurance brokerage. Technical choices grounded in an operating business.",
+        "context": "As an independent, I designed and built an AI agent for an insurance brokerage. The system is in production, and my work there is complete.",
+        "design": "I built the agent on Anthropic's Claude Agent SDK and made the case for the model choice against an incumbent enterprise agreement.",
+        "evidence": "The model choice was a business decision as well as a technical one. I carried that decision with executives and built the resulting system.",
+        "visualId": "agent-system",
+        "visualCaption": "Conceptual workflow illustration. It does not disclose the client's system.",
+        "visualAlt": "A conceptual agent workflow connects input, an AI system, human review and an outcome.",
+        "labels": [
+          "Input",
+          "Agent",
+          "Human review",
+          "Outcome"
+        ],
+        "tags": [
+          "AI architecture",
+          "Model selection",
+          "Production system"
+        ]
+      },
+      {
+        "id": "sightline",
+        "number": "03",
+        "category": "Own venture",
+        "title": "The built environment, made measurable.",
+        "subtitle": "Sightline Geospatial",
+        "role": "Founder and operator",
+        "summary": "Aerial reality capture for the built environment, serving customers across the Midwest.",
+        "context": "Sightline Geospatial serves AEC firms, civil and county engineers, general contractors, utilities and aggregate producers across the Midwest.",
+        "design": "I chose the market, the unit and the price for an aerial reality capture business. I operate the venture and answer for its margin.",
+        "evidence": "I live with my own design decisions. The relationship between an offer, its delivery and its economics is part of the daily work.",
+        "visualId": "terrain-study",
+        "visualCaption": "Illustrative terrain study. This is not a client survey or measured deliverable.",
+        "visualAlt": "Layered contour lines with a central measurement marker suggest terrain capture.",
+        "labels": [
+          "Terrain",
+          "Structure",
+          "Context"
+        ],
+        "tags": [
+          "Reality capture",
+          "Business design",
+          "Operations"
+        ]
+      },
+      {
+        "id": "miniature",
+        "number": "04",
+        "category": "Own venture",
+        "title": "A small component. A larger system.",
+        "subtitle": "Miniature Systems",
+        "role": "Founder",
+        "summary": "NDAA-compliant payload accessories for uncrewed aircraft, built for a leading US drone platform.",
+        "context": "Miniature Systems makes payload accessories for uncrewed aircraft. The venture serves a market shaped by the requirements of a larger platform and a regulated buyer.",
+        "design": "The work centers on the relationship between the accessory and the platform it depends on: what it adds, what it inherits and where the boundary belongs.",
+        "evidence": "In a hardware venture, inherited constraints are part of the business design. I make those choices in a venture of my own.",
+        "visualId": "payload-study",
+        "visualCaption": "Conceptual assembly study. This is not a drawing of a Miniature Systems product.",
+        "visualAlt": "An abstract small component sits above a larger platform, with its connection indicated.",
+        "labels": [
+          "Accessory",
+          "Interface",
+          "Platform"
+        ],
+        "tags": [
+          "Hardware",
+          "Platform dependencies",
+          "Venture design"
+        ]
+      },
+      {
+        "id": "written-method",
+        "number": "05",
+        "category": "Written practice",
+        "title": "A practice you can read.",
+        "subtitle": "The method I work from",
+        "role": "Author",
+        "summary": "A written method for standing up an AI-native venture next to a PE-backed services firm.",
+        "context": "My practice is written down. The method runs in gated phases, with a written way to stop at each gate and a full practitioner's guide behind it.",
+        "design": "The method sets out how to make the design decisions, identify the evidence each phase requires and decide whether to proceed.",
+        "evidence": "The standards of the engagement are explicit. A short introduction to the method is available on request.",
+        "visualId": "method-study",
+        "visualCaption": "Illustrative decision record. An introduction is available on request.",
+        "visualAlt": "Three connected decision gates form a sequence, with a stopping route at each gate.",
+        "labels": [
+          "Decision",
+          "Evidence",
+          "Proceed or stop"
+        ],
+        "tags": [
+          "Decision records",
+          "Evidence gates",
+          "Written method"
+        ],
+        "link": {
+          "label": "Ask about the method",
+          "href": "/contact/"
+        }
+      }
+    ],
+    "earlier": {
+      "eyebrow": "Before this",
+      "title": "The work behind the work.",
+      "body": "Nine years at McKinsey as an expert in front-office technology. Two years at Appirio as a lead architect. Co-founder of Live & Breathing and Modern Furniture Collection in Atlanta. The third employee at ShootQ, a company I named.",
+      "link": {
+        "label": "Read my story",
+        "href": "/about/"
+      }
+    },
+    "invitation": {
+      "ref": "common.invitation"
+    }
+  },
+  "about": {
+    "route": "/about/",
+    "seo": {
+      "title": "About Will Godfrey, venture architect",
+      "description": "Architect of applications, then of enterprises, then of ventures. A founder, photographer and independent venture architect based in Iowa City."
+    },
+    "hero": {
+      "eyebrow": "About Will",
+      "title": "Same noun. Bigger object.",
+      "titleLines": [
+        "Same noun.",
+        "Bigger object."
+      ],
+      "body": "Architect of applications, then of enterprises, then of ventures.",
+      "portraitCaption": "Will Godfrey. Iowa City, Iowa."
+    },
+    "opening": {
+      "title": "I have been an architect of one kind or another for more than a decade.",
+      "paragraphs": [
+        "First of applications, as a lead architect at Appirio. Then of the front-office systems of large enterprises, during nine years at McKinsey. Now of whole ventures.",
+        "The object has changed. The work still asks the same question: how do the parts fit, and who is accountable for the whole?"
+      ]
+    },
+    "arc": {
+      "eyebrow": "The professional arc",
+      "title": "Applications. Enterprises. Ventures.",
+      "items": [
+        {
+          "title": "Applications",
+          "label": "Appirio",
+          "body": "Two years as a lead architect, designing applications and the systems around them."
+        },
+        {
+          "title": "Enterprises",
+          "label": "McKinsey",
+          "body": "Nine years on the expert path, in the guild for software, cloud, cyber and architecture, working on the front-office systems of large enterprises."
+        },
+        {
+          "title": "Ventures",
+          "label": "Venture CTO and founder",
+          "body": "CTO of a new digital business next to an industrial parent. Now designing AI-native ventures and running Sightline Geospatial and Miniature Systems."
+        }
+      ]
+    },
+    "technicalSeat": {
+      "eyebrow": "The technical seat",
+      "title": "I went in for two weeks. I stayed as CTO.",
+      "paragraphs": [
+        "At McKinsey, the work that shaped me most was serving as CTO of North America's first large-scale digital business build: a new company stood up from scratch next to an industrial parent.",
+        "I also spent two years as lead faculty for the firm's experienced-hire program. That taught me that a design is only finished when someone else can run it."
+      ],
+      "link": {
+        "label": "See the venture work",
+        "href": "/work/#venture-build"
+      }
+    },
+    "photographer": {
+      "eyebrow": "Another way of seeing",
+      "title": "I still think in pictures.",
+      "paragraphs": [
+        "Alongside the rest of my work, I spent fifteen years as a professional photographer. Looking closely, finding the relationship between things and deciding what to leave out are still part of how I design.",
+        "Before McKinsey, I co-founded a media company that filmed independent bands and a furniture importer where I built the commerce, service and supply chain systems myself."
+      ],
+      "portraitAlt": "Will Godfrey"
+    },
+    "today": {
+      "eyebrow": "Today",
+      "title": "Building on my own account.",
+      "paragraphs": [
+        "I run Sightline Geospatial and Miniature Systems from Iowa City. One captures the built environment. The other makes NDAA-compliant payload accessories for uncrewed aircraft.",
+        "I have built AI systems hands-on since 2021. Most recently, I designed and built an agent for an insurance brokerage that is now in production.",
+        "I take a small number of commissions each year as venture architect for sponsors and founders, working from a written method of my own."
+      ],
+      "facts": [
+        {
+          "label": "Based in",
+          "value": "Iowa City, Iowa"
+        },
+        {
+          "label": "Working pattern",
+          "value": "Largely remote, with scheduled blocks on site"
+        },
+        {
+          "label": "Education",
+          "value": "MBA in the management of technology, Georgia Tech"
+        }
+      ],
+      "link": {
+        "label": "Explore the practice",
+        "href": "/venture-architect/"
+      }
+    },
+    "invitation": {
+      "ref": "common.invitation"
+    }
+  },
+  "contact": {
+    "route": "/contact/",
+    "seo": {
+      "title": "Start a conversation. Will Godfrey, venture architect",
+      "description": "Tell me what you are weighing in two or three sentences. I read everything myself. Based in Iowa City and working largely remote."
+    },
+    "hero": {
+      "eyebrow": "Start a conversation",
+      "title": "What are you weighing?",
+      "titleLines": [
+        "What are",
+        "you weighing?"
+      ],
+      "body": "Tell me in two or three sentences. I read everything myself.",
+      "primaryLink": {
+        "label": "will@willgodfrey.com",
+        "href": "mailto:will@willgodfrey.com"
+      }
+    },
+    "prompts": {
+      "eyebrow": "A place to start",
+      "title": "The decision in front of you.",
+      "body": "You do not need a finished brief. The useful starting point is the question you are trying to answer.",
+      "items": [
+        "What are you considering?",
+        "What is already in place?",
+        "What decision do you need to make next?"
+      ]
+    },
+    "expectations": {
+      "title": "What happens next.",
+      "paragraphs": [
+        "If it sounds like a venture, I will suggest a thirty-minute call. If it does not, I will say so, and point you somewhere better if I can.",
+        "I take a small number of commissions each year, so I would rather tell you early than late."
+      ]
+    },
+    "details": {
+      "locationLabel": "Based in",
+      "location": "Iowa City, Iowa",
+      "working": "Largely remote, with scheduled blocks on site.",
+      "elsewhereLabel": "Elsewhere",
+      "linkedinLabel": "Find me on LinkedIn",
+      "emailHelp": "You can also copy the address into your email app."
+    }
+  },
+  "notFound": {
+    "route": "/404.html",
+    "seo": {
+      "title": "Page not found. Will Godfrey",
+      "description": "The page you were looking for could not be found."
+    },
+    "hero": {
+      "eyebrow": "Page not found",
+      "title": "This sheet is not in the set.",
+      "body": "The page you were looking for does not exist, or it was part of an older version of this site.",
+      "primaryLink": {
+        "label": "Back to home",
+        "href": "/"
+      },
+      "secondaryLink": {
+        "label": "Explore the practice",
+        "href": "/venture-architect/"
+      }
+    }
+  }
+}

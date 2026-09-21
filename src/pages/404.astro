@@ -1,27 +1,37 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getSite } from '../lib/site';
-
-const site = await getSite();
-const nf = site.notFound;
-const meta = site.meta.notFound;
+import TextLink from '../components/TextLink.astro';
+import '../styles/inner.css';
+import { notFound } from '../lib/content';
+const h = notFound.hero;
 ---
 
-<Base title={meta.title} sheet="Page not found">
-  <article>
-    <section class="section pad-x" style="padding-bottom:clamp(56px,7vw,112px)">
-      <p class="stack-num" style="margin-bottom:14px">404</p>
-      <h1 class="display-xl" style="max-width:12ch">{nf.headline}</h1>
-      <p class="body" style="max-width:50ch;margin-top:clamp(28px,3vw,48px)">{nf.body}</p>
-      <div class="btn-row" style="margin-top:32px">
-        {
-          nf.links.map((l, i) => (
-            <a class:list={['btn', { 'btn--outline': i > 0 }]} href={l.href}>
-              {l.label}
-            </a>
-          ))
-        }
+<Base
+  title={notFound.seo.title}
+  description={notFound.seo.description}
+  invitation={false}
+  noindex={true}
+  bodyClass="inner-page"
+>
+  <section class="error-layout wrap">
+    <div>
+      <p class="page-kicker">{h.eyebrow}</p>
+      <h1>{h.title}</h1>
+      <p class="error-copy">{h.body}</p>
+      <div class="error-links">
+        <TextLink href={h.primaryLink.href} label={h.primaryLink.label} />
+        <TextLink href={h.secondaryLink.href} label={h.secondaryLink.label} />
       </div>
-    </section>
-  </article>
+    </div>
+    <div class="error-art">
+      <img
+        src="/images/architecture-practice/assembly-960.webp"
+        alt=""
+        aria-hidden="true"
+        width="960"
+        height="640"
+        loading="lazy"
+      />
+    </div>
+  </section>
 </Base>

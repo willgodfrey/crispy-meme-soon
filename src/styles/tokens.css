@@ -1,31 +1,22 @@
-/* Palette + type from the approved v2 design (docs/Willgodfrey Site v2.dc.html).
-   Cream is the light scheme; Ink is the dark scheme (prefers-color-scheme).
-   --inv/--invfg/--invsoft drive the full-bleed inverted sections and footer. */
+/* Design tokens from docs/architecture-practice-handoff/design-tokens.json.
+   Light-only palette (no automatic dark scheme). */
 :root {
-  --bg: #f2ebdd;
-  --fg: #141210;
-  --soft: #5a554c;
-  --rule: #d8cfbd;
-  --wash: #e6dcc8;
-  --accent: #b8442e;
-  --inv: #141210;
-  --invfg: #f2ebdd;
-  --invsoft: #c9c1b0;
+  --paper: #fafaf7;
+  --chalk: #ecede9;
+  --ink: #252729;
+  --wine: #622b3d;
+  --muted: #5b6060;
+  --line: #cdd0ca;
+  --work-surface: #e6e9e5;
+  --process-surface: #e9eae5;
+  --on-wine: #fafaf7;
+  --on-wine-soft: #eadce0;
 
-  --sans: 'Bricolage Grotesque Variable', system-ui, -apple-system, sans-serif;
-  --pad-x: clamp(20px, 4vw, 56px);
-}
+  --sans: 'Manrope', system-ui, -apple-system, Arial, sans-serif;
+  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #141210;
-    --fg: #f2ebdd;
-    --soft: #c9c1b0;
-    --rule: #3a352d;
-    --wash: #221f1a;
-    --accent: #e8714f;
-    --inv: #f2ebdd;
-    --invfg: #141210;
-    --invsoft: #5a554c;
-  }
+  --pad-x: clamp(20px, 5vw, 96px);
+  --section-desktop: 104px;
+  --section-tablet: 76px;
+  --section-mobile: 60px;
 }

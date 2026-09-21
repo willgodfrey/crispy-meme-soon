@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-// Copy lint for content/. Fails the build on punctuation and vocabulary
-// that Will does not allow, and on unfilled TODO markers in production.
+// Copy lint for the canonical content source (src/data/*.json). Fails the build
+// on punctuation and vocabulary that Will does not allow, and on unfilled TODO
+// markers in production.
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 
-const CONTENT_DIR = process.env.CONTENT_DIR || "content";
+const CONTENT_DIR = process.env.CONTENT_DIR || "src/data";
 const PRODUCTION_BRANCH = process.env.PRODUCTION_BRANCH || "main";
 const strictTodos =
   process.env.STRICT_TODOS === "1" ||
@@ -26,7 +27,10 @@ const rules = [
 function walk(dir) {
   return readdirSync(dir).flatMap((name) => {
     const p = join(dir, name);
-    return statSync(p).isDirectory() ? walk(p) : p.endsWith(".md") ? [p] : [];
+    if (statSync(p).isDirectory()) return walk(p);
+    return p.endsWith(".md") || (p.endsWith(".json") && !p.endsWith("asset-manifest.json"))
+      ? [p]
+      : [];
   });
 }
 
