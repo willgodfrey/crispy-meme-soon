@@ -1,24 +1,22 @@
 ---
-import '@fontsource-variable/source-serif-4';
-import '@fontsource/ibm-plex-mono/400.css';
-import '@fontsource/ibm-plex-mono/500.css';
+import '@fontsource-variable/bricolage-grotesque';
 import '../styles/tokens.css';
 import '../styles/base.css';
-import Header from '../components/Header.astro';
-import ClosingBlock from '../components/ClosingBlock.astro';
-import TitleBlock from '../components/TitleBlock.astro';
 import { getSite } from '../lib/site';
 
 interface Props {
   title: string;
   description?: string;
   sheet?: string;
+  revision?: number;
+  revised?: string;
 }
-const { title, description, sheet } = Astro.props;
+const { title, description, sheet, revision = 1, revised = '[[TODO: launch date]]' } = Astro.props;
 const site = await getSite();
-const isHome = Astro.url.pathname === '/';
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const path = Astro.url.pathname;
+const canonical = new URL(path, Astro.site).href;
 const ogImage = new URL('/images/will-godfrey.jpg', Astro.site).href;
+const isTodo = (v: string) => v.includes('[[TODO');
 ---
 
 <!doctype html>
@@ -43,13 +41,41 @@ const ogImage = new URL('/images/will-godfrey.jpg', Astro.site).href;
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <div class:list={['sheet-frame', { 'is-home': isHome }]} aria-hidden="true"></div>
-    <Header nav={site.nav} />
-    <main id="main">
+
+    <header class="site-header">
+      <a class="wordmark" href="/">{site.siteName}</a>
+      <nav aria-label="Primary">
+        {
+          site.nav.map((item) => (
+            <a href={item.href} aria-current={path === item.href ? 'page' : undefined}>
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
       <slot />
     </main>
-    <ClosingBlock text={site.closingBlock} link={site.closingLink} />
-    <TitleBlock site={site} sheet={sheet} />
+
+    <footer class="site-footer">
+      <section aria-label="About Will Godfrey">
+        <p class="bio">{site.closingBlock}</p>
+        <p class="bio-link"><a href="/contact/">{site.closingLink}</a></p>
+      </section>
+      <div class="meta">
+        <p>{site.titleBlock.practice}</p>
+        <p>{site.location}</p>
+        <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+        <p><a href={site.linkedin}>LinkedIn</a></p>
+        <p class="push">
+          {sheet}, revision {revision},
+          {' '}
+          {isTodo(revised) ? <span class="todo">{revised}</span> : <span>{revised}</span>}
+        </p>
+      </div>
+    </footer>
 
     <!-- Google Analytics: the single third-party script, loaded last per site owner. -->
     <script is:inline defer src="https://www.googletagmanager.com/gtag/js?id=G-RQMR51RTHC"

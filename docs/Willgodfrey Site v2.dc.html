@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&amp;display=swap">
+<script src="./image-slot.js"></script>
+<style>
+:root{--bg:#F2EBDD;--fg:#141210;--soft:#5A554C;--rule:#D8CFBD;--wash:#E6DCC8;--accent:#B8442E;--inv:#141210;--invfg:#F2EBDD;--invsoft:#C9C1B0;--sans:"Bricolage Grotesque",system-ui,sans-serif}
+[data-scheme="ink"]{--bg:#141210;--fg:#F2EBDD;--soft:#C9C1B0;--rule:#3A352D;--wash:#221F1A;--accent:#E8714F;--inv:#F2EBDD;--invfg:#141210;--invsoft:#5A554C}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg)}
+body{color:var(--fg);font-family:var(--sans);font-optical-sizing:auto;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;transition:color .12s,background-color .12s,border-color .12s}
+a:hover{color:var(--fg)}
+nav a{color:var(--fg);text-decoration:none}
+nav a:hover{color:var(--accent)}
+nav a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+[data-nums="false"] [data-num]{display:none}
+[data-cols2],[data-cols3]{display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
+[data-split]{display:grid;grid-template-columns:minmax(0,1fr);gap:24px 48px}
+@media (min-width:900px){
+[data-cols2]{grid-template-columns:repeat(2,minmax(0,1fr))}
+[data-cols3]{grid-template-columns:repeat(3,minmax(0,1fr))}
+[data-split]{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+[data-sticky]{position:sticky;top:24px;align-self:start}
+}
+</style>
+</helmet>
+<div data-scheme="{{ schemeKey }}" data-nums="{{ numsOn }}" style="min-height:100vh;background:var(--bg);color:var(--fg);font-family:var(--sans)">
+<a href="#main" onClick="{{ skip }}" style="position:absolute;left:-9999px;top:16px;z-index:20;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;font-size:15px;font-weight:600;background:var(--fg);color:var(--bg);text-decoration:none" style-focus="left:16px">Skip to content</a>
+<header style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 32px;padding:14px clamp(20px,4vw,56px);border-bottom:2px solid var(--fg)">
+<a href="#/" style="display:inline-block;padding:10px 0;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:-0.02em;color:var(--fg);text-decoration:none" style-hover="color:var(--accent)">Will Godfrey</a>
+<nav aria-label="Primary" style="display:flex;flex-wrap:wrap;gap:0 24px;font-size:15px;font-weight:500;line-height:1.4">
+<a href="#/venture-architect/" aria-current="{{ curEssay }}" style="display:inline-block;padding:12px 0">Venture architecture</a>
+<a href="#/work/" aria-current="{{ curWork }}" style="display:inline-block;padding:12px 0">Work</a>
+<a href="#/about/" aria-current="{{ curAbout }}" style="display:inline-block;padding:12px 0">About</a>
+<a href="#/contact/" aria-current="{{ curContact }}" style="display:inline-block;padding:12px 0">Start a conversation</a>
+</nav>
+</header>
+<main id="main" tabindex="-1" style="outline:none">
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<article data-screen-label="Home">
+<section style="padding:clamp(32px,4vw,64px) clamp(20px,4vw,56px) clamp(48px,6vw,96px)">
+<h1 style="font-weight:700;font-size:clamp(52px,12.5vw,184px);line-height:0.9;letter-spacing:-0.045em;text-wrap:balance">Venture architect</h1>
+<div data-split="1" style="margin-top:clamp(32px,4vw,64px);align-items:end">
+<p style="font-size:clamp(22px,1.4vw + 12px,32px);line-height:1.3;font-weight:500;letter-spacing:-0.015em;text-wrap:pretty;max-width:30ch">The architect of record for new AI-native businesses. I design them, prove the design in a working system, and hand over on a date.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a href="#/venture-architect/" style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;font-size:16px;font-weight:600;line-height:1;background:var(--fg);color:var(--bg);text-decoration:none" style-hover="background:var(--accent);color:#FFFFFF">What is a venture architect?</a>
+<a href="#/contact/" style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;font-size:16px;font-weight:600;line-height:1;border:2px solid var(--fg);color:var(--fg);text-decoration:none" style-hover="background:var(--fg);color:var(--bg)">Start a conversation</a>
+</div>
+</div>
+</section>
+
+<section style="background:var(--inv);color:var(--invfg);padding:clamp(56px,7vw,112px) clamp(20px,4vw,56px)">
+<h2 style="font-weight:700;font-size:clamp(36px,5.2vw,84px);line-height:0.98;letter-spacing:-0.035em;text-wrap:balance;max-width:16ch">In an AI-native business, the architecture is the business model.</h2>
+<p style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55;max-width:58ch;margin-top:36px;color:var(--invsoft);text-wrap:pretty">The choices an engineer makes about models, routing and human review set the gross margin. The choice between an agent and a copilot sets the price. Those are business decisions made in technical language, before the first line of code. Someone has to hold both.</p>
+</section>
+
+<div style="padding:0 clamp(20px,4vw,56px)">
+
+<section data-split="1" style="padding:clamp(56px,7vw,112px) 0">
+<h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em;text-wrap:balance">One per venture. Working for the owner.</h2>
+<div>
+<p style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55;max-width:56ch;text-wrap:pretty">A major building has one architect of record. That person works for the owner, puts their name on the drawings, and certifies the work before money is released. I do that job for a new business.</p>
+<p style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55;max-width:56ch;margin-top:18px;text-wrap:pretty">I bring no build team to sell, so I can tell you to stop. I hold the technical seat only long enough to prove the design. I leave on a date we write down at the start.</p>
+</div>
+</section>
+
+<section style="border-top:2px solid var(--fg);padding:clamp(48px,6vw,96px) 0">
+<h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em">Three situations</h2>
+<ul data-cols3="1" style="margin-top:40px;font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.5">
+<li style="border-top:2px solid var(--fg);padding-top:18px;text-wrap:pretty">A sponsor wants a productized, AI-native business next to a services firm in the portfolio. The question is whether it is separable, fundable and worth more apart.</li>
+<li style="border-top:2px solid var(--fg);padding-top:18px;text-wrap:pretty">Founders have been told to do something with AI. They want the options laid out before they agree to anything.</li>
+<li style="border-top:2px solid var(--fg);padding-top:18px;text-wrap:pretty">A venture is already under way and the margin is not what the deck promised. Nobody can say which decision caused it.</li>
+</ul>
+</section>
+
+<section data-split="1" style="border-top:2px solid var(--fg);padding:clamp(48px,6vw,96px) 0">
+<h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em;text-wrap:balance">The decisions that are cheap on paper and expensive later</h2>
+<div>
+<ul style="font-size:clamp(24px,2.6vw,42px);line-height:1.1;font-weight:500;letter-spacing:-0.02em">
+<li style="padding:0 0 18px;border-bottom:1px solid var(--fg)">What it sells, and to whom</li>
+<li style="padding:18px 0;border-bottom:1px solid var(--fg)">What each unit costs to deliver</li>
+<li style="padding:18px 0;border-bottom:1px solid var(--fg)">What it buys, builds and inherits</li>
+<li style="padding:18px 0;border-bottom:1px solid var(--fg)">Who owns and governs it</li>
+<li style="padding:18px 0;border-bottom:1px solid var(--fg)">How it is funded, and against what evidence</li>
+<li style="padding:18px 0;border-bottom:1px solid var(--fg)">Who leads it</li>
+<li style="padding:18px 0;border-bottom:1px solid var(--fg)">When it stops</li>
+</ul>
+<p style="margin-top:28px;font-size:17px;font-weight:600"><a href="#/venture-architect/">Read the full definition</a></p>
+</div>
+</section>
+
+<section style="border-top:2px solid var(--fg);padding:clamp(48px,6vw,96px) 0">
+<h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em">Design, prove, hand over</h2>
+<ol data-cols3="1" style="margin-top:40px;font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.5">
+<li style="border-top:2px solid var(--fg);padding-top:18px"><p style="font-size:clamp(40px,4vw,64px);font-weight:700;line-height:1;letter-spacing:-0.03em;color:var(--accent);margin-bottom:20px">1</p><p style="text-wrap:pretty">Design. I make the decisions with the sponsor and the founders, and write each one down with the alternatives we rejected.</p></li>
+<li style="border-top:2px solid var(--fg);padding-top:18px"><p style="font-size:clamp(40px,4vw,64px);font-weight:700;line-height:1;letter-spacing:-0.03em;color:var(--accent);margin-bottom:20px">2</p><p style="text-wrap:pretty">Prove. I hold the technical seat while the first version ships to committed customers, and report cost and quality at each gate.</p></li>
+<li style="border-top:2px solid var(--fg);padding-top:18px"><p style="font-size:clamp(40px,4vw,64px);font-weight:700;line-height:1;letter-spacing:-0.03em;color:var(--accent);margin-bottom:20px">3</p><p style="text-wrap:pretty">Hand over. I hire the permanent technical lead and leave on the date in the letter.</p></li>
+</ol>
+</section>
+
+<section style="border-top:2px solid var(--fg);padding:clamp(48px,6vw,96px) 0">
+<h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em">Two shapes</h2>
+<div data-cols2="1" style="margin-top:40px;gap:0">
+<div style="border:2px solid var(--fg);padding:clamp(24px,3vw,40px)">
+<h3 style="font-size:clamp(22px,1.6vw,28px);font-weight:700;line-height:1.15;letter-spacing:-0.02em">Design authority</h3>
+<dl style="margin-top:24px">
+<div style="padding:16px 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">What you get</dt><dd style="margin-top:6px;font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.45">The design decisions, the memo for your board, the gates and the founding hires</dd></div>
+<div style="padding:16px 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">How long</dt><dd style="margin-top:6px;font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.45">Bounded by the design phase</dd></div>
+<div style="padding:16px 0 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">Where</dt><dd style="margin-top:6px;font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.45">Largely remote, with scheduled on-site blocks</dd></div>
+</dl>
+</div>
+<div style="background:var(--inv);color:var(--invfg);border:2px solid var(--fg);padding:clamp(24px,3vw,40px)">
+<h3 style="font-size:clamp(22px,1.6vw,28px);font-weight:700;line-height:1.15;letter-spacing:-0.02em">Design authority plus the seat</h3>
+<dl style="margin-top:24px">
+<div style="padding:16px 0;border-top:1px solid var(--invsoft)"><dt style="font-size:14px;font-weight:600;color:var(--invsoft)">What you get</dt><dd style="margin-top:6px;font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.45">All of that, plus me as interim technical lead</dd></div>
+<div style="padding:16px 0;border-top:1px solid var(--invsoft)"><dt style="font-size:14px;font-weight:600;color:var(--invsoft)">How long</dt><dd style="margin-top:6px;font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.45">Until a handover date written into the letter</dd></div>
+<div style="padding:16px 0 0;border-top:1px solid var(--invsoft)"><dt style="font-size:14px;font-weight:600;color:var(--invsoft)">Where</dt><dd style="margin-top:6px;font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.45">The same</dd></div>
+</dl>
+</div>
+</div>
+<p style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55;margin-top:28px">I take a small number of commissions each year.</p>
+</section>
+
+<section data-split="1" style="border-top:2px solid var(--fg);padding:clamp(48px,6vw,96px) 0">
+<h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em;text-wrap:balance">Standards you can hold me to</h2>
+<ul style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.5;font-weight:500">
+<li style="padding:0 0 14px;border-bottom:1px solid var(--fg)">The owner is my client. I take nothing from anyone who builds.</li>
+<li style="padding:14px 0;border-bottom:1px solid var(--fg)">Every decision is written down with the alternatives we rejected.</li>
+<li style="padding:14px 0;border-bottom:1px solid var(--fg)">The sponsor and the founders get the same memo on the same day.</li>
+<li style="padding:14px 0;border-bottom:1px solid var(--fg)">The conditions for stopping are written before the build is funded.</li>
+<li style="padding:14px 0;border-bottom:1px solid var(--fg)">Capital is released against evidence I report at each gate.</li>
+<li style="padding:14px 0;border-bottom:1px solid var(--fg)">My exit has a date.</li>
+</ul>
+</section>
+
+<section data-split="1" style="border-top:2px solid var(--fg);padding:clamp(48px,6vw,96px) 0">
+<h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em">What I do not do</h2>
+<ul style="font-size:clamp(22px,2vw,34px);line-height:1.2;font-weight:500;letter-spacing:-0.015em">
+<li style="display:grid;grid-template-columns:32px minmax(0,1fr);gap:16px;align-items:start;padding:10px 0"><span aria-hidden="true" style="display:block;height:3px;background:var(--accent);margin-top:0.5em"></span>Supply a build team</li>
+<li style="display:grid;grid-template-columns:32px minmax(0,1fr);gap:16px;align-items:start;padding:10px 0"><span aria-hidden="true" style="display:block;height:3px;background:var(--accent);margin-top:0.5em"></span>Serve as chief executive</li>
+<li style="display:grid;grid-template-columns:32px minmax(0,1fr);gap:16px;align-items:start;padding:10px 0"><span aria-hidden="true" style="display:block;height:3px;background:var(--accent);margin-top:0.5em"></span>Stay past the handover date</li>
+<li style="display:grid;grid-template-columns:32px minmax(0,1fr);gap:16px;align-items:start;padding:10px 0"><span aria-hidden="true" style="display:block;height:3px;background:var(--accent);margin-top:0.5em"></span>Recommend building when the evidence says stop</li>
+</ul>
+</section>
+
+<section data-split="1" style="border-top:2px solid var(--fg);padding:clamp(48px,6vw,96px) 0">
+<h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em">Where this comes from</h2>
+<ul style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.5;font-weight:500">
+<li style="padding:0 0 16px;border-bottom:1px solid var(--fg);text-wrap:pretty">CTO of North America's first large-scale digital business build, during nine years at McKinsey</li>
+<li style="padding:16px 0;border-bottom:1px solid var(--fg);text-wrap:pretty">Author of the Carve-forward method for standing up an AI-native venture next to a PE-backed services firm</li>
+<li style="padding:16px 0;border-bottom:1px solid var(--fg);text-wrap:pretty">Building AI systems hands-on since 2021, including an agent now in production at a $6B insurance brokerage</li>
+<li style="padding:16px 0;border-bottom:1px solid var(--fg);text-wrap:pretty">Founder of two ventures of my own, Sightline Geospatial and Miniature Systems</li>
+</ul>
+</section>
+
+<section style="border-top:2px solid var(--fg);padding:clamp(56px,7vw,112px) 0">
+<h2 style="font-weight:700;font-size:clamp(36px,5.2vw,84px);line-height:0.98;letter-spacing:-0.035em;text-wrap:balance;max-width:14ch">A first conversation takes thirty minutes.</h2>
+<p style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55;max-width:56ch;margin-top:32px;text-wrap:pretty">Tell me what you are weighing. I will tell you whether it sounds like a venture, and what I would want to know first.</p>
+<div style="margin-top:36px"><a href="#/contact/" style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;font-size:16px;font-weight:600;line-height:1;background:var(--fg);color:var(--bg);text-decoration:none" style-hover="background:var(--accent);color:#FFFFFF">Start a conversation</a></div>
+</section>
+</div>
+</article>
+</sc-if>
+
+<sc-if value="{{ isEssay }}" hint-placeholder-val="{{ false }}">
+<article data-screen-label="Venture architecture">
+<section style="padding:clamp(32px,4vw,64px) clamp(20px,4vw,56px) clamp(40px,5vw,72px)">
+<h1 style="font-weight:700;font-size:clamp(44px,8.5vw,136px);line-height:0.92;letter-spacing:-0.04em;text-wrap:balance;max-width:12ch">What is a venture architect?</h1>
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 32px;margin-top:clamp(28px,3vw,48px);padding-top:16px;border-top:2px solid var(--fg);font-size:15px;font-weight:500;line-height:1.5">
+<p>By Will Godfrey. September 2026.</p>
+<p style="color:var(--soft)">Published <span style="padding:1px 6px;border:1px dashed var(--soft)">[[TODO: launch date]]</span>. Revision 1.</p>
+</div>
+<nav aria-label="On this page" style="margin-top:12px">
+<ol style="display:flex;flex-wrap:wrap;gap:0 24px;font-size:15px;font-weight:500;line-height:1.4">
+<sc-for list="{{ toc }}" as="t" hint-placeholder-count="7">
+<li><a href="{{ t.href }}" onClick="{{ t.go }}" style="display:inline-flex;gap:8px;padding:8px 0;color:var(--fg);text-decoration:none" style-hover="color:var(--accent)"><span data-num="1" style="color:var(--accent)">{{ t.num }}</span>{{ t.label }}</a></li>
+</sc-for>
+</ol>
+</nav>
+</section>
+
+<section style="background:var(--inv);color:var(--invfg);padding:clamp(56px,7vw,112px) clamp(20px,4vw,56px)">
+<p style="font-weight:500;font-size:clamp(26px,2.8vw,48px);line-height:1.12;letter-spacing:-0.025em;max-width:26ch;text-wrap:balance">A venture architect is the person accountable for the design of a new business before it exists, and for the integrity of that design through its first build.</p>
+<div data-cols2="1" style="margin-top:clamp(36px,4vw,56px);gap:24px 48px;color:var(--invsoft);font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55">
+<p style="text-wrap:pretty">I use the word architect in its building sense. Every major building has an architect of record. That person works for the owner and never for the contractor. They produce the drawings before money moves. They coordinate the structural, mechanical and civil engineers, whose work has to fit together. They certify progress before each payment is released. When the building is substantially complete they say so, and they leave. Their name stays on the drawings.</p>
+<p style="text-wrap:pretty">New businesses rarely have that person. They have a strategist who wrote the business case, a technical lead who chose the stack, lawyers who papered the entity, and a sponsor who approved the budget. Each did good work. Nobody was accountable for whether the parts fit.</p>
+</div>
+</section>
+
+<div style="padding:0 clamp(20px,4vw,56px)">
+
+<section data-split="1" id="the-decisions" style="padding:clamp(48px,6vw,96px) 0">
+<div data-sticky="1"><p data-num="1" style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px">01</p><h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em">The decisions</h2></div>
+<div style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55;max-width:58ch">
+<p style="text-wrap:pretty">The design of a venture comes down to a small set of decisions. What it sells, and to whom. What unit it prices in. What each unit costs to deliver at the quality the buyer needs. What it buys, what it builds, and what it inherits from a parent company. Who owns it, and who decides what. How it is funded, in what tranches, against what evidence. Who leads it. Under what measured conditions it stops.</p>
+<p style="margin-top:18px;text-wrap:pretty">Every one of these is cheap to change on paper and expensive to change once the company is running. Most ventures that fail made them by default. The pricing unit was copied from the parent. People and habits drifted across because nobody drew the line. The conditions for stopping were never written, so the venture never stopped. It faded.</p>
+<p style="margin-top:18px;text-wrap:pretty">The decisions sit in three layers: commercial, technical and institutional. Each layer usually has a capable owner. The trouble is at the joints. Price is set by one person and cost per unit by another, and the margin is whatever falls out. What crosses over from the parent is negotiated by lawyers and lived by the product team. Who owns the customer gets decided the first time two sellers call the same account. The joints are the architect's territory.</p>
+</div>
+</section>
+
+<section data-split="1" id="why-this-is-a-senior-seat" style="border-top:2px solid var(--fg);padding:clamp(48px,6vw,96px) 0">
+<div data-sticky="1"><p data-num="1" style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px">02</p><h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em;text-wrap:balance">Why this is a senior seat</h2></div>
+<div style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55;max-width:58ch">
+<p style="text-wrap:pretty">The title already exists in the venture studio world. There it names a staff role on the business side of a build, working alongside a separate engineering team. That is a useful job, and a different one.</p>
+<p style="margin-top:18px;text-wrap:pretty">An architect of record is a single, senior point of accountability. There is one per venture. They work for the owner and bring no build team to sell, which is what lets them recommend stopping. They hold design authority across all three layers, because the decisions cannot be made separately. They put their name on the design. And they have held the seat before: they have been the technical lead of a new business, and they have started and stopped companies of their own.</p>
+</div>
+</section>
+
+<section data-split="1" id="why-now" style="border-top:2px solid var(--fg);padding:clamp(48px,6vw,96px) 0">
+<div data-sticky="1"><p data-num="1" style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px">03</p><h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em">Why now</h2></div>
+<div style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55;max-width:58ch">
+<p style="text-wrap:pretty">For a long time a strategist could write the business case and hand it to engineers. Software margins were forgiving enough to allow it.</p>
+<p style="margin-top:18px;text-wrap:pretty">AI-native businesses are different, because every request carries a real cost. In <a href="https://cdn.prod.website-files.com/65d0d38fc4ec8ce8a8921654/6979532decf89bd3df2163b0_ICONIQ_Analytics_Insights_2026_State_of_AI_Bi-Annual_Snapshot.pdf">ICONIQ's January 2026 State of AI survey</a> of about 300 software executives building AI products, average gross margin on those products was 41% in 2024 and is projected at 52% for 2026. Inference runs at 23% of revenue for companies at scale. Pricing is unsettled too: more than a third of those companies expect to change how they price within a year.</p>
+<p style="margin-top:18px;text-wrap:pretty">So the choices an engineer makes about models, routing and human review set the gross margin. The choice between an agent that does the work and a copilot that helps someone do it sets the price. Those are business decisions made in technical language, and they are made before the first line of code. In an AI-native business, the architecture is the business model. Someone has to hold both.</p>
+</div>
+</section>
+
+<section data-split="1" id="design-prove-hand-over" style="border-top:2px solid var(--fg);padding:clamp(48px,6vw,96px) 0">
+<div data-sticky="1"><p data-num="1" style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px">04</p><h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em;text-wrap:balance">Design, prove, hand over</h2></div>
+<div style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55;max-width:58ch">
+<p style="text-wrap:pretty">My work runs in three stages.</p>
+<p style="margin-top:18px;text-wrap:pretty">In design, I make the decisions with the sponsor and the founders. I write each one down with the alternatives we rejected and the reasons. The conditions for stopping are written then, before anyone is invested in the answer.</p>
+<p style="margin-top:18px;text-wrap:pretty">In prove, I hold the technical seat while the first version ships to committed customers. I report cost and quality at each gate, so capital is released against evidence.</p>
+<p style="margin-top:18px;text-wrap:pretty">In handover, I hire the permanent technical lead and leave on a date we wrote into the letter at the start.</p>
+<p style="margin-top:18px;text-wrap:pretty">The date matters. An architect who can stay indefinitely has a reason to become necessary. One with a date has a reason to make the team capable.</p>
+</div>
+</section>
+
+<section data-split="1" id="what-i-do-not-do" style="border-top:2px solid var(--fg);padding:clamp(48px,6vw,96px) 0">
+<div data-sticky="1"><p data-num="1" style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px">05</p><h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em">What I do not do</h2></div>
+<p style="font-size:clamp(22px,2vw,34px);line-height:1.25;font-weight:500;letter-spacing:-0.015em;max-width:30ch;text-wrap:pretty">I do not supply a build team. I do not serve as chief executive. I do not stay past the handover date. I do not recommend building when the evidence says stop.</p>
+</section>
+
+<section data-split="1" id="how-i-came-to-this" style="border-top:2px solid var(--fg);padding:clamp(48px,6vw,96px) 0">
+<div data-sticky="1"><p data-num="1" style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px">06</p><h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em">How I came to this</h2></div>
+<div style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55;max-width:58ch">
+<p style="text-wrap:pretty">I have been an architect of one kind or another for more than a decade: of applications, then of the front-office systems of large enterprises during nine years at McKinsey, then of whole ventures. At McKinsey I served as CTO of North America's first large-scale digital business build, a new company stood up next to an industrial parent.</p>
+<p style="margin-top:18px;text-wrap:pretty">I wrote the Carve-forward method for standing up an AI-native venture next to a PE-backed services firm. I also run two ventures of my own, which keeps me honest about what design decisions cost to live with.</p>
+</div>
+</section>
+
+<section data-split="1" id="questions-i-get-asked" style="border-top:2px solid var(--fg);padding:clamp(48px,6vw,96px) 0">
+<div data-sticky="1"><p data-num="1" style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px">07</p><h2 style="font-weight:700;font-size:clamp(32px,3.6vw,56px);line-height:1;letter-spacing:-0.03em">Questions I get asked</h2></div>
+<dl style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55;max-width:58ch">
+<div style="padding:0 0 24px"><dt style="font-size:clamp(22px,1.6vw,28px);font-weight:700;line-height:1.2;letter-spacing:-0.02em;text-wrap:balance">Is this a fractional CTO?</dt><dd style="margin-top:12px;text-wrap:pretty">No. A fractional CTO owns the technology and inherits everything else. I own the design of the whole business: what it sells, what it costs to deliver, who governs it, and when it stops. The technical seat is one part of that, and I hold it only until the design is proven.</dd></div>
+<div style="padding:24px 0;border-top:1px solid var(--fg)"><dt style="font-size:clamp(22px,1.6vw,28px);font-weight:700;line-height:1.2;letter-spacing:-0.02em;text-wrap:balance">I have seen this title at BCG and at venture studios. Is it the same thing?</dt><dd style="margin-top:12px;text-wrap:pretty">Same words, different seat. There it names a staff role on the business side of a build, several to a venture, inside a firm that also sells the build team. I work for the owner as the architect of record. One per venture.</dd></div>
+<div style="padding:24px 0;border-top:1px solid var(--fg)"><dt style="font-size:clamp(22px,1.6vw,28px);font-weight:700;line-height:1.2;letter-spacing:-0.02em;text-wrap:balance">Why not hire a venture studio?</dt><dd style="margin-top:12px;text-wrap:pretty">A studio designs and builds, often for equity, so it is architect and contractor at once. That can work. It also means nobody at the table is paid to tell you to stop. I bring no build team, and the conditions for stopping are in my drawings.</dd></div>
+<div style="padding:24px 0;border-top:1px solid var(--fg)"><dt style="font-size:clamp(22px,1.6vw,28px);font-weight:700;line-height:1.2;letter-spacing:-0.02em;text-wrap:balance">We already have a strategy firm. Why add you?</dt><dd style="margin-top:12px;text-wrap:pretty">Keep them. A strategy firm tells you whether to build and sizes the prize. I make the design decisions that follow, prove them in a running system, and stay accountable until a named technical lead takes over. I work alongside advisory firms, not in place of them.</dd></div>
+<div style="padding:24px 0;border-top:1px solid var(--fg)"><dt style="font-size:clamp(22px,1.6vw,28px);font-weight:700;line-height:1.2;letter-spacing:-0.02em;text-wrap:balance">What have you built?</dt><dd style="margin-top:12px;text-wrap:pretty">A new digital business next to an industrial parent, as its CTO. An AI agent now in production at a $6B insurance brokerage. Two ventures of my own. And the method I work from. The <a href="#/work/">work page</a> has the detail.</dd></div>
+<div style="padding:24px 0 0;border-top:1px solid var(--fg)"><dt style="font-size:clamp(22px,1.6vw,28px);font-weight:700;line-height:1.2;letter-spacing:-0.02em;text-wrap:balance">How does a commission start?</dt><dd style="margin-top:12px;text-wrap:pretty">With a thirty-minute conversation. Then we look at the options for the owner, including the ones with no venture in them, before anyone commits to a build.</dd></div>
+</dl>
+</section>
+
+<section style="border-top:2px solid var(--fg);padding:clamp(56px,7vw,112px) 0">
+<p style="font-weight:700;font-size:clamp(36px,5.2vw,84px);line-height:0.98;letter-spacing:-0.035em;text-wrap:balance;max-width:16ch">If you are weighing a new business next to an existing one, I am glad to talk.</p>
+<div style="margin-top:36px"><a href="#/contact/" style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;font-size:16px;font-weight:600;line-height:1;background:var(--fg);color:var(--bg);text-decoration:none" style-hover="background:var(--accent);color:#FFFFFF">Start a conversation</a></div>
+</section>
+</div>
+</article>
+</sc-if>
+
+<sc-if value="{{ isWork }}" hint-placeholder-val="{{ false }}">
+<article data-screen-label="Work">
+<section style="padding:clamp(32px,4vw,64px) clamp(20px,4vw,56px) clamp(40px,5vw,72px)">
+<h1 style="font-weight:700;font-size:clamp(44px,8.5vw,136px);line-height:0.92;letter-spacing:-0.04em;text-wrap:balance;max-width:11ch">Things I have designed and built</h1>
+</section>
+<div style="padding:0 clamp(20px,4vw,56px)">
+
+<section data-split="1" style="border-top:2px solid var(--fg);padding:clamp(40px,5vw,80px) 0">
+<div data-sticky="1"><p data-num="1" style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px">01</p><h2 style="font-weight:700;font-size:clamp(30px,3.2vw,50px);line-height:1;letter-spacing:-0.03em;text-wrap:balance">A new digital business next to an industrial parent</h2></div>
+<dl style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.5;max-width:58ch">
+<div style="padding:0 0 16px"><dt style="font-size:14px;font-weight:600;color:var(--soft)">The seat</dt><dd style="margin-top:6px;text-wrap:pretty">CTO of North America's first large-scale digital business build, at McKinsey. I was brought in for two weeks as product owner and stayed as CTO.</dd></div>
+<div style="padding:16px 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">What I designed</dt><dd style="margin-top:6px;text-wrap:pretty">The new company's technology from scratch. The architecture, a security posture that met enterprise standards, the engineering environment, and the line between the parent's legacy systems and the new company's stack.</dd></div>
+<div style="padding:16px 0 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">What it shows</dt><dd style="margin-top:6px;text-wrap:pretty">I have held the technical seat in a venture built next to a parent, and worked the boundary with the parent's CIO.</dd></div>
+</dl>
+</section>
+
+<section data-split="1" style="border-top:2px solid var(--fg);padding:clamp(40px,5vw,80px) 0">
+<div data-sticky="1"><p data-num="1" style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px">02</p><h2 style="font-weight:700;font-size:clamp(30px,3.2vw,50px);line-height:1;letter-spacing:-0.03em;text-wrap:balance">An AI agent for a $6B insurance brokerage</h2></div>
+<dl style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.5;max-width:58ch">
+<div style="padding:0 0 16px"><dt style="font-size:14px;font-weight:600;color:var(--soft)">The seat</dt><dd style="margin-top:6px">Designer and builder, as an independent.</dd></div>
+<div style="padding:16px 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">What I designed</dt><dd style="margin-top:6px;text-wrap:pretty">An agent built on Anthropic's Claude Agent SDK that does real work inside <span style="font-size:0.8em;font-weight:500;color:var(--soft);padding:1px 6px;border:1px dashed var(--soft)">[[TODO: brokerage workflow]]</span>. I made the case for the model choice against an incumbent enterprise agreement.</dd></div>
+<div style="padding:16px 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">Where it stands</dt><dd style="margin-top:6px">In production. My work there is complete.</dd></div>
+<div style="padding:16px 0 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">What it shows</dt><dd style="margin-top:6px;text-wrap:pretty">In an AI-native build, the model choice is a business decision, and I can carry it with executives.</dd></div>
+</dl>
+</section>
+
+<section data-split="1" style="border-top:2px solid var(--fg);padding:clamp(40px,5vw,80px) 0">
+<div data-sticky="1"><p data-num="1" style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px">03</p><h2 style="font-weight:700;font-size:clamp(30px,3.2vw,50px);line-height:1;letter-spacing:-0.03em">Sightline Geospatial</h2></div>
+<dl style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.5;max-width:58ch">
+<div style="padding:0 0 16px"><dt style="font-size:14px;font-weight:600;color:var(--soft)">The seat</dt><dd style="margin-top:6px">Founder and operator.</dd></div>
+<div style="padding:16px 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">What it is</dt><dd style="margin-top:6px;text-wrap:pretty">Aerial reality capture for the built environment. I serve AEC firms, civil and county engineers, general contractors, utilities and aggregate producers across the Midwest.</dd></div>
+<div style="padding:16px 0 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">What it shows</dt><dd style="margin-top:6px;text-wrap:pretty">I live with my own design decisions. I chose the wedge, the unit and the price, and I answer for the margin.</dd></div>
+</dl>
+</section>
+
+<section data-split="1" style="border-top:2px solid var(--fg);padding:clamp(40px,5vw,80px) 0">
+<div data-sticky="1"><p data-num="1" style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px">04</p><h2 style="font-weight:700;font-size:clamp(30px,3.2vw,50px);line-height:1;letter-spacing:-0.03em">Miniature Systems</h2></div>
+<dl style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.5;max-width:58ch">
+<div style="padding:0 0 16px"><dt style="font-size:14px;font-weight:600;color:var(--soft)">The seat</dt><dd style="margin-top:6px">Founder.</dd></div>
+<div style="padding:16px 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">What it is</dt><dd style="margin-top:6px;text-wrap:pretty">NDAA-compliant payload accessories for uncrewed aircraft, built for <span style="font-size:0.8em;font-weight:500;color:var(--soft);padding:1px 6px;border:1px dashed var(--soft)">[[TODO: Skydio naming]]</span>.</dd></div>
+<div style="padding:16px 0 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">What it shows</dt><dd style="margin-top:6px;text-wrap:pretty">A hardware venture with a regulated buyer, where what you inherit from a larger platform is the whole design question.</dd></div>
+</dl>
+</section>
+
+<section data-split="1" style="border-top:2px solid var(--fg);padding:clamp(40px,5vw,80px) 0">
+<div data-sticky="1"><p data-num="1" style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px">05</p><h2 style="font-weight:700;font-size:clamp(30px,3.2vw,50px);line-height:1;letter-spacing:-0.03em">The Carve-forward method</h2></div>
+<dl style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.5;max-width:58ch">
+<div style="padding:0 0 16px"><dt style="font-size:14px;font-weight:600;color:var(--soft)">The seat</dt><dd style="margin-top:6px">Author.</dd></div>
+<div style="padding:16px 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">What it is</dt><dd style="margin-top:6px;text-wrap:pretty">A written method for standing up an AI-native venture next to a PE-backed services firm. It runs in gated phases, with a written way to stop at each gate, and it has a full practitioner's guide behind it.</dd></div>
+<div style="padding:16px 0 0;border-top:1px solid var(--fg)"><dt style="font-size:14px;font-weight:600;color:var(--soft)">What it shows</dt><dd style="margin-top:6px;text-wrap:pretty">My practice is written down, and my name is on it. A short introduction is available on request.</dd></div>
+</dl>
+</section>
+
+<section data-split="1" style="border-top:2px solid var(--fg);padding:clamp(40px,5vw,80px) 0 clamp(56px,7vw,112px)">
+<p data-num="1" style="font-size:15px;font-weight:700;color:var(--soft)">Earlier</p>
+<p style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.5;max-width:58ch;color:var(--soft);text-wrap:pretty">Nine years at McKinsey as an expert in front-office technology, two years at Appirio as a lead architect, and two startups I co-founded in Atlanta <span style="font-size:0.8em;font-weight:500;padding:1px 6px;border:1px dashed var(--soft)">[[TODO: Atlanta startups]]</span>.</p>
+</section>
+</div>
+</article>
+</sc-if>
+
+<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+<article data-screen-label="About">
+<section style="padding:clamp(32px,4vw,64px) clamp(20px,4vw,56px) clamp(40px,5vw,72px)">
+<h1 style="font-weight:700;font-size:clamp(44px,8.5vw,136px);line-height:0.92;letter-spacing:-0.04em;text-wrap:balance;max-width:12ch">Same noun, bigger object</h1>
+<p style="font-size:clamp(22px,1.4vw + 12px,32px);line-height:1.3;font-weight:500;letter-spacing:-0.015em;margin-top:clamp(24px,3vw,40px);max-width:30ch;text-wrap:balance">Architect of applications, then of enterprises, then of ventures.</p>
+</section>
+<div style="padding:0 clamp(20px,4vw,56px)">
+<section data-split="{{ aboutSplit }}" style="border-top:2px solid var(--fg);padding:clamp(40px,5vw,80px) 0 clamp(56px,7vw,112px)">
+<sc-if value="{{ showPortrait }}" hint-placeholder-val="{{ true }}">
+<figure data-sticky="1" style="max-width:440px">
+<div style="aspect-ratio:4/5;position:relative;background:var(--wash);border:2px solid var(--fg)">
+<image-slot id="v2-portrait" shape="rect" placeholder="Portrait. 4:5, at least 1600px on the long edge" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+</div>
+<figcaption style="margin-top:10px;font-size:14px;font-weight:500;line-height:1.5;color:var(--soft)"><span style="padding:1px 6px;border:1px dashed var(--soft)">[[TODO: portrait caption, or delete]]</span></figcaption>
+</figure>
+</sc-if>
+<div style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55;max-width:58ch">
+<p style="text-wrap:pretty">I have been an architect of one kind or another for more than a decade. First of applications, as a lead architect at Appirio. Then of the front-office systems of large enterprises, during nine years at McKinsey. Now of whole ventures.</p>
+<p style="margin-top:18px;text-wrap:pretty">At McKinsey I was on the expert path, in the guild for software, cloud, cyber and architecture. The work that shaped me most was serving as CTO of North America's first large-scale digital business build: a new company, stood up from scratch, next to an industrial parent. I went in for two weeks and stayed as CTO. I also spent two years as lead faculty for the firm's experienced-hire program, which taught me that a design is only finished when someone else can run it.</p>
+<p style="margin-top:18px;text-wrap:pretty">Before McKinsey I was a founder and an operator. I co-founded a media company that filmed more than a hundred independent bands, and a furniture importer where I built the commerce, service and supply chain systems myself. Alongside all of it, I worked for fifteen years as a professional photographer. I still think in pictures, which is most of what architecture is.</p>
+<p style="margin-top:18px;text-wrap:pretty">I have built AI systems hands-on since 2021, before ChatGPT. Most recently I designed and built an agent for a $6B insurance brokerage, which is now in production.</p>
+<p style="margin-top:18px;text-wrap:pretty">Today I run two ventures of my own from Iowa City: Sightline Geospatial, which does aerial reality capture for the built environment, and Miniature Systems, which makes NDAA-compliant payload accessories for uncrewed aircraft. I take a small number of commissions each year as venture architect for sponsors and founders. I wrote the Carve-forward method for that work.</p>
+<p style="margin-top:18px;text-wrap:pretty">I hold an MBA in the management of technology from Georgia Tech. I work largely remote, with scheduled blocks on site.</p>
+</div>
+</section>
+</div>
+</article>
+</sc-if>
+
+<sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+<article data-screen-label="Contact">
+<section style="padding:clamp(32px,4vw,64px) clamp(20px,4vw,56px) clamp(40px,5vw,72px)">
+<h1 style="font-weight:700;font-size:clamp(44px,8.5vw,136px);line-height:0.92;letter-spacing:-0.04em;text-wrap:balance;max-width:12ch">Start a conversation</h1>
+<p style="margin-top:clamp(28px,3vw,48px);font-size:15px;font-weight:600;color:var(--soft)">Write to</p>
+<p style="margin-top:6px;font-weight:700;font-size:clamp(26px,5.6vw,92px);line-height:1;letter-spacing:-0.04em;overflow-wrap:anywhere"><a href="mailto:will@willgodfrey.com" style="color:var(--accent);text-decoration:none" style-hover="color:var(--fg)">will@willgodfrey.com</a></p>
+</section>
+<div style="padding:0 clamp(20px,4vw,56px)">
+<section data-split="1" style="border-top:2px solid var(--fg);padding:clamp(40px,5vw,80px) 0 clamp(56px,7vw,112px);font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55">
+<div style="max-width:40ch">
+<p style="text-wrap:pretty">Tell me what you are weighing, in two or three sentences. I read everything myself.</p>
+<p style="margin-top:18px;text-wrap:pretty">If it sounds like a venture, I will suggest a thirty-minute call. If it does not, I will say so, and point you somewhere better if I can.</p>
+</div>
+<p style="max-width:40ch;color:var(--soft);text-wrap:pretty">I take a small number of commissions each year, so I would rather tell you early than late.</p>
+</section>
+</div>
+</article>
+</sc-if>
+
+<sc-if value="{{ isNotFound }}" hint-placeholder-val="{{ false }}">
+<article data-screen-label="404">
+<section style="padding:clamp(32px,4vw,64px) clamp(20px,4vw,56px) clamp(56px,7vw,112px)">
+<p style="font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px">404</p>
+<h1 style="font-weight:700;font-size:clamp(44px,8.5vw,136px);line-height:0.92;letter-spacing:-0.04em;text-wrap:balance;max-width:12ch">This sheet is not in the set</h1>
+<p style="font-size:clamp(18px,0.6vw + 12px,21px);line-height:1.55;max-width:50ch;margin-top:clamp(28px,3vw,48px);text-wrap:pretty">The page you were looking for does not exist, or it was part of an older version of this site.</p>
+<ul style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px">
+<li><a href="#/" style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;font-size:16px;font-weight:600;line-height:1;background:var(--fg);color:var(--bg);text-decoration:none" style-hover="background:var(--accent);color:#FFFFFF">Home</a></li>
+<li><a href="#/venture-architect/" style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;font-size:16px;font-weight:600;line-height:1;border:2px solid var(--fg);color:var(--fg);text-decoration:none" style-hover="background:var(--fg);color:var(--bg)">What is a venture architect?</a></li>
+</ul>
+</section>
+</article>
+</sc-if>
+</main>
+
+<footer style="background:var(--inv);color:var(--invfg);padding:clamp(40px,5vw,72px) clamp(20px,4vw,56px) clamp(32px,4vw,56px)">
+<section aria-label="About Will Godfrey">
+<p style="font-size:clamp(17px,0.5vw + 12px,19px);line-height:1.55;max-width:66ch;color:var(--invsoft);text-wrap:pretty">Will Godfrey is a venture architect: the architect of record for new AI-native businesses. He spent nine years at McKinsey, where he served as CTO of North America's first large-scale digital business build. He wrote the Carve-forward method and runs two ventures of his own, Sightline Geospatial and Miniature Systems, from Iowa City.</p>
+<p style="margin-top:20px;font-size:17px;font-weight:600"><a href="#/contact/" style="color:var(--invfg)">Start a conversation</a></p>
+</section>
+<div style="display:flex;flex-wrap:wrap;gap:8px 32px;margin-top:clamp(40px,5vw,64px);padding-top:20px;border-top:1px solid var(--invsoft);font-size:14px;font-weight:500;line-height:1.6;color:var(--invsoft)">
+<p>Will Godfrey, venture architect</p>
+<p>Iowa City, Iowa</p>
+<p><a href="mailto:will@willgodfrey.com" style="color:var(--invfg)">will@willgodfrey.com</a></p>
+<p><a href="https://www.linkedin.com/in/willgodfrey" style="color:var(--invfg)">LinkedIn</a></p>
+<p style="margin-left:auto">{{ sheetName }}, revision 1, <span style="padding:1px 5px;border:1px dashed var(--invsoft)">[[TODO: launch date]]</span></p>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;scheme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Cream&quot;,&quot;options&quot;:[&quot;Cream&quot;,&quot;Ink&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;sectionNumbers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;portrait&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { route: this.readRoute() };
+  readRoute() {
+    if (typeof location === 'undefined') return 'home';
+    const h = decodeURIComponent(location.hash || '').replace(/^#/, '').replace(/\/?$/, '/');
+    if (h === '/') return 'home';
+    const m = { '/venture-architect/': 'essay', '/work/': 'work', '/about/': 'about', '/contact/': 'contact' };
+    return m[h] || 'notFound';
+  }
+  componentDidMount() {
+    this.onHash = () => { this.setState({ route: this.readRoute() }); window.scrollTo(0, 0); };
+    window.addEventListener('hashchange', this.onHash);
+    this.applyRoot();
+  }
+  componentDidUpdate() { this.applyRoot(); }
+  componentWillUnmount() { window.removeEventListener('hashchange', this.onHash); }
+  schemeKey() { return this.props.scheme === 'Ink' ? 'ink' : 'cream'; }
+  applyRoot() {
+    const k = this.schemeKey(), d = document.documentElement;
+    if (d.dataset.scheme !== k) d.dataset.scheme = k;
+  }
+  jump(id) {
+    return e => {
+      e.preventDefault();
+      const el = document.getElementById(id);
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 16, behavior: 'smooth' });
+    };
+  }
+  renderVals() {
+    const r = this.state.route;
+    const sheets = { home: 'Home', essay: 'Venture architecture', work: 'Work', about: 'About', contact: 'Contact', notFound: 'Page not found' };
+    const cur = key => (r === key ? 'page' : undefined);
+    const showPortrait = this.props.portrait ?? true;
+    const toc = [
+      ['the-decisions', 'The decisions'], ['why-this-is-a-senior-seat', 'Why this is a senior seat'], ['why-now', 'Why now'],
+      ['design-prove-hand-over', 'Design, prove, hand over'], ['what-i-do-not-do', 'What I do not do'],
+      ['how-i-came-to-this', 'How I came to this'], ['questions-i-get-asked', 'Questions I get asked'],
+    ].map(([id, label], i) => ({ id, label, num: String(i + 1).padStart(2, '0'), href: '#/venture-architect/', go: this.jump(id) }));
+    return {
+      schemeKey: this.schemeKey(),
+      numsOn: String(this.props.sectionNumbers ?? true),
+      isHome: r === 'home', isEssay: r === 'essay', isWork: r === 'work', isAbout: r === 'about', isContact: r === 'contact', isNotFound: r === 'notFound',
+      curEssay: cur('essay'), curWork: cur('work'), curAbout: cur('about'), curContact: cur('contact'),
+      sheetName: sheets[r],
+      showPortrait, aboutSplit: showPortrait ? '1' : undefined,
+      toc,
+      skip: e => { e.preventDefault(); const m = document.getElementById('main'); if (m) { m.focus(); window.scrollTo({ top: m.getBoundingClientRect().top + window.scrollY - 16 }); } },
+    };
+  }
+}
+</script>
+</body>
+</html>

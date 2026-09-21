@@ -7,7 +7,7 @@ export interface LinkItem {
   href: string;
 }
 export type Node =
-  | { type: 'h1' | 'h2'; text: string }
+  | { type: 'h1' | 'h2' | 'h3'; text: string }
   | { type: 'p'; text: string }
   | { type: 'list'; ordered: boolean; items: string[] }
   | { type: 'links'; links: LinkItem[] }
@@ -45,12 +45,15 @@ function parseNodes(body: string): Node[] {
       flush();
       continue;
     }
-    if (/^#\s+/.test(line)) {
+    if (/^###\s+/.test(line)) {
       flush();
-      nodes.push({ type: 'h1', text: line.replace(/^#\s+/, '') });
+      nodes.push({ type: 'h3', text: line.replace(/^###\s+/, '') });
     } else if (/^##\s+/.test(line)) {
       flush();
       nodes.push({ type: 'h2', text: line.replace(/^##\s+/, '') });
+    } else if (/^#\s+/.test(line)) {
+      flush();
+      nodes.push({ type: 'h1', text: line.replace(/^#\s+/, '') });
     } else if (/^Links?:/.test(line)) {
       flush();
       nodes.push({ type: 'links', links: parseLinks(line.replace(/^Links?:/, '')) });
@@ -81,6 +84,12 @@ function parseNodes(body: string): Node[] {
   }
   flush();
   return nodes;
+}
+
+// Parse a plain markdown body (no block markers) into nodes. Used by the
+// essay, work, about and contact pages.
+export function parseMarkdown(body: string): Node[] {
+  return parseNodes(body);
 }
 
 export function parseHome(body: string): Block[] {

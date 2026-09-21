@@ -1,69 +1,171 @@
 ---
 import Base from '../layouts/Base.astro';
-import BlockContent from '../components/BlockContent.astro';
 import { getEntry } from 'astro:content';
 import { getSite } from '../lib/site';
 import { parseHome } from '../lib/home';
+import type { Node } from '../lib/home';
 
 const site = await getSite();
 const meta = site.meta.home;
-
 const entry = await getEntry('pages', 'home');
 const blocks = parseHome(entry?.body ?? '');
 
-const hero = blocks.find((b) => b.name === 'hero');
-const rest = blocks.filter((b) => b.name !== 'hero');
+const byName = (n: string) => blocks.find((b) => b.name === n);
+const h2 = (n: string) => {
+  const node = byName(n)?.nodes.find((x) => x.type === 'h2');
+  return node?.type === 'h2' ? node.text : '';
+};
+const paras = (n: string) =>
+  (byName(n)?.nodes.filter((x) => x.type === 'p') ?? []) as Extract<Node, { type: 'p' }>[];
+const list = (n: string) => {
+  const node = byName(n)?.nodes.find((x) => x.type === 'list');
+  return node?.type === 'list' ? node.items : [];
+};
+const links = (n: string) => {
+  const node = byName(n)?.nodes.find((x) => x.type === 'links');
+  return node?.type === 'links' ? node.links : [];
+};
 
-const heroTitle = hero?.nodes.find((n) => n.type === 'h1');
-const heroParas = hero?.nodes.filter((n) => n.type === 'p') ?? [];
-const heroLinks = hero?.nodes.find((n) => n.type === 'links');
+const heroParas = paras('hero');
+const heroLinks = links('hero');
+
+// Two-shapes: turn the table into two comparison cards, one per column.
+const tsNode = byName('two-shapes')?.nodes.find((x) => x.type === 'table');
+const ts = tsNode?.type === 'table' ? tsNode : null;
+const tsCards = ts
+  ? ts.head.slice(1).map((title, i) => ({
+      title,
+      rows: ts.rows.map((r) => ({ label: r[0], value: r[i + 1] })),
+    }))
+  : [];
 ---
 
 <Base title={meta.title} description={meta.description} sheet="Home">
-  <section class="hero">
-    <div class="hero__main">
-      <h1>{heroTitle?.type === 'h1' && heroTitle.text}</h1>
-      {heroParas[0]?.type === 'p' && <p class="eyebrow">{heroParas[0].text}</p>}
-      {heroParas[1]?.type === 'p' && <p class="lead">{heroParas[1].text}</p>}
-      {
-        heroLinks?.type === 'links' && (
-          <p class="link-row">
-            {heroLinks.links.map((l, i) => (
-              <a class:list={['pill', { 'pill--solid': i === 0 }]} href={l.href}>
+  <article>
+    <section class="hero section pad-x" data-diff-skip>
+      <h1>{heroParas[0]?.text}</h1>
+      <div class="split hero__row">
+        <p class="hero__lead">{heroParas[1]?.text}</p>
+        <div class="btn-row">
+          {
+            heroLinks.map((l, i) => (
+              <a class:list={['btn', { 'btn--outline': i > 0 }]} href={l.href}>
                 {l.label}
               </a>
-            ))}
-          </p>
-        )
-      }
-    </div>
-    <aside class="hero__rail" data-diff-skip>
-      <dl>
-        <div>
-          <dt>Discipline</dt>
-          <dd>{site.person.jobTitle}</dd>
+            ))
+          }
         </div>
-        <div>
-          <dt>Based</dt>
-          <dd>{site.location}</dd>
-        </div>
-        <div>
-          <dt>Contact</dt>
-          <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
-        </div>
-      </dl>
-    </aside>
-  </section>
+      </div>
+    </section>
 
-  <div class="sheet-body">
-    {
-      rest.map((b) => (
-        <section class:list={['block', `block--${b.name}`]} id={b.name}>
-          <div class="block__body">
-            <BlockContent nodes={b.nodes} />
-          </div>
-        </section>
-      ))
-    }
-  </div>
+    <section class="slab pad-x" style="padding-block: clamp(56px,7vw,112px)">
+      <h2 class="h2-lg" style="max-width:16ch">{h2('thesis')}</h2>
+      <p class="body" style="max-width:58ch;margin-top:36px;color:var(--invsoft)">
+        {paras('thesis')[0]?.text}
+      </p>
+    </section>
+
+    <div class="pad-x">
+      <section class="section split">
+        <h2 class="h2">{h2('architect-of-record')}</h2>
+        <div class="body measure">
+          {paras('architect-of-record').map((p) => <p>{p.text}</p>)}
+        </div>
+      </section>
+
+      <section class="section section--rule">
+        <h2 class="h2">{h2('situations')}</h2>
+        <ul class="cols3 grid-rule body" style="margin-top:40px">
+          {list('situations').map((it) => <li>{it}</li>)}
+        </ul>
+      </section>
+
+      <section class="section section--rule split">
+        <h2 class="h2">{h2('decisions')}</h2>
+        <div>
+          <ul class="decisions">
+            {list('decisions').map((it) => <li>{it}</li>)}
+          </ul>
+          {
+            links('decisions')[0] && (
+              <p style="margin-top:28px;font-size:17px;font-weight:600">
+                <a href={links('decisions')[0].href}>{links('decisions')[0].label}</a>
+              </p>
+            )
+          }
+        </div>
+      </section>
+
+      <section class="section section--rule">
+        <h2 class="h2">{h2('stages')}</h2>
+        <ol class="cols3 steps body" style="margin-top:40px">
+          {
+            list('stages').map((it, i) => (
+              <li>
+                <p class="steps__n">{i + 1}</p>
+                <p>{it.replace(/^\d+\.\s*/, '')}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <section class="section section--rule">
+        <h2 class="h2">{h2('two-shapes')}</h2>
+        <div class="compare">
+          {
+            tsCards.map((card, i) => (
+              <div class:list={['compare__card', { 'compare__card--inv': i > 0 }]}>
+                <h3>{card.title}</h3>
+                <dl>
+                  {card.rows.map((row) => (
+                    <div>
+                      <dt>{row.label}</dt>
+                      <dd>{row.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))
+          }
+        </div>
+        <p class="body" style="margin-top:28px">{paras('two-shapes')[0]?.text}</p>
+      </section>
+
+      <section class="section section--rule split">
+        <h2 class="h2">{h2('standards')}</h2>
+        <ul class="rule-list body">
+          {list('standards').map((it) => <li>{it}</li>)}
+        </ul>
+      </section>
+
+      <section class="section section--rule split">
+        <h2 class="h2">{h2('refusals')}</h2>
+        <ul class="refusals">
+          {list('refusals').map((it) => <li>{it}</li>)}
+        </ul>
+      </section>
+
+      <section class="section section--rule split">
+        <h2 class="h2">{h2('proof')}</h2>
+        <ul class="rule-list body">
+          {list('proof').map((it) => <li>{it}</li>)}
+        </ul>
+      </section>
+
+      <section class="section section--rule">
+        <h2 class="h2-lg" style="max-width:14ch">{h2('ask')}</h2>
+        <p class="body" style="max-width:56ch;margin-top:32px">{paras('ask')[0]?.text}</p>
+        {
+          links('ask')[0] && (
+            <div style="margin-top:36px">
+              <a class="btn" href={links('ask')[0].href}>
+                {links('ask')[0].label}
+              </a>
+            </div>
+          )
+        }
+      </section>
+    </div>
+  </article>
 </Base>

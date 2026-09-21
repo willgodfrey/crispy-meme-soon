@@ -40,6 +40,9 @@ function htmlText(file) {
 function mdText(file) {
   let src = readFileSync(join(root, 'content', file), 'utf8');
   src = src.replace(/^---\n[\s\S]*?\n---\n/, ''); // frontmatter
+  // The home hero is re-composed by the design (the name moves to the masthead),
+  // so it is marked data-diff-skip in the DOM; drop it here too.
+  if (file === 'home.md') src = src.replace(/^[\s\S]*?(?=<!--\s*block:\s*thesis)/, '');
   const out = [];
   for (const raw of src.split('\n')) {
     let line = raw.replace(/<!--[\s\S]*?-->/g, '').trim();

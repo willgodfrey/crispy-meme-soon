@@ -1,14 +1,64 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getEntry, render } from 'astro:content';
+import { getEntry } from 'astro:content';
 import { getSite } from '../lib/site';
+import { parseMarkdown } from '../lib/home';
+import type { Node } from '../lib/home';
+import { inlineHtml } from '../lib/inline';
 
 const site = await getSite();
-const entry = await getEntry('pages', 'about');
-const { Content } = await render(entry!);
 const meta = site.meta.about;
+const entry = await getEntry('pages', 'about');
+const data = entry!.data;
+const nodes = parseMarkdown(entry?.body ?? '');
+
+const h1 = nodes.find((n) => n.type === 'h1');
+const paras = nodes.filter((n): n is Extract<Node, { type: 'p' }> => n.type === 'p');
+const lead = paras[0];
+const body = paras.slice(1);
+const portrait = site.images.portrait;
+const isTodo = (v?: string) => !!v && v.includes('[[TODO');
 ---
 
-<Base title={meta.title} description={meta.description} sheet={entry!.data.sheet}>
-  <Content />
+<Base
+  title={meta.title}
+  description={meta.description}
+  sheet={data.sheet}
+  revision={data.revision}
+  revised={data.revised}
+>
+  <article>
+    <section class="section pad-x" style="padding-bottom:clamp(40px,5vw,72px)">
+      {h1?.type === 'h1' && <h1 class="display-xl" style="max-width:12ch">{h1.text}</h1>}
+      {
+        lead && (
+          <p class="lead" style="margin-top:clamp(24px,3vw,40px);max-width:30ch">
+            {lead.text}
+          </p>
+        )
+      }
+    </section>
+    <div class="pad-x">
+      <section
+        class="section section--rule split"
+        style="padding-block:clamp(40px,5vw,80px) clamp(56px,7vw,112px)"
+      >
+        <figure class="sticky" style="max-width:440px">
+          <div class="figure-slot">Portrait. 4:5, at least 1600px on the long edge.</div>
+          {
+            isTodo(portrait?.caption) ? (
+              <figcaption>
+                <span class="todo">{portrait.caption}</span>
+              </figcaption>
+            ) : (
+              portrait?.caption && <figcaption>{portrait.caption}</figcaption>
+            )
+          }
+        </figure>
+        <div class="body measure">
+          {body.map((p) => <p set:html={inlineHtml(p.text)} />)}
+        </div>
+      </section>
+    </div>
+  </article>
 </Base>

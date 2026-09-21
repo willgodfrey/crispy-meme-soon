@@ -1,14 +1,53 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getEntry, render } from 'astro:content';
+import { getEntry } from 'astro:content';
 import { getSite } from '../lib/site';
+import { parseMarkdown } from '../lib/home';
+import type { Node } from '../lib/home';
+import { inlineHtml } from '../lib/inline';
 
 const site = await getSite();
-const entry = await getEntry('pages', 'contact');
-const { Content } = await render(entry!);
 const meta = site.meta.contact;
+const entry = await getEntry('pages', 'contact');
+const data = entry!.data;
+const nodes = parseMarkdown(entry?.body ?? '');
+
+const h1 = nodes.find((n) => n.type === 'h1');
+const paras = nodes.filter((n): n is Extract<Node, { type: 'p' }> => n.type === 'p');
+const emailIdx = paras.findIndex((p) => /\S+@\S+/.test(p.text));
+const emailP = emailIdx >= 0 ? paras[emailIdx] : undefined;
+const emailM = emailP?.text.match(/^(.*?)\s*(\S+@\S+)\s*$/);
+const writeLabel = emailM?.[1] ?? 'Write to';
+const email = emailM?.[2] ?? site.email;
+const before = emailIdx >= 0 ? paras.slice(0, emailIdx) : paras;
+const after = emailIdx >= 0 ? paras.slice(emailIdx + 1) : [];
 ---
 
-<Base title={meta.title} description={meta.description} sheet={entry!.data.sheet}>
-  <Content />
+<Base
+  title={meta.title}
+  description={meta.description}
+  sheet={data.sheet}
+  revision={data.revision}
+  revised={data.revised}
+>
+  <article>
+    <section class="section pad-x" style="padding-bottom:clamp(40px,5vw,72px)">
+      {h1?.type === 'h1' && <h1 class="display-xl" style="max-width:12ch">{h1.text}</h1>}
+      <p class="label" style="margin-top:clamp(28px,3vw,48px)">{writeLabel}</p>
+      <p class="email-xl"><a href={`mailto:${email}`}>{email}</a></p>
+    </section>
+    <div class="pad-x">
+      <section
+        class="section section--rule split body"
+        style="padding-block:clamp(40px,5vw,80px) clamp(56px,7vw,112px)"
+      >
+        <div style="max-width:40ch">
+          {before.map((p) => <p set:html={inlineHtml(p.text)} />)}
+        </div>
+        <div style="max-width:40ch;color:var(--soft)">
+          {after.map((p) => <p set:html={inlineHtml(p.text)} />)}
+        </div>
+      </section>
+    </div>
+  </article>
 </Base>

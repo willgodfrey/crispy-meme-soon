@@ -1,46 +1,31 @@
-/* Design tokens. Direction: an architect's drawing set.
-   Paper (light) is warm drafting vellum; Blueprint (dark) is a cyanotype.
-   Serif for reading, technical mono for the drafting/label layer, one redline accent. */
+/* Palette + type from the approved v2 design (docs/Willgodfrey Site v2.dc.html).
+   Cream is the light scheme; Ink is the dark scheme (prefers-color-scheme).
+   --inv/--invfg/--invsoft drive the full-bleed inverted sections and footer. */
 :root {
-  --paper: #ebe7dc;
-  --paper-2: #e2ddce;
-  --ink: #17191c;
-  --ink-soft: #585d64;
-  --line: #c3bdad;
-  --grid: rgba(23, 25, 28, 0.05);
-  --accent: #b23a1e;
-  --on-accent: #f7f3ea;
-  --blue: #274b6d;
+  --bg: #f2ebdd;
+  --fg: #141210;
+  --soft: #5a554c;
+  --rule: #d8cfbd;
+  --wash: #e6dcc8;
+  --accent: #b8442e;
+  --inv: #141210;
+  --invfg: #f2ebdd;
+  --invsoft: #c9c1b0;
 
-  --font-serif: 'Source Serif 4 Variable', Georgia, 'Times New Roman', serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
-
-  --content-max: 1200px;
-  --measure: 64ch;
-  --gutter: clamp(20px, 5vw, 56px);
-  --frame-inset: 20px;
-
-  /* Type scale, 1.25 ratio: 16 20 25 31 39 49 61 76 */
-  --fs-0: 1rem;
-  --fs-1: 1.25rem;
-  --fs-2: 1.5625rem;
-  --fs-3: 1.9375rem;
-  --fs-4: 2.4375rem;
-  --fs-5: 3.0625rem;
-  --fs-6: 3.8125rem;
-  --fs-7: 4.75rem;
+  --sans: 'Bricolage Grotesque Variable', system-ui, -apple-system, sans-serif;
+  --pad-x: clamp(20px, 4vw, 56px);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #0b2136;
-    --paper-2: #0e2a44;
-    --ink: #e7eff7;
-    --ink-soft: #9db4cb;
-    --line: #2c4a66;
-    --grid: rgba(255, 255, 255, 0.055);
-    --accent: #ff9e6b;
-    --on-accent: #0b2136;
-    --blue: #7fb2de;
+    --bg: #141210;
+    --fg: #f2ebdd;
+    --soft: #c9c1b0;
+    --rule: #3a352d;
+    --wash: #221f1a;
+    --accent: #e8714f;
+    --inv: #f2ebdd;
+    --invfg: #141210;
+    --invsoft: #5a554c;
   }
 }

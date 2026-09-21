@@ -1,14 +1,88 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getEntry, render } from 'astro:content';
+import { getEntry } from 'astro:content';
 import { getSite } from '../lib/site';
+import { parseMarkdown } from '../lib/home';
+import type { Node } from '../lib/home';
+import { inlineHtml } from '../lib/inline';
 
 const site = await getSite();
-const entry = await getEntry('pages', 'work');
-const { Content } = await render(entry!);
 const meta = site.meta.work;
+const entry = await getEntry('pages', 'work');
+const data = entry!.data;
+const nodes = parseMarkdown(entry?.body ?? '');
+
+const h1 = nodes.find((n) => n.type === 'h1');
+type Sec = { heading: string; nodes: Node[] };
+const sections: Sec[] = [];
+for (const n of nodes) {
+  if (n.type === 'h2') sections.push({ heading: n.text, nodes: [] });
+  else if (n.type !== 'h1') sections.at(-1)?.nodes.push(n);
+}
+
+const cases = sections.filter((s) => s.heading.toLowerCase() !== 'foot line');
+const foot = sections.find((s) => s.heading.toLowerCase() === 'foot line');
+const footText = (foot?.nodes.find((n) => n.type === 'p') as Extract<Node, { type: 'p' }>)?.text ?? '';
+const footM = footText.match(/^([^:]+):\s*([\s\S]+)$/);
+const footLabel = footM ? footM[1] : 'Earlier';
+const footBody = footM ? footM[2] : footText;
+
+const pad = (i: number) => String(i + 1).padStart(2, '0');
+function rows(sec: Sec) {
+  const list = sec.nodes.find((n) => n.type === 'list');
+  if (!list || list.type !== 'list') return [];
+  return list.items.map((it) => {
+    const m = it.match(/^([^:]+):\s*([\s\S]+)$/);
+    return m ? { dt: m[1], dd: m[2] } : { dt: '', dd: it };
+  });
+}
 ---
 
-<Base title={meta.title} description={meta.description} sheet={entry!.data.sheet}>
-  <Content />
+<Base
+  title={meta.title}
+  description={meta.description}
+  sheet={data.sheet}
+  revision={data.revision}
+  revised={data.revised}
+>
+  <article>
+    <section class="section pad-x" style="padding-bottom:clamp(40px,5vw,72px)">
+      {h1?.type === 'h1' && <h1 class="display-xl" style="max-width:11ch">{h1.text}</h1>}
+    </section>
+    <div class="pad-x">
+      {
+        cases.map((s, i) => (
+          <section class="section section--rule split" style="padding-block:clamp(40px,5vw,80px)">
+            <div class="sticky">
+              <p class="stack-num">{pad(i)}</p>
+              <h2 class="h2" style="font-size:clamp(30px,3.2vw,50px)">
+                {s.heading}
+              </h2>
+            </div>
+            <dl class="deflist body">
+              {rows(s).map((r) => (
+                <div>
+                  <dt>{r.dt}</dt>
+                  <dd set:html={inlineHtml(r.dd)} />
+                </div>
+              ))}
+            </dl>
+          </section>
+        ))
+      }
+      {
+        foot && (
+          <section
+            class="section section--rule split"
+            style="padding-block:clamp(40px,5vw,80px) clamp(56px,7vw,112px)"
+          >
+            <p class="stack-num" style="color:var(--soft)">
+              {footLabel}
+            </p>
+            <p class="body measure" style="color:var(--soft)" set:html={inlineHtml(footBody)} />
+          </section>
+        )
+      }
+    </div>
+  </article>
 </Base>

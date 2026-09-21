@@ -7,17 +7,21 @@ const nf = site.notFound;
 const meta = site.meta.notFound;
 ---
 
-<Base title={meta.title} sheet="404">
-  <h1>{nf.headline}</h1>
-  <p>{nf.body}</p>
-  <p>
-    {
-      nf.links.map((link, i) => (
-        <>
-          {i > 0 && <span>. </span>}
-          <a href={link.href}>{link.label}</a>
-        </>
-      ))
-    }
-  </p>
+<Base title={meta.title} sheet="Page not found">
+  <article>
+    <section class="section pad-x" style="padding-bottom:clamp(56px,7vw,112px)">
+      <p class="stack-num" style="margin-bottom:14px">404</p>
+      <h1 class="display-xl" style="max-width:12ch">{nf.headline}</h1>
+      <p class="body" style="max-width:50ch;margin-top:clamp(28px,3vw,48px)">{nf.body}</p>
+      <div class="btn-row" style="margin-top:32px">
+        {
+          nf.links.map((l, i) => (
+            <a class:list={['btn', { 'btn--outline': i > 0 }]} href={l.href}>
+              {l.label}
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </article>
 </Base>
