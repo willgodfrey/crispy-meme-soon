@@ -126,12 +126,8 @@ main:focus {
   text-underline-offset: 7px;
 }
 .navlinks a[aria-current='page'] {
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 4px;
-}
-.navlinks .talk {
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 4px;
+  text-decoration: underline;
+  text-underline-offset: 7px;
 }
 
 /* Shared link with arrow */
