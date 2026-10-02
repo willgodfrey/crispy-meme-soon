@@ -32,12 +32,12 @@
     "location": "Iowa City, Iowa",
     "navigation": [
       {
-        "label": "Practice",
-        "href": "/venture-architect/"
+        "label": "Services",
+        "href": "/commissions/"
       },
       {
-        "label": "Commissions",
-        "href": "/commissions/"
+        "label": "Approach",
+        "href": "/venture-architect/"
       },
       {
         "label": "Work",
@@ -65,18 +65,18 @@
       "currentPage": "Current page",
       "tableOfContents": "On this page",
       "sectionNavigation": "Page sections",
-      "commissionsNavigation": "Commissions on this page"
+      "commissionsNavigation": "Services on this page"
     },
     "caseLabels": {
       "context": "The context",
       "design": "What I designed",
       "evidence": "What it shows",
-      "role": "The seat"
+      "role": "My role"
     },
     "invitation": {
       "eyebrow": "Start a conversation",
       "title": "What are you weighing?",
-      "body": "Tell me what you are weighing. You do not need to know which commission fits.",
+      "body": "Tell me what you are weighing. You do not need to choose a service before we talk.",
       "link": {
         "label": "Start a conversation",
         "href": "/contact/"
@@ -98,7 +98,7 @@
     },
     "share": {
       "title": "Will Godfrey, venture architect",
-      "description": "Venture architecture from the first decision through the first build. Bring the question; we can shape the right commission together.",
+      "description": "Venture design and AI advisory for owners, founders and investors. Bring the question; we can shape the engagement together.",
       "image": "/images/will-godfrey.jpg",
       "imageAlt": "Will Godfrey"
     },
@@ -621,29 +621,29 @@
   "home": {
     "route": "/",
     "seo": {
-      "title": "Will Godfrey, venture architect",
-      "description": "Independent venture architect for AI-native businesses. Design, prove and hand over, with focused commissions for the decisions along the way."
+      "title": "Will Godfrey | Venture design and AI advisory",
+      "description": "Venture design and technical leadership, AI opportunity assessments, acquisition diligence, cost and margin reviews, funding reviews and portfolio workshops."
     },
     "hero": {
-      "eyebrow": "Independent venture architect",
+      "eyebrow": "Venture design and AI advisory",
       "title": "A business. By design.",
       "titleLines": [
         "A business.",
         "By design."
       ],
-      "body": "The architect of record for AI-native businesses. I design the venture, hold the design through its first build, and plan the handover from the start.",
+      "body": "I help owners, founders and investors design new businesses and make decisions about AI. Bring a new venture, an acquisition, a live product or a funding decision.",
       "primaryLink": {
         "label": "Start a conversation",
         "href": "/contact/"
       },
       "secondaryLink": {
-        "label": "Explore the work",
-        "href": "/work/"
+        "label": "Explore the services",
+        "href": "#services"
       },
       "imageCaption": "A study in three parts. Commercial. Technical. Institutional.",
       "imageAlt": "Conceptual sculpture of cobalt stone, graphite and glass planes joined into one structure.",
       "assetId": "assembly",
-      "helper": "Bring the decision you are facing. We can shape the engagement together."
+      "helper": "You do not need to choose a service before we talk. We can shape the engagement together."
     },
     "proof": {
       "label": "Experience behind the practice",
@@ -672,29 +672,27 @@
         "sightline"
       ],
       "moreLink": {
-        "label": "See all five projects",
+        "label": "See the work and method",
         "href": "/work/"
       },
       "caseLinkLabel": "View the project",
       "visualLabel": "Illustrative model"
     },
     "process": {
-      "eyebrow": "The venture commission",
-      "title": "My name on the design. An end date in the letter.",
+      "eyebrow": "Venture design & leadership",
+      "title": "From business design to the first build.",
       "titleLines": [
-        "My name on",
-        "the design.",
-        "An end date",
-        "in the letter."
+        "From business design",
+        "to the first build."
       ],
-      "body": "The full commission: one design held through three defined stages, with the owner and team involved throughout.",
+      "body": "I guide the business design, review the build with your team and prepare the handover. Interim technical leadership can be included for an agreed phase.",
       "stageIds": [
         "design",
         "prove",
         "hand-over"
       ],
       "link": {
-        "label": "Explore the venture commission",
+        "label": "Explore venture design & leadership",
         "href": "/commissions/#venture-commission"
       }
     },
@@ -712,69 +710,32 @@
     },
     "invitation": {
       "ref": "common.invitation"
-    },
-    "entryPoints": {
-      "title": "Where I come in.",
-      "body": "You may be ready to build a venture, or have a decision to make first. These are useful places to begin.",
-      "items": [
-        {
-          "id": "options-brief",
-          "situation": "Before you commit.",
-          "label": "Options brief",
-          "body": "Compare the routes before choosing where to invest.",
-          "href": "/commissions/#options-brief"
-        },
-        {
-          "id": "ai-diligence",
-          "situation": "Before you buy.",
-          "label": "AI diligence",
-          "body": "Examine the AI story and what AI changes about the business.",
-          "href": "/commissions/#ai-diligence"
-        },
-        {
-          "id": "ai-margin-review",
-          "situation": "When the economics disappoint.",
-          "label": "AI margin review",
-          "body": "Understand what an outcome costs and where the design can improve.",
-          "href": "/commissions/#ai-margin-review"
-        },
-        {
-          "id": "gate-review",
-          "situation": "Before the next funding decision.",
-          "label": "Gate review",
-          "body": "Read the evidence before releasing the next tranche.",
-          "href": "/commissions/#gate-review"
-        }
-      ],
-      "link": {
-        "label": "Explore the commissions",
-        "href": "/commissions/"
-      }
     }
   },
   "practice": {
     "route": "/venture-architect/",
     "seo": {
-      "title": "Venture architecture. Will Godfrey",
-      "description": "One accountable architect for a new AI-native business: the commercial, technical and institutional decisions, the first build and a defined handover."
+      "title": "Approach | Venture design and AI advisory | Will Godfrey",
+      "description": "How Will Godfrey connects business design, technology and leadership, with clear responsibilities for venture engagements, focused AI reviews and workshops."
     },
     "hero": {
-      "eyebrow": "Venture architecture",
-      "title": "The whole venture. One accountable architect.",
+      "eyebrow": "My approach",
+      "title": "Business design. Technical leadership. Clear responsibilities.",
       "titleLines": [
-        "The whole venture.",
-        "One accountable",
-        "architect."
+        "Business design.",
+        "Technical leadership.",
+        "Clear responsibilities."
       ],
-      "body": "A new business is a set of connected decisions. I hold the design together, work for the owner and stay accountable through the first build.",
+      "body": "I connect what a business sells, what it costs to deliver, how its technology works and who runs it. For a new venture, I guide those decisions through the first build. For a focused review, I answer the specific question we agree.",
       "primaryLink": {
         "label": "Start a conversation",
         "href": "/contact/"
       },
       "secondaryLink": {
-        "label": "Explore the commissions",
-        "href": "/commissions/"
-      }
+        "label": "Explore the services",
+        "href": "/commissions/#services"
+      },
+      "role": "Your team delivers the build. I provide business design and oversight, with interim technical leadership where agreed. Any hands-on technical work is defined in the scope; I do not supply a development team."
     },
     "layers": {
       "eyebrow": "One design, three layers",
@@ -848,19 +809,19 @@
       ]
     },
     "modes": {
-      "eyebrow": "Within a venture commission",
-      "title": "The authority. Or the authority and the seat.",
-      "body": "The commission is shaped around the decisions and the people already in place.",
+      "eyebrow": "Within a venture engagement",
+      "title": "My role in your team",
+      "body": "Choose the responsibilities your team needs. Design and oversight can stand on their own, or include interim technical leadership.",
       "items": [
         {
-          "title": "Design authority",
-          "body": "The design decisions, the memo for the owner, and review of the build against the agreed design and evidence gates.",
+          "title": "Business design & build oversight",
+          "body": "I make the design decisions with you and review the build against them. Your team manages and delivers the build.",
           "duration": "Through the phases agreed in the commission.",
           "location": "Largely remote, with scheduled on-site blocks."
         },
         {
-          "title": "Design authority plus the seat",
-          "body": "The same design authority, with me as interim technical lead for an agreed phase of the first build.",
+          "title": "Design & interim technical leadership",
+          "body": "I also act as technical lead for an agreed phase, guiding the engineering work before handing over to a permanent lead.",
           "duration": "With a written scope and handover date.",
           "location": "Largely remote, with scheduled on-site blocks."
         }
@@ -981,9 +942,9 @@
           }
         },
         {
-          "question": "How does a commission start?",
+          "question": "How does an engagement start?",
           "answer": [
-            "Tell me the decision you are facing and what is already in place. We can work out whether a full venture commission, a focused review or another route is the useful next step. You do not need to choose a service first."
+            "Tell me the decision you are facing and what is already in place. We can work out whether a venture engagement, a focused review, a workshop or another route is the useful next step. You do not need to choose a service first."
           ],
           "link": {
             "label": "Start a conversation",
@@ -996,14 +957,14 @@
       "ref": "common.invitation"
     },
     "scopedStandards": {
-      "title": "The responsibility follows the commission.",
+      "title": "Clear scope for each kind of work",
       "items": [
         {
-          "title": "Full venture commission",
+          "title": "Venture design & leadership",
           "body": "I hold the design through the agreed phases. The owner supplies the authority, team, access and funding needed to carry it out; gates make the next decision explicit."
         },
         {
-          "title": "Focused commission",
+          "title": "Focused assessments and reviews",
           "body": "The responsibility is a bounded question, a written recommendation and its supporting evidence. It does not imply responsibility for the whole venture or its delivery."
         },
         {
@@ -1013,8 +974,8 @@
       ]
     },
     "commissionsLink": {
-      "label": "Find a starting point",
-      "href": "/commissions/"
+      "label": "Explore the services",
+      "href": "/commissions/#services"
     }
   },
   "commissions": {
@@ -1022,29 +983,32 @@
     "labels": {
       "decision": "The decision",
       "deliverables": "What you receive",
-      "engagementModes": "How I hold the design",
-      "navigation": "Explore the commissions"
+      "engagementModes": "My role in your team",
+      "navigation": "Explore the services",
+      "when": "When it helps",
+      "work": "What I do",
+      "client": "Your team and scope"
     },
     "seo": {
-      "title": "Commissions. Will Godfrey, venture architect",
-      "description": "From the first decision to a working venture. Venture commissions, options briefs, AI diligence, AI margin reviews, gate reviews and portfolio sessions."
+      "title": "Services | Venture design and AI advisory | Will Godfrey",
+      "description": "Venture design and leadership, AI opportunity assessment, acquisition diligence, cost and margin review, progress and funding review, and portfolio workshops."
     },
     "hero": {
-      "eyebrow": "Commissions",
-      "title": "From the first decision to a working venture.",
+      "eyebrow": "Services",
+      "title": "Venture design. AI advisory.",
       "titleLines": [
-        "From the first decision",
-        "to a working venture."
+        "Venture design.",
+        "AI advisory."
       ],
-      "body": "I help owners design new businesses and make the decisions that shape them. The full venture commission holds the design through the first build. Focused commissions bring the same judgment to a specific question.",
-      "helper": "Tell me what you are weighing. You do not need to know which commission fits.",
+      "body": "I help owners, founders and investors design new businesses and make decisions about AI.",
+      "helper": "You do not need to choose a service before we talk.",
       "primaryLink": {
         "label": "Start a conversation",
         "href": "/contact/"
       },
       "secondaryLink": {
-        "label": "Explore the commissions",
-        "href": "#venture-commission"
+        "label": "Services at a glance",
+        "href": "#services"
       },
       "visualAlt": "Three architectural sheets labeled Design, Prove and Hand over, with illustrative venture drawings.",
       "visualCaption": "Illustrative commission documents. The scope is shaped around the decision and the venture.",
@@ -1052,9 +1016,9 @@
     },
     "flagship": {
       "id": "venture-commission",
-      "eyebrow": "The full commission",
-      "title": "Design the venture. Hold the design.",
-      "body": "For an owner ready to create a business. I connect the commercial, technical and institutional decisions, stay accountable for the design through the agreed build phases, and prepare the handover to a permanent team.",
+      "eyebrow": "The full venture engagement",
+      "title": "Venture design & leadership",
+      "body": "I design how the business earns money, how its systems work and who is responsible for running it. I guide the design through the agreed build phases and prepare the handover to a permanent team. My focus is AI-native ventures, where AI is central to the offer or how it is delivered.",
       "stageIds": [
         "design",
         "prove",
@@ -1062,22 +1026,22 @@
       ],
       "modes": [
         {
-          "title": "Design authority",
-          "body": "I hold the design decisions and review the evidence while your team leads the build."
+          "title": "Business design & build oversight",
+          "body": "I make the design decisions with you and review the build against them. Your team manages and delivers the build."
         },
         {
-          "title": "Design authority plus the seat",
-          "body": "I also hold the technical seat for an agreed phase, with a written handover date."
+          "title": "Design & interim technical leadership",
+          "body": "I also act as technical lead for an agreed phase, guiding the engineering work before handing over to a permanent lead."
         }
       ],
-      "deliverableTitle": "The drawing set",
+      "deliverableTitle": "What you receive",
       "deliverables": [
         "A venture design memo and the decisions behind it.",
         "The offer, delivery economics and system design.",
         "An evidence plan, funding gates and stopping conditions.",
         "A leadership and handover plan."
       ],
-      "boundary": "We agree the scope around the team, access and authority in place, including how customer evidence will be gathered and permanent leadership prepared.",
+      "boundary": "You provide the build team, access, authority and funding. I do not supply a development team. We agree my responsibilities, any hands-on technical work, the deliverables and the handover before work begins.",
       "link": {
         "label": "Start a conversation",
         "href": "/contact/"
@@ -1085,107 +1049,119 @@
       "evidenceLink": {
         "label": "See the venture work",
         "href": "/work/#venture-build"
-      }
+      },
+      "summary": "Design an AI-native business and guide its first build with your team.",
+      "when": "You are creating a new business and need someone to connect the business design, technology and team."
     },
     "focused": {
       "id": "focused-commissions",
-      "title": "Start with the decision in front of you.",
-      "body": "Each focused commission stands on its own. It ends with a written recommendation the owner can act on, whether or not we work together again.",
+      "title": "Focused assessments and reviews",
+      "body": "Each of these four services answers a specific business or investment question and ends with a written recommendation. Each stands on its own; further work is a separate decision.",
       "items": [
         {
           "id": "options-brief",
-          "name": "Options brief",
-          "situation": "Before you commit.",
-          "body": "You see an AI opportunity but have not chosen the route. I compare the credible options against your economics, capabilities and priorities, including the option to wait.",
+          "name": "AI opportunity assessment",
+          "situation": "Before you invest in AI.",
+          "body": "I compare the credible options against your economics, capabilities and priorities, including the option to wait.",
           "decision": "Which route deserves investment, and what must be learned next?",
           "deliverables": [
             "An options memo with tradeoffs and supporting evidence.",
             "A recommendation and the questions the next step must resolve."
           ],
-          "scopeNote": "The question and available information set the scope. This can serve sponsors, founders or other owners.",
+          "scopeNote": "You bring the business question, priorities and available information. We agree which options and evidence the assessment will cover.",
           "visualId": "options-study",
           "visualAlt": "One question branches into improving the existing business, building a venture or acquiring capability, then returns to an owner decision.",
           "visualCaption": "Illustrative options map. The alternatives depend on the question.",
           "link": {
             "label": "Start a conversation",
             "href": "/contact/"
-          }
+          },
+          "summary": "Compare AI opportunities and decide where to invest.",
+          "when": "You see an AI opportunity but have not chosen the route."
         },
         {
           "id": "ai-diligence",
-          "name": "AI diligence",
-          "situation": "Before you buy.",
-          "body": "A target has an AI story, or AI may change its economics. I examine the claims, the evidence behind them and the exposure of the existing business.",
+          "name": "AI acquisition diligence",
+          "situation": "Before you acquire a business.",
+          "body": "I examine the AI claims, the evidence behind them and the exposure of the existing business.",
           "decision": "What should change in the deal thesis or the plan after acquisition?",
           "deliverables": [
             "An AI diligence memo with evidence, confidence and open questions.",
             "A decision summary and priorities for further investigation or action."
           ],
-          "scopeNote": "This complements technology and commercial diligence. Code, security, legal rights and valuation questions go to the appropriate specialists.",
+          "scopeNote": "Your deal team provides the investment questions and available access. This complements technology and commercial diligence; code, security, legal rights and valuation questions go to the appropriate specialists.",
           "visualId": "diligence-study",
           "visualAlt": "A three-column diligence worksheet separates claims, evidence and confidence, including what remains uncertain.",
           "visualCaption": "Illustrative diligence worksheet. No business has been assessed in this drawing.",
           "link": {
             "label": "Start a conversation",
             "href": "/contact/"
-          }
+          },
+          "summary": "Assess a target company's AI claims and business exposure.",
+          "when": "You are considering an acquisition, and AI is part of the investment case or could change the target company's economics."
         },
         {
           "id": "ai-margin-review",
-          "name": "AI margin review",
-          "situation": "When the economics disappoint.",
-          "body": "An AI product is live, but its margin is below plan or falls as usage grows. I trace cost per outcome through the technical, product, pricing and operating decisions.",
+          "name": "AI cost & margin review",
+          "situation": "When an AI product costs too much to deliver.",
+          "body": "I trace cost per outcome through the technical, product, pricing and operating decisions.",
           "decision": "What should change without losing the quality customers need?",
           "deliverables": [
             "A cost-per-outcome model with its assumptions and data gaps.",
             "A prioritized redesign and a plan for measuring cost and quality."
           ],
-          "scopeNote": "Testing is agreed against available data, a usable quality benchmark and client engineering capacity. Your team runs any production changes.",
+          "scopeNote": "You provide available cost and usage data, a usable quality benchmark and engineering support. We agree the testing; your team runs production changes.",
           "visualId": "margin-study",
           "visualAlt": "A symbolic outcome-economics equation includes models and tools, human review and other delivery costs.",
           "visualCaption": "Illustrative unit-economics model. The drawing contains no measured values.",
           "link": {
             "label": "Start a conversation",
             "href": "/contact/"
-          }
+          },
+          "summary": "Understand delivery costs and identify changes to improve margins.",
+          "when": "An AI product is live, but its margin is below plan or falls as usage grows."
         },
         {
           "id": "gate-review",
-          "name": "Gate review",
-          "situation": "Before the next funding decision.",
-          "body": "Someone else is building and the next tranche is due. I review progress against agreed measures, examine the evidence and recommend release, hold or change.",
+          "name": "Venture progress & funding review",
+          "situation": "Before you fund the next stage.",
+          "body": "I review progress against agreed measures, examine the evidence and recommend funding the next stage, holding funding or changing the plan.",
           "decision": "Does the evidence support the next commitment of capital?",
           "deliverables": [
             "A gate memo with a recommendation and its conditions.",
             "A record of the evidence, gaps and decisions across agreed gates."
           ],
-          "scopeNote": "The owner decides. Prior involvement, commercial interests and any potential follow-on role are disclosed before the review is agreed.",
+          "scopeNote": "You provide the agreed measures, progress evidence and access needed for the review. The owner decides. Prior involvement, commercial interests and any potential follow-on role are disclosed before work is agreed.",
           "visualId": "gate-study",
           "visualAlt": "Evidence feeds a gate decision with three equal possible outcomes: release, hold or change.",
           "visualCaption": "Illustrative gate record. Release, hold and change are all possible decisions.",
           "link": {
             "label": "Start a conversation",
             "href": "/contact/"
-          }
+          },
+          "summary": "Review the evidence before committing the next stage of funding.",
+          "when": "Another team is building and you need to decide whether to commit more capital."
         }
       ]
     },
     "portfolio": {
       "id": "portfolio-sessions",
-      "eyebrow": "For sponsors and operating teams",
-      "title": "Portfolio sessions.",
+      "eyebrow": "Workshops for sponsors and operating teams",
+      "title": "AI portfolio workshops",
       "body": "A working session for leaders considering what AI changes about their businesses. We examine the economics, compare possible responses and identify the questions worth pursuing.",
       "deliverable": "A concise set of observations and next questions for the participants and sponsor, shaped around the agreed preparation.",
       "scopeNote": "Preparation, participants and outputs are agreed in advance. A session offers a starting view; it is not a completed assessment of each company.",
       "link": {
         "label": "Start a conversation",
         "href": "/contact/"
-      }
+      },
+      "summary": "Explore what AI changes across your businesses with your leadership team.",
+      "when": "Your portfolio leaders or operating teams need a shared starting point for decisions about AI."
     },
     "conversation": {
       "id": "starting-point",
       "title": "Bring the question. We can shape the work.",
-      "body": "A service name is not the starting requirement. The decision, the people involved and the evidence already available are more useful.",
+      "body": "Tell me about the situation, the people involved and what you need to decide. We can work out whether a venture engagement, focused review or workshop would help.",
       "steps": [
         {
           "title": "Tell me the situation.",
@@ -1193,10 +1169,10 @@
         },
         {
           "title": "Find the useful scope.",
-          "body": "We discuss the decision and whether I can help. I may recommend a focused commission, a larger engagement or another route."
+          "body": "We discuss the decision and whether I can help. I may recommend an assessment, a larger engagement, a workshop or another route."
         },
         {
-          "title": "Agree the commission.",
+          "title": "Agree the scope.",
           "body": "Before work begins, we define the deliverable, responsibilities, fee and end point."
         }
       ],
@@ -1209,13 +1185,13 @@
       "title": "Before we speak",
       "items": [
         {
-          "question": "Do I need to choose a commission first?",
+          "question": "Do I need to choose a service first?",
           "answer": [
             "No. Tell me the decision you are facing. Shaping the engagement is part of the conversation."
           ]
         },
         {
-          "question": "Does a focused commission commit us to a larger engagement?",
+          "question": "Does an assessment or review commit us to a larger engagement?",
           "answer": [
             "No. Its recommendation and deliverables stand on their own. Any further work is a separate decision."
           ]
@@ -1227,6 +1203,15 @@
           ]
         }
       ]
+    },
+    "overview": {
+      "id": "services",
+      "title": "How I can help",
+      "body": "Work with me through a venture build, or bring a specific decision.",
+      "flagshipLabel": "The full venture engagement",
+      "focusedLabel": "Focused assessments and reviews",
+      "workshopLabel": "For portfolio leaders",
+      "linkLabel": "View service details"
     }
   },
   "work": {
@@ -1512,7 +1497,7 @@
         }
       ],
       "link": {
-        "label": "Explore the practice",
+        "label": "Explore the approach",
         "href": "/venture-architect/"
       }
     },
@@ -1524,7 +1509,7 @@
     "route": "/contact/",
     "seo": {
       "title": "Start a conversation. Will Godfrey, venture architect",
-      "description": "Bring the decision you are facing. You do not need a finished brief or a chosen commission. Start a conversation with Will Godfrey."
+      "description": "Bring the decision you are facing. You do not need a finished brief or a chosen service. Start a conversation with Will Godfrey."
     },
     "hero": {
       "eyebrow": "Start a conversation",
@@ -1533,7 +1518,7 @@
         "What are",
         "you weighing?"
       ],
-      "body": "Tell me in two or three sentences. You do not need a finished brief or a chosen commission. I read everything myself.",
+      "body": "Tell me in two or three sentences. You do not need a finished brief or a chosen service. I read everything myself.",
       "primaryLink": {
         "label": "will@willgodfrey.com",
         "href": "mailto:will@willgodfrey.com"
@@ -1546,13 +1531,13 @@
       "items": [
         "What are you weighing?",
         "What people, systems or evidence are already in place?",
-        "What decision do you need to make next?"
+        "When do you need to decide?"
       ]
     },
     "expectations": {
       "title": "What happens next.",
       "paragraphs": [
-        "I will read the situation and suggest a useful next step. We can discuss whether a full venture commission, a focused review or another route fits the decision.",
+        "I will read the situation and suggest a useful next step. We can discuss whether a venture engagement, a focused review, a workshop or another route fits the decision.",
         "If we decide to work together, we will agree the scope, deliverable, responsibilities, fee and end point before work begins. I take a small number of commissions each year and will be clear about fit and availability."
       ]
     },
@@ -1580,7 +1565,7 @@
         "href": "/"
       },
       "secondaryLink": {
-        "label": "Explore the practice",
+        "label": "Explore the approach",
         "href": "/venture-architect/"
       }
     }

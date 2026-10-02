@@ -2,35 +2,44 @@
 import Base from '../layouts/Base.astro';
 import TextLink from '../components/TextLink.astro';
 import CommissionFigure from '../components/CommissionFigure.astro';
+import ServiceOverview from '../components/ServiceOverview.astro';
 import '../styles/practice.css';
-import { commissions, common, getStages } from '../lib/content';
+import '../styles/services-page.css';
+import { commissions, getStages } from '../lib/content';
 
 const { hero, flagship, focused, portfolio, conversation, faq, labels } = commissions;
 const stages = getStages(flagship.stageIds);
 ---
 
 <Base title={commissions.seo.title} description={commissions.seo.description} bodyClass="commissions-page">
-  <section class="commission-hero wrap">
-    <div class="commission-title">
+  <section class="services-opening wrap">
+    <div>
       <p class="intro">{hero.eyebrow}</p>
-      <h1>{hero.title}</h1>
-      <p class="commission-lead">{hero.body}</p>
+      <h1>{hero.titleLines.map((line, index) => index ? [<br />, line] : line)}</h1>
+    </div>
+    <div class="services-opening-copy">
+      <p class="services-lead">{hero.body}</p>
       <div class="hero-links">
         <TextLink {...hero.primaryLink} />
         <TextLink {...hero.secondaryLink} />
       </div>
-      <p class="commission-helper">{hero.helper}</p>
+      <p class="services-helper">{hero.helper}</p>
     </div>
-    <CommissionFigure {...hero} hero />
   </section>
 
+  <ServiceOverview local heading={false} />
+
   <section class="section flagship wrap" id={flagship.id}>
-    <div class="flagship-heading">
+    <div class="flagship-heading service-flagship-heading">
       <div>
         <p class="eyebrow">{flagship.eyebrow}</p>
         <h2>{flagship.title}</h2>
+        <dl class="service-description">
+          <dt>{labels.when}</dt><dd>{flagship.when}</dd>
+          <dt>{labels.work}</dt><dd>{flagship.body}</dd>
+        </dl>
       </div>
-      <p class="flagship-intro">{flagship.body}</p>
+      <CommissionFigure {...hero} />
     </div>
     <div class="commission-stages">
       {stages.map((stage) => (
@@ -57,29 +66,26 @@ const stages = getStages(flagship.stageIds);
       </div>
     </div>
     <div class="flagship-foot">
-      <p>{flagship.boundary}</p>
+      <div class="service-boundary"><h3 class="small-heading">{labels.client}</h3><p>{flagship.boundary}</p></div>
       <div class="hero-links"><TextLink {...flagship.link} /><TextLink {...flagship.evidenceLink} /></div>
     </div>
   </section>
 
   <section id={focused.id}>
     <div class="focused-heading wrap"><h2>{focused.title}</h2><p>{focused.body}</p></div>
-    <nav class="commission-index wrap" aria-label={common.accessibility.commissionsNavigation}>
-      {focused.items.map((offer) => <a href={`#${offer.id}`}>{offer.name}<span aria-hidden="true">↓</span></a>)}
-      <a href={`#${portfolio.id}`}>{portfolio.title}<span aria-hidden="true">↓</span></a>
-    </nav>
     {focused.items.map((offer, index) => (
       <article class:list={['commission-spread', 'wrap', { reverse: index % 2 === 1 }]} id={offer.id}>
         <div class="commission-copy">
-          <p class="eyebrow">{offer.name}</p>
-          <h3>{offer.situation}</h3>
-          <p class="offer-body">{offer.body}</p>
+          <h3>{offer.name}</h3>
+          <p class="service-situation">{offer.situation}</p>
           <dl class="offer-detail">
+            <dt>{labels.when}</dt><dd>{offer.when}</dd>
+            <dt>{labels.work}</dt><dd>{offer.body}</dd>
             <dt>{labels.decision}</dt><dd>{offer.decision}</dd>
             <dt>{labels.deliverables}</dt>
             <dd><ul class="clean-list" role="list">{offer.deliverables.map((item) => <li>{item}</li>)}</ul></dd>
+            <dt>{labels.client}</dt><dd class="scope-note">{offer.scopeNote}</dd>
           </dl>
-          <p class="scope-note">{offer.scopeNote}</p>
           <TextLink {...offer.link} />
         </div>
         <CommissionFigure {...offer} />
@@ -89,7 +95,12 @@ const stages = getStages(flagship.stageIds);
 
   <section class="portfolio-session wrap" id={portfolio.id}>
     <div><p class="eyebrow">{portfolio.eyebrow}</p><h2>{portfolio.title}</h2><TextLink {...portfolio.link} /></div>
-    <div><p class="portfolio-body">{portfolio.body}</p><p>{portfolio.deliverable}</p><p class="scope-note">{portfolio.scopeNote}</p></div>
+    <dl class="service-description">
+      <dt>{labels.when}</dt><dd>{portfolio.when}</dd>
+      <dt>{labels.work}</dt><dd>{portfolio.body}</dd>
+      <dt>{labels.deliverables}</dt><dd>{portfolio.deliverable}</dd>
+      <dt>{labels.client}</dt><dd>{portfolio.scopeNote}</dd>
+    </dl>
   </section>
 
   <section class="section conversation wrap" id={conversation.id}>

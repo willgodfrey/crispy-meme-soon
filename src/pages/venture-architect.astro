@@ -23,6 +23,7 @@ const layers = practice.layers.items as {
       <p class="intro">{practice.hero.eyebrow}</p>
       <h1>{practice.hero.titleLines.map((l: string, i: number) => (i ? [<br />, l] : l))}</h1>
       <p class="practice-summary">{practice.hero.body}</p>
+      <p class="practice-role">{practice.hero.role}</p>
       <div class="hero-links">
         <TextLink href={practice.hero.primaryLink.href} label={practice.hero.primaryLink.label} />
         <TextLink href={practice.hero.secondaryLink.href} label={practice.hero.secondaryLink.label} />
@@ -189,3 +190,22 @@ const layers = practice.layers.items as {
     import '../scripts/architecture-controls.ts';
   </script>
 </Base>
+
+<style>
+  .practice-title h1 {
+    max-width: none;
+    font-size: clamp(2.5rem, 4.05vw, 3.5rem);
+  }
+  @media (max-width: 38.75em) {
+    .practice-title h1 {
+      font-size: clamp(2rem, 8.5vw, 2.5rem);
+    }
+  }
+  .practice-role {
+    max-width: 40ch;
+    margin: -0.5rem 0 1.75rem;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+</style>

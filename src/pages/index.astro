@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import TextLink from '../components/TextLink.astro';
+import ServiceOverview from '../components/ServiceOverview.astro';
 import '../styles/practice.css';
 import { home, common, getCases, getStages, diagramSrc } from '../lib/content';
 
@@ -51,6 +52,8 @@ const webp = `${AP}-640.webp 640w, ${AP}-960.webp 960w, ${AP}-1536.webp 1536w`;
       ))
     }
   </section>
+
+  <ServiceOverview />
 
   <section class="section work wrap">
     <div class="section-heading">
@@ -143,25 +146,6 @@ const webp = `${AP}-640.webp 640w, ${AP}-960.webp 960w, ${AP}-1536.webp 1536w`;
     </div>
   </section>
 
-  <section class="section entry-points wrap">
-    <div class="entry-heading">
-      <h2>{home.entryPoints.title}</h2>
-      <p>{home.entryPoints.body}</p>
-      <TextLink href={home.entryPoints.link.href} label={home.entryPoints.link.label} />
-    </div>
-    <div class="entry-list">
-      {home.entryPoints.items.map((entry) => (
-        <a class="entry-row" href={entry.href}>
-          <div>
-            <h3>{entry.situation}</h3>
-            <p>{entry.body}</p>
-          </div>
-          <span class="entry-label">{entry.label}<span aria-hidden="true">↗</span></span>
-        </a>
-      ))}
-    </div>
-  </section>
-
   <section class="section personal wrap">
     <div class="portrait">
       <img
@@ -187,3 +171,14 @@ const webp = `${AP}-640.webp 640w, ${AP}-960.webp 960w, ${AP}-1536.webp 1536w`;
     import '../scripts/architecture-controls.ts';
   </script>
 </Base>
+
+<style>
+  @media (max-width: 38.75em) {
+    .hero-image {
+      height: 360px;
+    }
+    .hero::after {
+      background: linear-gradient(180deg, var(--hero-background) 0%, var(--hero-background) calc(100% - 360px), rgba(var(--hero-rgb), 0) calc(100% - 300px));
+    }
+  }
+</style>

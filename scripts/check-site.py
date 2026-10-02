@@ -34,6 +34,9 @@ def strings(value):
             yield from strings(item)
 
 
+VOID_ELEMENTS = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
+
+
 class Page(HTMLParser):
     def __init__(self, text):
         super().__init__(convert_charrefs=True)
@@ -45,6 +48,8 @@ class Page(HTMLParser):
         self.metadata = {}
         self.canonicals = []
         self.headings = []
+        self.nodes = []
+        self.stack = []
         self.excluded = 0
         self.in_body = False
         self.title = ''
@@ -53,6 +58,10 @@ class Page(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        node = {'tag': tag, 'attrs': attrs, 'parent': self.stack[-1] if self.stack else None, 'text': [], 'position': len(self.nodes)}
+        self.nodes.append(node)
+        if tag not in VOID_ELEMENTS:
+            self.stack.append(node)
         if tag in ('script', 'style'):
             self.excluded += 1
         if tag == 'body':
@@ -84,6 +93,10 @@ class Page(HTMLParser):
             self.headings.append(int(tag[1]))
 
     def handle_endtag(self, tag):
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index]['tag'] == tag:
+                del self.stack[index:]
+                break
         if tag in ('script', 'style'):
             self.excluded -= 1
         if tag == 'body':
@@ -96,6 +109,8 @@ class Page(HTMLParser):
             self.title += text
         if self.in_body and not self.excluded and normalized(text):
             self.text.append(normalized(text))
+            for node in self.stack:
+                node['text'].append(normalized(text))
 
 
 def output_file(path):
@@ -162,14 +177,73 @@ def rendered_phrases(value, key=''):
             yield from rendered_phrases(item, field)
 
 
-for phrase in rendered_phrases(commissions):
-    check(normalized(phrase) in commission_text, f'Missing commission copy: {phrase}')
+for field, value in commissions.items():
+    if field != 'overview':
+        for phrase in rendered_phrases(value, field):
+            check(normalized(phrase) in commission_text, f'Missing commission copy: {phrase}')
 for stage in CONTENT['common']['stages']:
     check(stage['body'] in commission_text, f'Missing flagship stage: {stage["id"]}')
-for node, route in [(CONTENT['home']['entryPoints'], '/'), (CONTENT['practice']['scopedStandards'], '/venture-architect/')]:
+for node, route in [(CONTENT['practice']['scopedStandards'], CONTENT['practice']['route'])]:
     rendered = normalized(' '.join(PAGES[route].text))
     for phrase in rendered_phrases(node):
         check(normalized(phrase) in rendered, f'Missing copy at {route}: {phrase}')
+
+
+
+def inside(node, ancestor):
+    parent = node['parent']
+    while parent is not None:
+        if parent is ancestor:
+            return True
+        parent = parent['parent']
+    return False
+
+
+# The offer menu must be understandable before visitors reach the deep content.
+# Check the real linked headings and summaries, not just text anywhere on the page.
+overview = commissions['overview']
+offers = [commissions['flagship'], *commissions['focused']['items'], commissions['portfolio']]
+check(len(offers) == 6, 'Expected the six approved services')
+for route in (CONTENT['home']['route'], commissions['route']):
+    page = PAGES[route]
+    regions = [node for node in page.nodes if node['attrs'].get('id') == overview['id']]
+    check(len(regions) == 1, f'Expected one services overview at {route}')
+    if len(regions) != 1:
+        continue
+    region = regions[0]
+    region_text = normalized(' '.join(region['text']))
+    overview_links = [node for node in page.nodes if node['tag'] == 'a' and inside(node, region)]
+    prefix = '' if route == commissions['route'] else commissions['route']
+    destinations = [f"{prefix}#{offer['id']}" for offer in offers]
+    check([node['attrs'].get('href') for node in overview_links] == destinations,
+          f'Services overview must link all six offers with the full venture engagement first: {route}')
+    for offer, destination in zip(offers, destinations):
+        name = offer.get('name', offer.get('title'))
+        links = [node for node in overview_links if node['attrs'].get('href') == destination]
+        check(len(links) == 1, f'Missing or repeated service link at {route}: {name}')
+        if len(links) != 1:
+            continue
+        link = links[0]
+        linked_headings = [normalized(' '.join(node['text'])) for node in page.nodes
+                           if re.fullmatch('h[1-6]', node['tag']) and inside(node, link)]
+        check(name in linked_headings, f'Service name must be a linked heading at {route}: {name}')
+        check(normalized(offer['summary']) in normalized(' '.join(link['text'])),
+              f'Missing service summary in its overview link at {route}: {name}')
+    for key in ('flagshipLabel', 'focusedLabel', 'workshopLabel', 'linkLabel'):
+        check(normalized(overview[key]) in region_text, f'Missing overview {key} at {route}')
+    if route == CONTENT['home']['route']:
+        for key in ('title', 'body'):
+            check(normalized(overview[key]) in region_text, f'Missing Home overview {key}')
+        for section_class in ('work', 'process'):
+            targets = [node for node in page.nodes if node['tag'] == 'section'
+                       and section_class in node['attrs'].get('class', '').split()]
+            check(len(targets) == 1 and region['position'] < targets[0]['position'],
+                  f'Home services overview must precede {section_class}')
+    else:
+        targets = [node for node in page.nodes if node['attrs'].get('id') == commissions['flagship']['id']]
+        check(len(targets) == 1 and region['position'] < targets[0]['position'],
+              'Services overview must precede the full venture engagement details')
+
 
 for diagram in CONTENT['common']['diagrams'].values():
     file = DIST / 'diagrams' / Path(diagram['sourceFile']).name
@@ -200,4 +274,4 @@ check(not any('Design reference' in ' '.join(page.text) for page in PAGES.values
 
 if FAILURES:
     raise SystemExit('\n'.join(FAILURES))
-print(f'Site check passed: {len(PAGES)} routes, metadata, headings, copy, links, anchors, local assets, diagram labels, checksums and sitemap.')
+print(f'Site check passed: {len(PAGES)} routes, metadata, headings, copy, six-service overview, links, anchors, local assets, diagram labels, checksums and sitemap.')

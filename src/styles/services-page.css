@@ -1,0 +1,48 @@
+/* Put the complete offer before the detailed engagement narrative. */
+.services-opening {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem 6vw;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+.services-opening .intro { margin-bottom: 1rem; }
+.services-opening h1 {
+  font-size: clamp(2.5rem, 4.1vw, 4rem);
+  line-height: 1.06;
+  max-width: none;
+}
+.services-lead { font-size: 1.125rem; line-height: 1.6; max-width: 48ch; }
+.services-opening .hero-links { margin-top: 1.25rem; }
+.services-helper { font-size: .8125rem; line-height: 1.6; max-width: 56ch; color: var(--muted); margin-top: 1rem; }
+.service-flagship-heading { align-items: center; }
+.service-flagship-heading .commission-study { background: transparent; padding: 0; }
+.service-description { margin: 1.75rem 0 0; }
+.service-description dt { font-size: .75rem; font-weight: 700; margin-top: 1.25rem; }
+.service-description dd { margin: .5rem 0 0; font-size: 1rem; line-height: 1.7; max-width: 56ch; color: var(--muted); }
+.service-description dt:first-child { margin-top: 0; }
+.service-boundary { max-width: 64ch; }
+.service-boundary .small-heading { margin-bottom: .5rem; }
+.service-boundary p { font-size: .875rem; line-height: 1.7; color: var(--muted); }
+.commission-copy .service-situation { margin-top: -0.5rem; font-size: 1rem; line-height: 1.5; color: var(--accent); }
+.commission-copy .offer-detail { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.commission-copy .offer-detail dt { font-size: .75rem; }
+.commission-copy .offer-detail dd { line-height: 1.7; }
+.portfolio-session .service-description { margin: 0; }
+.portfolio-session .service-description dd { color: var(--on-ink-soft); }
+.flagship, .commission-spread, .portfolio-session { scroll-margin-top: 1.5rem; }
+@media (max-width: 47.5em) {
+  .services-opening { grid-template-columns: minmax(0, 1fr); padding-top: 1.5rem; gap: 1rem; padding-bottom: .5rem; }
+  .services-opening h1 { font-size: clamp(2.375rem, 7.5vw, 3.5rem); }
+  .services-opening .intro { margin-bottom: .75rem; }
+  .services-lead { font-size: 1rem; }
+  .services-helper { font-size: .8125rem; }
+  .services-opening .hero-links { margin-top: 1rem; }
+  .service-flagship-heading .commission-study { max-width: 32rem; }
+}
+@media print {
+  .services-opening, .service-flagship-heading { display: block; }
+  .services-opening { padding-block: 1rem; }
+  .service-flagship-heading .commission-study { max-width: 20rem; }
+}

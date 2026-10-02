@@ -1,0 +1,67 @@
+---
+import { common, commissions } from '../lib/content';
+import '../styles/service-overview.css';
+
+interface Props {
+  local?: boolean;
+  heading?: boolean;
+}
+
+const { local = false, heading = true } = Astro.props;
+const overview = commissions.overview;
+const Heading = heading ? 'h3' : 'h2';
+const destination = (id: string) => `${local ? '' : commissions.route}#${id}`;
+---
+
+<section class:list={['service-overview', 'wrap', { 'service-overview-standalone': heading }]} id={overview.id}>
+  {heading && (
+    <div class="service-overview-heading">
+      <h2>{overview.title}</h2>
+      <p>{overview.body}</p>
+    </div>
+  )}
+  <nav class="service-overview-grid" aria-label={common.accessibility.commissionsNavigation}>
+    <a
+      class="service-overview-feature"
+      href={destination(commissions.flagship.id)}
+      aria-labelledby="overview-flagship-title"
+      aria-describedby="overview-flagship-summary"
+    >
+      <p class="service-overview-label">{overview.flagshipLabel}</p>
+      <Heading id="overview-flagship-title">{commissions.flagship.title}</Heading>
+      <p class="service-overview-summary" id="overview-flagship-summary">{commissions.flagship.summary}</p>
+      <span class="service-overview-detail">{overview.linkLabel}</span>
+    </a>
+    <div class="service-overview-focused">
+      <p class="service-overview-label">{overview.focusedLabel}</p>
+      <ul class="service-overview-list" role="list">
+        {commissions.focused.items.map((offer) => (
+          <li>
+            <a
+              class="service-overview-offer"
+              href={destination(offer.id)}
+              aria-labelledby={`overview-${offer.id}-title`}
+              aria-describedby={`overview-${offer.id}-summary`}
+            >
+              <Heading id={`overview-${offer.id}-title`}>{offer.name}</Heading>
+              <p class="service-overview-summary" id={`overview-${offer.id}-summary`}>{offer.summary}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <a
+      class="service-overview-workshop"
+      href={destination(commissions.portfolio.id)}
+      aria-labelledby="overview-workshop-title"
+      aria-describedby="overview-workshop-summary"
+    >
+      <div>
+        <p class="service-overview-label">{overview.workshopLabel}</p>
+        <Heading id="overview-workshop-title">{commissions.portfolio.title}</Heading>
+      </div>
+      <p class="service-overview-summary" id="overview-workshop-summary">{commissions.portfolio.summary}</p>
+      <span class="service-overview-detail">{overview.linkLabel}</span>
+    </a>
+  </nav>
+</section>

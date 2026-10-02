@@ -148,13 +148,16 @@ export function validateContent(): void {
   uniqueIds(common.stages, 'stage');
   uniqueIds(work.cases, 'case');
   uniqueIds(practice.layers.items, 'layer');
-  uniqueIds([commissions.flagship, commissions.focused, ...commissions.focused.items, commissions.portfolio, commissions.conversation], 'commission');
+  uniqueIds([commissions.overview, commissions.flagship, commissions.focused, ...commissions.focused.items, commissions.portfolio, commissions.conversation], 'commission');
   requireText(commissions.hero, ['title', 'eyebrow', 'helper'], 'commissions.hero');
+  requireText(commissions.overview, ['id', 'title', 'body', 'flagshipLabel', 'focusedLabel', 'workshopLabel', 'linkLabel'], 'commissions.overview');
+  requireText(commissions.labels, ['decision', 'deliverables', 'engagementModes', 'navigation', 'when', 'work', 'client'], 'commissions.labels');
+  requireText(practice.hero, ['role'], 'practice.hero');
   for (const section of [commissions.flagship, commissions.focused, commissions.portfolio, commissions.conversation]) {
     requireText(section, ['id', 'title', 'body'], 'commission section');
   }
-  requireText(commissions.flagship, ['boundary', 'deliverableTitle'], 'commissions.flagship');
-  requireText(commissions.portfolio, ['eyebrow', 'deliverable', 'scopeNote'], 'commissions.portfolio');
+  requireText(commissions.flagship, ['summary', 'when', 'boundary', 'deliverableTitle'], 'commissions.flagship');
+  requireText(commissions.portfolio, ['summary', 'when', 'eyebrow', 'deliverable', 'scopeNote'], 'commissions.portfolio');
   for (const step of commissions.conversation.steps) requireText(step, ['title', 'body'], 'conversation step');
   requireText(commissions.faq, ['title'], 'commissions.faq');
   for (const item of commissions.faq.items) {
@@ -185,18 +188,11 @@ export function validateContent(): void {
     }
   }
   for (const offer of commissions.focused.items) {
-    requireText(offer, ['id', 'name', 'situation', 'decision', 'scopeNote'], 'focused commission');
+    requireText(offer, ['id', 'name', 'summary', 'when', 'situation', 'decision', 'scopeNote'], 'focused commission');
     if (!offer.deliverables.length || offer.deliverables.some((item) => !item.trim())) {
       throw new Error(`Missing deliverables: ${offer.id}`);
     }
     if (offer.link.href !== contact.route) throw new Error(`Invalid conversation destination: ${offer.id}`);
-  }
-  if (home.entryPoints.items.length !== commissions.focused.items.length) throw new Error('Incomplete Home entry points');
-  for (const [index, entry] of home.entryPoints.items.entries()) {
-    const offer = commissions.focused.items[index];
-    if (entry.id !== offer.id || entry.href !== `${commissions.route}#${offer.id}`) {
-      throw new Error(`Invalid Home commission anchor or order: ${entry.id}`);
-    }
   }
   const pages = [home, practice, commissions, work, about, contact, notFound];
   for (const page of pages) requireText(page.seo, ['title', 'description'], page.route);
