@@ -1108,7 +1108,7 @@
           "decision": "What should change without losing the quality customers need?",
           "deliverables": [
             "A cost-per-outcome model with its assumptions and data gaps.",
-            "A prioritized redesign and a plan for measuring cost and quality."
+            "Prioritized recommendations for changes, plus a plan for measuring cost and quality."
           ],
           "scopeNote": "You provide available cost and usage data, a usable quality benchmark and engineering support. We agree the testing; your team runs production changes.",
           "visualId": "margin-study",

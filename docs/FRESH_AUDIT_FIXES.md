@@ -47,3 +47,11 @@ The script reads public responses only; it does not deploy, change DNS or alter 
 - Native assistive-technology testing (such as VoiceOver and NVDA), physical-device coverage, native zoom, and fresh performance/field measurements remain unverified. The earlier PageSpeed API attempt returned a quota error. The checks above are evidence for the tested scenarios, not a certification of universal accessibility.
 
 No production branch, DNS or Cloudflare account configuration is changed by this work.
+
+## Second cold-visitor review
+
+A second review of the published preview used two independent reviewers without project history. One read all six public pages; the other entered directly on Services and followed the Contact journey. Both identified the six services, primary engagement, client responsibilities, named deliverables and email next step correctly. No contradictory service promises or blocking comprehension issues were found. The service overview was also reviewed visually at desktop and phone widths.
+
+One small deliverable ambiguity was corrected: the margin review now promises “Prioritized recommendations for changes, plus a plan for measuring cost and quality.” This makes clear that the review provides recommendations and that the client's team implements production changes.
+
+The remaining content opportunities require real business details: publishable outcomes from the work, examples of what an agreed first-build milestone can mean, and representative engagement cadence if Will wishes to publish it. These have not been invented. This is a qualitative review, not evidence that every possible visitor will interpret all wording identically.
