@@ -33,7 +33,7 @@ const layers = practice.layers.items as {
       <div class="layer-controls case-controls js-controls" role="group" aria-label={common.accessibility.diagramSelector}>
         {
           layers.map((it, i) => (
-            <button type="button" aria-pressed={i === 0 ? 'true' : 'false'} aria-controls={`layer-${it.id}`} data-plane={it.id} data-target={`layer-${it.id}`}>
+            <button type="button" aria-pressed={i === 0 ? 'true' : 'false'} aria-controls={`layer-${it.id}`} data-plane={it.id} data-target={`layer-${it.id}`} data-announcement={`${it.title}. ${it.question} ${it.body}`}>
               {it.title}
             </button>
           ))
@@ -67,7 +67,7 @@ const layers = practice.layers.items as {
       </div>
       <p>{practice.decisions.body}</p>
     </div>
-    <ul class="decision-list">
+    <ul class="decision-list" role="list">
       {practice.decisions.items.map((d: string) => <li>{d}</li>)}
     </ul>
   </section>
@@ -88,7 +88,7 @@ const layers = practice.layers.items as {
             <h3>{s.title}</h3>
             <p>{s.body}</p>
             <h4>{s.deliverable.title}</h4>
-            <ul>{s.deliverable.items.map((it: string) => <li>{it}</li>)}</ul>
+            <ul role="list">{s.deliverable.items.map((it: string) => <li>{it}</li>)}</ul>
           </article>
         ))
       }
@@ -125,11 +125,11 @@ const layers = practice.layers.items as {
     <div>
       <p class="eyebrow">{practice.standards.eyebrow}</p>
       <h2>{practice.standards.title}</h2>
-      <ul>{practice.standards.items.map((s: string) => <li>{s}</li>)}</ul>
+      <ul role="list">{practice.standards.items.map((s: string) => <li>{s}</li>)}</ul>
     </div>
     <div>
       <h3>{practice.standards.boundaryTitle}</h3>
-      <ul>{practice.standards.boundaries.map((b: string) => <li>{b}</li>)}</ul>
+      <ul role="list">{practice.standards.boundaries.map((b: string) => <li>{b}</li>)}</ul>
     </div>
   </section>
 

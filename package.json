@@ -10,11 +10,16 @@
     "prebuild": "node scripts/lint-copy.mjs",
     "build": "astro build",
     "lint:copy": "node scripts/lint-copy.mjs",
-    "check": "node scripts/lint-copy.mjs && astro build && python3 scripts/check-site.py",
-    "preview": "astro preview"
+    "check": "npm run check:types && npm run build && python3 scripts/check-site.py && python3 scripts/check-accessibility.py && node --test scripts/check-controls.mjs",
+    "preview": "astro preview",
+    "check:types": "astro check --minimumFailingSeverity warning"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
     "astro": "7.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "typescript": "6.0.3"
   }
 }

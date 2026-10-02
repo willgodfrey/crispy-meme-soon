@@ -36,7 +36,7 @@ const d = contact.details;
       <p>{contact.prompts.body}</p>
     </div>
     <div>
-      <ul class="contact-prompts">
+      <ul class="contact-prompts" role="list">
         {contact.prompts.items.map((p: string) => <li>{p}</li>)}
       </ul>
       <p class="location-info">{d.locationLabel}: {d.location}. {d.working}</p>

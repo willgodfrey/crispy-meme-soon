@@ -55,7 +55,7 @@ const analytics = import.meta.env.PUBLIC_ENABLE_ANALYTICS === 'true';
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={ogImage} />
-    <StructuredData title={title} description={description} />
+    <StructuredData title={title} description={description} canonical={canonical} />
   </head>
   <body class:list={[bodyClass]}>
     <a class="skip" href="#main">{common.accessibility.skipLink}</a>
@@ -64,6 +64,7 @@ const analytics = import.meta.env.PUBLIC_ENABLE_ANALYTICS === 'true';
       <slot />
     </main>
     {invitation ? <ContactBand /> : <SiteFooter />}
+    <div id="sr-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
     {
       analytics && (
         <Fragment>

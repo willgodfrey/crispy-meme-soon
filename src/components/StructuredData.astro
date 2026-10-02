@@ -1,44 +1,102 @@
 ---
-// Content-backed JSON-LD. Only facts present in the content; no invented dates.
-import { common, practice } from '../lib/content';
-const { title, description } = Astro.props;
-const site = 'https://www.willgodfrey.com';
-const path = Astro.url.pathname;
+// Content-backed JSON-LD. Identifiers join the page, person and services without
+// adding claims, prices or availability beyond the approved visible content.
+import { about, commissions, common, contact, practice } from '../lib/content';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical: string;
+}
+const { title, description, canonical } = Astro.props;
+const site = new URL('/', common.canonicalHost).href;
+const path = new URL(canonical).pathname;
+const personId = `${site}#person`;
+const websiteId = `${site}#website`;
+const pageId = `${canonical}#webpage`;
+const reference = (id: string) => ({ '@id': id });
 
 const person = {
   '@type': 'Person',
+  '@id': personId,
   name: common.person.name,
   jobTitle: common.person.jobTitle,
-  url: `${site}/`,
-  email: common.emailHref,
+  url: site,
+  image: new URL(common.portrait.path, site).href,
+  email: common.email,
   alumniOf: { '@type': 'CollegeOrUniversity', name: common.person.alumniOf },
   knowsAbout: common.person.knowsAbout,
-  address: { '@type': 'PostalAddress', addressLocality: 'Iowa City', addressRegion: 'Iowa' },
+  address: common.location,
   sameAs: [common.linkedin.href],
 };
-const website = { '@type': 'WebSite', name: common.siteName, url: `${site}/` };
+const website = {
+  '@type': 'WebSite',
+  '@id': websiteId,
+  name: common.siteName,
+  url: site,
+  publisher: reference(personId),
+  about: reference(personId),
+};
+const page: Record<string, unknown> = {
+  '@type': path === about.route ? 'ProfilePage'
+    : path === contact.route ? 'ContactPage'
+    : path === practice.route ? 'FAQPage' : 'WebPage',
+  '@id': pageId,
+  name: title,
+  description,
+  url: canonical,
+  isPartOf: reference(websiteId),
+  publisher: reference(personId),
+};
+const graph: Record<string, unknown>[] = [website, person, page];
 
-const graph: Record<string, unknown>[] = [website, person];
-
-if (path === '/commissions/') {
-  graph.push({ '@type': 'WebPage', name: title, description, url: `${site}${path}` });
+if (path === '/' || path === about.route || path === contact.route) {
+  page.about = reference(personId);
 }
-
-if (path === '/about/') {
-  graph.push({ '@type': 'ProfilePage', mainEntity: person });
+if (path === about.route) {
+  page.mainEntity = reference(personId);
 }
-if (path === '/venture-architect/') {
-  graph.push({
-    '@type': 'FAQPage',
-    mainEntity: (practice.faq.items as { question: string; answer: string[] }[]).map((q) => ({
-      '@type': 'Question',
-      name: q.question,
-      acceptedAnswer: { '@type': 'Answer', text: q.answer.join(' ') },
+if (path === practice.route) {
+  page.mainEntity = practice.faq.items.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer.join(' ') },
+  }));
+}
+if (path === commissions.route) {
+  // Keep the stated scope beside each summary when machines read the service.
+  const services = [
+    {
+      id: commissions.flagship.id,
+      name: commissions.flagship.title,
+      description: `${commissions.flagship.body} ${commissions.flagship.boundary}`,
+    },
+    ...commissions.focused.items.map((item) => ({
+      id: item.id,
+      name: item.name,
+      description: `${item.body} ${item.scopeNote}`,
     })),
-  });
+    {
+      id: commissions.portfolio.id,
+      name: commissions.portfolio.title,
+      description: `${commissions.portfolio.body} ${commissions.portfolio.scopeNote}`,
+    },
+  ].map((service) => ({
+    '@type': 'Service',
+    '@id': `${canonical}#${service.id}`,
+    name: service.name,
+    description: service.description,
+    url: `${canonical}#${service.id}`,
+    provider: reference(personId),
+    mainEntityOfPage: reference(pageId),
+  }));
+  page.mainEntity = services.map((service) => reference(service['@id']));
+  graph.push(...services);
 }
 
-const jsonLd = { '@context': 'https://schema.org', '@graph': graph };
+// Escaping '<' prevents an approved future text edit from ending the script tag.
+const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })
+  .replace(/</g, '\\u003c');
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+<script type="application/ld+json" set:html={jsonLd} is:inline />

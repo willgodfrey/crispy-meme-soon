@@ -22,7 +22,7 @@
 }
 
 .inner-page .contact-direct .email-help {
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: var(--muted);
   margin-top: 16px;
 }
@@ -41,7 +41,7 @@
   min-width: 0;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 38.75em) {
   .hero .hero-content {
     padding-bottom: 360px;
   }
@@ -52,11 +52,160 @@
 
   body .hero-links .text-link {
     gap: 15px;
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .scope-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Relative type and em breakpoints preserve the default composition while
+   allowing larger browser fonts to reflow into the compact layouts. */
+.nav {
+  height: auto;
+  min-height: 94px;
+  flex-wrap: wrap;
+}
+
+.navlinks,
+.layer-controls,
+.sheet-top {
+  flex-wrap: wrap;
+}
+
+:where(main, main section, main article, main aside, main div, main figure, footer) {
+  min-width: 0;
+}
+
+main :is(h1, h2, h3, h4, p, li, dt, dd, blockquote),
+.nav,
+footer {
+  overflow-wrap: anywhere;
+}
+
+.text-link {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.nav .brand,
+.contact .text-link,
+.entry-label {
+  white-space: normal;
+}
+
+.intro::before {
+  flex-shrink: 0;
+}
+
+/* Keep the illustrative document's labels in flow so they cannot cover
+   its rows when text grows or visitors apply additional text spacing. */
+.sheet {
+  overflow-wrap: anywhere;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 4.8125rem);
+  grid-template-rows: auto auto 1fr auto;
+}
+
+.sheet-top,
+.sheet-name,
+.sheet-lines {
+  grid-column: 1 / -1;
+}
+
+.sheet-lines {
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-self: start;
+  margin-bottom: 1.5rem;
+}
+
+.sheet .sheet-seal {
+  position: static;
+  grid-area: 4 / 2;
+  align-self: end;
+  width: 100%;
+  height: auto;
+  min-height: 4.8125rem;
+  aspect-ratio: 1;
+  padding: .4em;
+  overflow-wrap: anywhere;
+}
+
+.sheet .sheet-foot {
+  position: static;
+  grid-area: 4 / 1;
+  align-self: end;
+  max-width: none;
+  padding-right: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.phase-controls button[aria-pressed='true'] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: .25em;
+}
+
+.inner-page .about-portrait figcaption {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* A rotated sheet grows beyond a narrow viewport when its text is enlarged.
+   Give its footer and seal independent rows instead of restricting the text. */
+@media (max-width: 38.75em) {
+  .inner-page .about-portrait {
+    flex-wrap: wrap;
+  }
+
+  .sheet {
+    transform: none;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr auto auto;
+  }
+
+  .sheet .sheet-foot {
+    grid-area: 4 / 1;
+    padding-right: 0;
+  }
+
+  .sheet .sheet-seal {
+    grid-area: 5 / 1;
+    justify-self: end;
+    width: min(100%, 4.8125rem);
+    margin-top: .75rem;
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .case-controls button,
+  .phase-controls button,
+  .layer-controls button {
+    border-color: ButtonText;
+  }
+
+  .case-controls button[aria-pressed='true'],
+  .phase-controls button[aria-pressed='true'],
+  .layer-controls button[aria-pressed='true'] {
+    outline: 2px solid ButtonText;
+    outline-offset: -2px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: .25em;
+  }
+
+  body a:focus-visible,
+  body button:focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 4px;
+  }
+
+  .hero::after,
+  .inner-page .contact-direct::after {
+    background: Canvas;
   }
 }
 
@@ -129,7 +278,7 @@
   }
 
   body main h1 {
-    font-size: 32px !important;
+    font-size: 2rem !important;
     line-height: 1.1 !important;
     max-width: none !important;
   }
@@ -158,6 +307,6 @@
   }
 
   body .contact h2 {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 }

@@ -53,7 +53,7 @@ const stages = getStages(flagship.stageIds);
       </div>
       <div>
         <h3 class="small-heading">{flagship.deliverableTitle}</h3>
-        <ul class="clean-list">{flagship.deliverables.map((item) => <li>{item}</li>)}</ul>
+        <ul class="clean-list" role="list">{flagship.deliverables.map((item) => <li>{item}</li>)}</ul>
       </div>
     </div>
     <div class="flagship-foot">
@@ -77,7 +77,7 @@ const stages = getStages(flagship.stageIds);
           <dl class="offer-detail">
             <dt>{labels.decision}</dt><dd>{offer.decision}</dd>
             <dt>{labels.deliverables}</dt>
-            <dd><ul class="clean-list">{offer.deliverables.map((item) => <li>{item}</li>)}</ul></dd>
+            <dd><ul class="clean-list" role="list">{offer.deliverables.map((item) => <li>{item}</li>)}</ul></dd>
           </dl>
           <p class="scope-note">{offer.scopeNote}</p>
           <TextLink {...offer.link} />
@@ -94,7 +94,7 @@ const stages = getStages(flagship.stageIds);
 
   <section class="section conversation wrap" id={conversation.id}>
     <div class="section-heading"><h2>{conversation.title}</h2><p>{conversation.body}</p></div>
-    <ol class="conversation-steps">
+    <ol class="conversation-steps" role="list">
       {conversation.steps.map((step) => <li><h3>{step.title}</h3><p>{step.body}</p></li>)}
     </ol>
     <TextLink {...conversation.link} />

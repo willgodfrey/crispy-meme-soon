@@ -64,7 +64,7 @@ const webp = `${AP}-640.webp 640w, ${AP}-960.webp 960w, ${AP}-1536.webp 1536w`;
     <div class="case-controls js-controls" role="group" aria-label={common.accessibility.workSelector}>
       {
         cases.map((c, i) => (
-          <button type="button" aria-pressed={i === 0 ? 'true' : 'false'} aria-controls={`work-${c.id}`} data-target={`work-${c.id}`}>
+          <button type="button" aria-pressed={i === 0 ? 'true' : 'false'} aria-controls={`work-${c.id}`} data-target={`work-${c.id}`} data-announcement={`${c.title}. ${c.summary}`}>
             {c.category}
           </button>
         ))
@@ -105,7 +105,7 @@ const webp = `${AP}-640.webp 640w, ${AP}-960.webp 960w, ${AP}-1536.webp 1536w`;
         <div class="phase-controls js-controls" role="group" aria-label={common.accessibility.stageSelector}>
           {
             stages.map((s, i) => (
-              <button type="button" aria-pressed={i === 0 ? 'true' : 'false'} aria-controls={`stage-${s.id}`} data-target={`stage-${s.id}`}>
+              <button type="button" aria-pressed={i === 0 ? 'true' : 'false'} aria-controls={`stage-${s.id}`} data-target={`stage-${s.id}`} data-announcement={`${s.title}. ${s.body}`}>
                 {s.title}
               </button>
             ))

@@ -4,15 +4,10 @@
 // complete readable document. Each group initialises independently.
 
 function announce(message: string): void {
-  let live = document.getElementById('sr-status');
-  if (!live) {
-    live = document.createElement('div');
-    live.id = 'sr-status';
-    live.setAttribute('aria-live', 'polite');
-    live.className = 'sr-only';
-    document.body.appendChild(live);
-  }
-  live.textContent = message;
+  // Base renders this empty region before the first interaction so assistive
+  // technology observes a content change in an established live region.
+  const live = document.getElementById('sr-status');
+  if (live) live.textContent = message;
 }
 
 interface Options {
@@ -26,12 +21,15 @@ function initGroup(group: HTMLElement, opts: Options = {}): void {
   if (panels.some((p) => p === null)) return; // a target is missing: stay static
 
   const show = (button: HTMLButtonElement, announceChange: boolean): void => {
+    const changed = button.getAttribute('aria-pressed') !== 'true';
     buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
     panels.forEach((p) => {
       if (p) p.hidden = p.id !== button.dataset.target;
     });
     opts.onSelect?.(button);
-    if (announceChange) announce(button.textContent?.trim() ?? '');
+    if (announceChange && changed) {
+      announce(button.dataset.announcement ?? button.textContent?.trim() ?? '');
+    }
   };
 
   buttons.forEach((button) => button.addEventListener('click', () => show(button, true)));
