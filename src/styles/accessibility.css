@@ -1,0 +1,163 @@
+.navlinks .talk {
+  border-bottom: 1px solid currentColor;
+}
+
+.nav .brand,
+.site-footer-quiet a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.brand span {
+  flex: 0 0 9px;
+}
+
+.text-link svg {
+  flex-shrink: 0;
+}
+
+.email-link {
+  overflow-wrap: anywhere;
+}
+
+.inner-page .contact-direct .email-help {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 16px;
+}
+
+.enhanced .js-controls:not(.is-ready) {
+  display: none;
+}
+
+.inner-page .about-pullquote a:focus-visible {
+  outline-color: var(--paper);
+}
+
+.commission-hero > *,
+.commission-spread > *,
+.contact-canvas > * {
+  min-width: 0;
+}
+
+@media (max-width: 620px) {
+  .hero .hero-content {
+    padding-bottom: 360px;
+  }
+
+  body .hero-links {
+    gap: 12px 22px;
+  }
+
+  body .hero-links .text-link {
+    gap: 15px;
+    font-size: 12px;
+  }
+
+  .scope-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media print {
+  body,
+  body main *,
+  body .contact,
+  body .contact * {
+    color: #000 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body .nav,
+  body .skip,
+  body .js-controls,
+  body .commission-index {
+    display: none !important;
+  }
+
+  body [hidden] {
+    display: block !important;
+  }
+
+  body .section,
+  body .commission-spread,
+  body .commission-hero,
+  body .portfolio-session {
+    padding: 24px 0;
+  }
+
+  body .definition,
+  body .faq,
+  body .commission-hero,
+  body .commission-spread,
+  body .portfolio-session {
+    display: block;
+  }
+
+  body .definition aside {
+    position: static;
+  }
+
+  body .commission-study,
+  body .commission-hero-art {
+    max-width: 360px;
+    margin: 24px auto;
+    break-inside: avoid;
+  }
+
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+  }
+
+  body .sheet {
+    transform: none;
+  }
+
+  body main h1 {
+    font-size: 32px !important;
+    line-height: 1.1 !important;
+    max-width: none !important;
+  }
+
+  body .flagship-heading,
+  body .focused-heading,
+  body .commission-spread,
+  body .commission-hero,
+  body .portfolio-session,
+  body .conversation,
+  body .faq-list section,
+  body .contact {
+    break-inside: avoid;
+  }
+
+  body .definition aside {
+    break-after: avoid;
+  }
+
+  body .contact {
+    padding: 24px 0;
+  }
+
+  body .contact-main {
+    margin-bottom: 24px;
+  }
+
+  body .contact h2 {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-labelledby="commission-set-title commission-set-desc">
+<title id="commission-set-title">Design, prove, hand over</title>
+<desc id="commission-set-desc">Three overlapping architectural sheets represent the design, proof and handover of a venture. Each sheet contains an illustrative drawing, not a completed client deliverable.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif;font-weight:400}.construction{fill:none;stroke:#CED4E0;stroke-width:1}.rule{fill:none;stroke:#242C3B;stroke-width:1.25}.label{fill:#242C3B;font-size:20px}.white{fill:#F8F9FA;font-size:20px}</style>
+<rect width="640" height="500" fill="#E9ECF2"/>
+
+<g class="construction"><path d="M22 44H618M36 24V474M610 154V480M180 456H620"/><path d="M26 36H46M36 26V54M600 456H620M610 446V466"/></g>
+<rect x="47" y="48" width="280" height="316" fill="#F8F9FA" stroke="#242C3B" stroke-width="1.25"/>
+<text x="69" y="86" class="label">Design</text><path d="M69 102H305" class="construction"/>
+<path d="M84 165L148 127L213 165L148 203Z" fill="#2849B8"/>
+<path d="M84 165V237L148 276V203Z" fill="#2849B8" fill-opacity=".78"/>
+<path d="M148 203L213 165V237L148 276Z" fill="#2849B8" fill-opacity=".52"/>
+<path d="M68 297H237M80 285V311M225 285V311M148 119V284" class="rule"/>
+<rect x="211" y="116" width="266" height="316" fill="#F8F9FA" stroke="#242C3B" stroke-width="1.25"/>
+<text x="233" y="154" class="label">Prove</text><path d="M233 170H455" class="construction"/>
+<path d="M238 207H351V252H284V300H432M260 324H343V383H445" class="rule"/>
+<rect x="245" y="196" width="24" height="24" fill="#F8F9FA" stroke="#2849B8" stroke-width="2"/>
+<rect x="337" y="239" width="26" height="26" fill="#2849B8"/>
+<circle cx="284" cy="300" r="12" fill="#F8F9FA" stroke="#242C3B" stroke-width="1.25"/>
+<path d="M233 350H314M233 361H298M233 372H308" class="construction"/>
+<rect x="367" y="184" width="235" height="272" fill="#2849B8" stroke="#242C3B" stroke-width="1.25"/>
+<text x="389" y="222" class="white">Hand over</text><path d="M389 238H580" stroke="#F8F9FA" stroke-opacity=".45"/>
+<path d="M395 267H483V310H551M433 310H483V353H551M433 353V396H551" fill="none" stroke="#F8F9FA" stroke-width="1.25"/>
+<rect x="389" y="260" width="15" height="15" fill="#F8F9FA"/>
+<g fill="#2849B8" stroke="#F8F9FA" stroke-width="1.25"><rect x="546" y="303" width="14" height="14"/><rect x="546" y="346" width="14" height="14"/><rect x="546" y="389" width="14" height="14"/></g>
+<path d="M389 426H471M528 426H580" stroke="#F8F9FA" stroke-opacity=".45"/>
+
+</svg>

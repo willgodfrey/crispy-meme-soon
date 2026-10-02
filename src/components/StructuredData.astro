@@ -1,6 +1,7 @@
 ---
 // Content-backed JSON-LD. Only facts present in the content; no invented dates.
 import { common, practice } from '../lib/content';
+const { title, description } = Astro.props;
 const site = 'https://www.willgodfrey.com';
 const path = Astro.url.pathname;
 
@@ -18,6 +19,10 @@ const person = {
 const website = { '@type': 'WebSite', name: common.siteName, url: `${site}/` };
 
 const graph: Record<string, unknown>[] = [website, person];
+
+if (path === '/commissions/') {
+  graph.push({ '@type': 'WebPage', name: title, description, url: `${site}${path}` });
+}
 
 if (path === '/about/') {
   graph.push({ '@type': 'ProfilePage', mainEntity: person });

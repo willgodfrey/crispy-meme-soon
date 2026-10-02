@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="margin-study-title margin-study-desc">
+<title id="margin-study-title">Economics per successful outcome</title>
+<desc id="margin-study-desc">Price per outcome minus cost to deliver equals margin per outcome. The delivery-cost breakdown includes models and tools, human review, and other delivery costs. The equation is symbolic and contains no measured values.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif;font-weight:400}.construction{fill:none;stroke:#CED4E0;stroke-width:1}.rule{fill:none;stroke:#242C3B;stroke-width:1.25}.label{fill:#242C3B;font-size:20px}.white{fill:#F8F9FA;font-size:20px}</style>
+<rect width="640" height="360" fill="#E9ECF2"/>
+
+<path d="M24 26H616M24 334H616" class="construction"/>
+<text x="40" y="67" class="label"><tspan x="40">Price per</tspan><tspan x="40" dy="27">outcome</tspan></text>
+<path d="M207 77H231" stroke="#242C3B" stroke-width="1.5"/>
+<text x="267" y="67" class="label"><tspan x="267">Cost to</tspan><tspan x="267" dy="27">deliver</tspan></text>
+<path d="M410 71H435M410 82H435" stroke="#242C3B" stroke-width="1.5"/>
+<text x="469" y="67" class="label"><tspan x="469">Margin per</tspan><tspan x="469" dy="27">outcome</tspan></text>
+<path d="M302 111V139M180 164H204M180 225H204M180 286H204M180 164V286" class="rule"/>
+<rect x="204" y="139" width="396" height="181" fill="#2849B8"/>
+<path d="M226 200H578M226 260H578" stroke="#F8F9FA" stroke-opacity=".35"/>
+<text x="228" y="177" class="white">Models and tools</text>
+<text x="228" y="237" class="white">Human review</text>
+<text x="228" y="297" class="white">Other delivery costs</text>
+
+</svg>

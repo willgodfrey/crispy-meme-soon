@@ -2,6 +2,7 @@
 node_modules/
 dist/
 .astro/
+qa/cobalt/
 
 # Local logs
 logs/

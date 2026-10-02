@@ -38,6 +38,7 @@ function initGroup(group: HTMLElement, opts: Options = {}): void {
 
   const initial = buttons.find((b) => b.getAttribute('aria-pressed') === 'true') ?? buttons[0];
   show(initial, false);
+  group.classList.add('is-ready');
 }
 
 function setLayerPlane(button: HTMLButtonElement): void {

@@ -1,0 +1,15 @@
+---
+import { assembly } from '../lib/content';
+
+interface Props {
+  class?: string;
+  sizes: string;
+}
+const { class: imageClass, sizes } = Astro.props;
+---
+
+<picture>
+  <source type="image/avif" srcset={assembly.widths.map((width) => `${assembly.base}-${width}.avif ${width}w`).join(', ')} sizes={sizes} />
+  <source type="image/webp" srcset={assembly.widths.map((width) => `${assembly.base}-${width}.webp ${width}w`).join(', ')} sizes={sizes} />
+  <img class={imageClass} src={assembly.jpg} alt="" width="1536" height="1024" loading="lazy" />
+</picture>

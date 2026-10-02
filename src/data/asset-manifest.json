@@ -1,267 +1,562 @@
 {
-  "version": "1.0",
-  "pathsRelativeTo": "Package root",
-  "status": "Complete reproduction assets for supplied mockups",
+  "version": "2.0",
+  "date": "2026-10-01",
+  "pathsRelativeTo": "Repository root; production files only",
+  "status": "Inventory of actual bundled assets for the Cobalt commissions design handoff",
+  "palette": "Cobalt Blue #2849B8",
   "assets": [
     {
       "id": "assembly",
+      "kind": "concept-art",
+      "role": "Cobalt sculpture for Home hero and decorative Contact/404 crops",
+      "source": "Selected Cobalt Blue color edit of the original Architecture practice artwork, made 2026-09-21; no new raster generation in this commissions update.",
+      "license": "Generated project artwork; no separate third-party asset license is bundled. Generation provenance is recorded.",
+      "provenance": "assets/ARTWORK-PROVENANCE.md",
+      "alt": "Conceptual sculpture of cobalt stone, graphite and glass planes joined into one structure.",
+      "caption": "A study in three parts. Commercial. Technical. Institutional.",
       "files": [
         {
-          "path": "assets/images/assembly-1536.avif",
-          "bytes": 78466,
-          "sha256": "e46717fb500fdca7a726c0ad5326b95852ac290749eccdd80db0842a8ab35dce"
+          "path": "public/images/architecture-practice/assembly-1536.avif",
+          "bytes": 40179,
+          "sha256": "1ec1d5a7a0fada81934baaba11a86887c19d3670d04bcd987df21e833285da86",
+          "publishToSite": true,
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "format": "AVIF"
         },
         {
-          "path": "assets/images/assembly-1536.jpg",
-          "bytes": 166105,
-          "sha256": "ac48bed4b5db55bb5ee0573ccb389b48582d2baa80339877d73ebd643a117ae3"
+          "path": "public/images/architecture-practice/assembly-1536.jpg",
+          "bytes": 168604,
+          "sha256": "24c521399d33d4626485ae91e3ee37ef969b5244940bf3f4fbab8b041d4c3785",
+          "publishToSite": true,
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "format": "JPEG"
         },
         {
-          "path": "assets/images/assembly-1536.webp",
-          "bytes": 66028,
-          "sha256": "1e2b6ca1f8ae3cab2bd240ce2282e86e4894712f21daea69ed3f6a3f3e3b872c"
+          "path": "public/images/architecture-practice/assembly-1536.webp",
+          "bytes": 64644,
+          "sha256": "45da8284c10747ebb3c050e7adac3a20d2089947be4664286a012940dfba87c5",
+          "publishToSite": true,
+          "dimensions": {
+            "width": 1536,
+            "height": 1024
+          },
+          "format": "WEBP"
         },
         {
-          "path": "assets/images/assembly-640.avif",
-          "bytes": 15078,
-          "sha256": "c324dee176450846520ae35ba755b10fcccbf0ce9a98f85aa07bf38f2ce73976"
+          "path": "public/images/architecture-practice/assembly-640.avif",
+          "bytes": 9678,
+          "sha256": "2685e8d4f81e3ebd609d1dbf8337b04b2c6116312199a828ed746cc2e0eae12b",
+          "publishToSite": true,
+          "dimensions": {
+            "width": 640,
+            "height": 427
+          },
+          "format": "AVIF"
         },
         {
-          "path": "assets/images/assembly-640.webp",
-          "bytes": 12414,
-          "sha256": "b47bfd087e4c60e467e897680382d35ba76d60529e60597a377dfec93432edcb"
+          "path": "public/images/architecture-practice/assembly-640.webp",
+          "bytes": 14436,
+          "sha256": "f8655c47a630e419b099ead20e11abebb13006232aa3a579301337fdd34fa5a3",
+          "publishToSite": true,
+          "dimensions": {
+            "width": 640,
+            "height": 427
+          },
+          "format": "WEBP"
         },
         {
-          "path": "assets/images/assembly-960.avif",
-          "bytes": 31906,
-          "sha256": "77ef89bdded969f41533e0f04504bebc02e8e00292be6c6a5ca784ccfa8755a5"
+          "path": "public/images/architecture-practice/assembly-960.avif",
+          "bytes": 18589,
+          "sha256": "1770133a39e77f3356834e5527d14bf2688db78225fdf90afa9cbfbe0220fb61",
+          "publishToSite": true,
+          "dimensions": {
+            "width": 960,
+            "height": 640
+          },
+          "format": "AVIF"
         },
         {
-          "path": "assets/images/assembly-960.webp",
-          "bytes": 25598,
-          "sha256": "1f1ec8098f05be9394c10e0f82367af6cb67df7c59915b41b0de0243f1c8ea05"
-        },
-        {
-          "path": "assets/images/assembly-master.png",
-          "bytes": 1947083,
-          "sha256": "3cb7b7df277d1f74e2c6fa16eaede7227333adbf1f6e6392555e1ef511e006f0"
+          "path": "public/images/architecture-practice/assembly-960.webp",
+          "bytes": 28896,
+          "sha256": "743728f1de6d13967972e63ea066f6c5c514fe00fc9fa969dd98bf509f4ab855",
+          "publishToSite": true,
+          "dimensions": {
+            "width": 960,
+            "height": 640
+          },
+          "format": "WEBP"
         }
       ],
-      "kind": "concept-art",
-      "purpose": "Home hero; decorative Contact/404 detail",
-      "masterDimensions": {
-        "width": 1536,
-        "height": 1024
-      },
-      "source": "Original generated concept artwork from the selected Architecture practice study, 2026-09-21.",
-      "production": "Use AVIF/WebP srcsets. JPEG final fallback. Keep PNG master out of routine public transfer.",
-      "alt": "Conceptual sculpture of graphite, stone and glass planes joined into one structure.",
-      "caption": "A study in three parts. Commercial. Technical. Institutional.",
-      "provenance": "assets/ARTWORK-PROVENANCE.md",
+      "production": "Use AVIF and WebP 640w/960w/1536w srcsets, JPEG fallback, explicit intrinsic dimensions. Hero sizes=100vw. Keep PNG master in the handoff or source archive, not the deployed public asset set. Decorative repeats use empty alt.",
       "crop": {
-        "desktop": "center 50%, cover",
-        "phone": "68% center; lower image field",
+        "homeDesktop": "center 50%, cover",
+        "homeTablet": "62% center",
+        "homePhone": "68% center, lower image field",
         "contact": "80% center with readable scrim"
       }
     },
     {
       "id": "portrait",
+      "kind": "photograph",
+      "role": "Home personal note, About portrait and existing social-sharing image",
+      "source": "Actual portrait carried forward unchanged from the existing website.",
+      "license": "Existing user-supplied website photograph; separate third-party license not supplied. Preserve existing attribution and permissions.",
       "files": [
         {
-          "path": "assets/images/will-godfrey.jpg",
+          "path": "public/images/will-godfrey.jpg",
           "bytes": 30104,
-          "sha256": "4a2e9b55fb3783abebe8301ab66a5f1953383941163fecc6f58572420433a356"
+          "sha256": "4a2e9b55fb3783abebe8301ab66a5f1953383941163fecc6f58572420433a356",
+          "publishToSite": true,
+          "dimensions": {
+            "width": 400,
+            "height": 400
+          },
+          "format": "JPEG"
         }
       ],
-      "kind": "photograph",
-      "purpose": "Home personal note and About portrait; preserved share-image URL",
-      "dimensions": {
-        "width": 400,
-        "height": 400
-      },
-      "source": "Copied unchanged from existing public/images/will-godfrey.jpg.",
       "alt": "Will Godfrey",
       "productionPath": "/images/will-godfrey.jpg",
-      "displayLimit": "About width about 320px; home 122px; preserve genuine source, no upscaling claim."
+      "production": "400×400 source. Home renders 122×148; About renders about 320×360 with object-fit:cover. Do not claim a higher-resolution source or replace with a generated person."
     },
     {
       "id": "venture-boundary",
+      "kind": "editable-svg",
+      "role": "Home and Work explanatory illustration",
+      "source": "Inherited original conceptual drawing, recolored for the selected Cobalt Blue study. Not a client record.",
+      "license": "Original project drawing supplied for this website; no separate third-party asset license is bundled.",
       "files": [
         {
-          "path": "assets/diagrams/parent-and-venture.svg",
+          "path": "public/diagrams/parent-and-venture.svg",
           "bytes": 968,
-          "sha256": "26741312225a3abce47043b496787b38e153c49a213777e192d3591e63a2b54b"
+          "sha256": "28cab6916bce6d4605a3e83a1735521dbebfae2b6a3fcc9ccb8c6bd1cd477ca4",
+          "publishToSite": true,
+          "viewBox": "0 0 520 300",
+          "dimensions": {
+            "width": 520,
+            "height": 300
+          },
+          "format": "SVG"
         }
       ],
-      "kind": "editable-svg",
-      "purpose": "Explanatory Work illustration; first three reused on Home",
-      "source": "Original conceptual SVG created for this design study; not project documentation.",
       "alt": "A new venture is connected to an industrial parent across a defined boundary.",
       "caption": "Illustrative model of the boundary between a parent and a new venture.",
       "production": "Use same-origin image or inline safely with unique SVG IDs. Retain illustrative caption."
     },
     {
       "id": "agent-system",
+      "kind": "editable-svg",
+      "role": "Home and Work explanatory illustration",
+      "source": "Inherited original conceptual drawing, recolored for the selected Cobalt Blue study. Not a client record.",
+      "license": "Original project drawing supplied for this website; no separate third-party asset license is bundled.",
       "files": [
         {
-          "path": "assets/diagrams/agent-workflow.svg",
+          "path": "public/diagrams/agent-workflow.svg",
           "bytes": 915,
-          "sha256": "0e8484d6d2bff623de9e74bbf24ea6296d6b44894e4b6951a5a35605b0a14f47"
+          "sha256": "eea8427503c399fc4342cc76be58ec80b43c154e6bc61712fe57af467bc14954",
+          "publishToSite": true,
+          "viewBox": "0 0 520 300",
+          "dimensions": {
+            "width": 520,
+            "height": 300
+          },
+          "format": "SVG"
         }
       ],
-      "kind": "editable-svg",
-      "purpose": "Explanatory Work illustration; first three reused on Home",
-      "source": "Original conceptual SVG created for this design study; not project documentation.",
       "alt": "A conceptual agent workflow connects input, an AI system, human review and an outcome.",
       "caption": "Conceptual workflow illustration. It does not disclose the client's system.",
       "production": "Use same-origin image or inline safely with unique SVG IDs. Retain illustrative caption."
     },
     {
       "id": "terrain-study",
+      "kind": "editable-svg",
+      "role": "Home and Work explanatory illustration",
+      "source": "Inherited original conceptual drawing, recolored for the selected Cobalt Blue study. Not a client record.",
+      "license": "Original project drawing supplied for this website; no separate third-party asset license is bundled.",
       "files": [
         {
-          "path": "assets/diagrams/terrain-study.svg",
+          "path": "public/diagrams/terrain-study.svg",
           "bytes": 948,
-          "sha256": "4e6c7135997c38c6929f37a1cd8a7d77adc6aa2a3646824d86ed766660d6e335"
+          "sha256": "160436b4aefb28f8d96e5ae73a9c239e2403eae44d7fb99ce8112fbb365a2c14",
+          "publishToSite": true,
+          "viewBox": "0 0 520 300",
+          "dimensions": {
+            "width": 520,
+            "height": 300
+          },
+          "format": "SVG"
         }
       ],
-      "kind": "editable-svg",
-      "purpose": "Explanatory Work illustration; first three reused on Home",
-      "source": "Original conceptual SVG created for this design study; not project documentation.",
       "alt": "Layered contour lines with a central measurement marker suggest terrain capture.",
       "caption": "Illustrative terrain study. This is not a client survey or measured deliverable.",
       "production": "Use same-origin image or inline safely with unique SVG IDs. Retain illustrative caption."
     },
     {
       "id": "payload-study",
+      "kind": "editable-svg",
+      "role": "Work explanatory illustration",
+      "source": "Inherited original conceptual drawing, recolored for the selected Cobalt Blue study. Not a client record.",
+      "license": "Original project drawing supplied for this website; no separate third-party asset license is bundled.",
       "files": [
         {
-          "path": "assets/diagrams/payload-study.svg",
+          "path": "public/diagrams/payload-study.svg",
           "bytes": 867,
-          "sha256": "d2cd63b1ae5313f04bbe83346afaba6b91ade0143eaf140b8e46527811983628"
+          "sha256": "05c289d76988abf1b085687c4526103c55d04b8d47010ced3001fe63e86fc737",
+          "publishToSite": true,
+          "viewBox": "0 0 520 300",
+          "dimensions": {
+            "width": 520,
+            "height": 300
+          },
+          "format": "SVG"
         }
       ],
-      "kind": "editable-svg",
-      "purpose": "Explanatory Work illustration; first three reused on Home",
-      "source": "Original conceptual SVG created for this design study; not project documentation.",
       "alt": "An abstract small component sits above a larger platform, with its connection indicated.",
       "caption": "Conceptual assembly study. This is not a drawing of a Miniature Systems product.",
       "production": "Use same-origin image or inline safely with unique SVG IDs. Retain illustrative caption."
     },
     {
       "id": "method-study",
+      "kind": "editable-svg",
+      "role": "Work explanatory illustration",
+      "source": "Inherited original conceptual drawing, recolored for the selected Cobalt Blue study. Not a client record.",
+      "license": "Original project drawing supplied for this website; no separate third-party asset license is bundled.",
       "files": [
         {
-          "path": "assets/diagrams/method-study.svg",
+          "path": "public/diagrams/method-study.svg",
           "bytes": 1123,
-          "sha256": "0d12131ac0124e91a913b6299bfdf571f4d7484235ef3c9ee3e0213c9e32937b"
+          "sha256": "fe62b3a120469eb6e694590fc448d2a41c238cfe618124b347b0da7a45bd60d9",
+          "publishToSite": true,
+          "viewBox": "0 0 520 300",
+          "dimensions": {
+            "width": 520,
+            "height": 300
+          },
+          "format": "SVG"
         }
       ],
-      "kind": "editable-svg",
-      "purpose": "Explanatory Work illustration; first three reused on Home",
-      "source": "Original conceptual SVG created for this design study; not project documentation.",
       "alt": "Three connected decision gates form a sequence, with a stopping route at each gate.",
       "caption": "Illustrative decision record. An introduction is available on request.",
       "production": "Use same-origin image or inline safely with unique SVG IDs. Retain illustrative caption."
     },
     {
       "id": "venture-layers",
+      "kind": "editable-svg",
+      "role": "Interactive Practice model",
+      "source": "Inherited original conceptual drawing, recolored for the selected Cobalt Blue study. Not a client record.",
+      "license": "Original project drawing supplied for this website; no separate third-party asset license is bundled.",
       "files": [
         {
-          "path": "assets/diagrams/venture-layers.svg",
+          "path": "public/diagrams/venture-layers.svg",
           "bytes": 5266,
-          "sha256": "71444f6f6466cdf9b4ce7b6154434f1a414de6df4769014b4f6f370e77868745"
+          "sha256": "77c90fc80c1c76fa83fb56bca727b70a6fef14fea9c75e48d954a9ea11f0cdae",
+          "publishToSite": true,
+          "viewBox": "0 0 680 595",
+          "dimensions": {
+            "width": 680,
+            "height": 595
+          },
+          "format": "SVG"
         }
       ],
-      "kind": "editable-svg",
-      "purpose": "Interactive Practice-layer model",
-      "source": "Original conceptual SVG from the design study, adapted to selected palette.",
       "alt": "Three connected layers of a venture: commercial, technical and institutional. The design joins decisions across all three.",
       "caption": "Conceptual model of a venture. Select a layer to explore its decisions.",
       "production": "Inline for layer selection, retain data-plane identifiers commercial/technical/institutional; explanatory text remains HTML."
     },
     {
-      "id": "manrope",
+      "id": "commission-set",
+      "kind": "editable-svg",
+      "role": "Flagship venture commission visual on the Commissions page. Keep the outside caption visible. Not a case study or a promise of exact document layouts.",
+      "source": "Original conceptual SVG created for the commissions update, 2026-10-01. Not a real commission deliverable or result.",
+      "license": "Original project drawing supplied for this website; no separate third-party asset license is bundled.",
       "files": [
         {
-          "path": "assets/fonts/manrope-latin-variable.woff2",
-          "bytes": 24576,
-          "sha256": "e310b55a7fd9677f5e3555e6c6c4d064fa1f1d24393f0ddbe217cea12a8c432f"
-        },
-        {
-          "path": "assets/fonts/manrope-OFL.txt",
-          "bytes": 4387,
-          "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+          "path": "public/diagrams/commission-set.svg",
+          "bytes": 2580,
+          "sha256": "dadc60e2748b6bafa057346b578f2853e82ae61e26b987efb8c8f99633a9ba87",
+          "publishToSite": true,
+          "viewBox": "0 0 640 500",
+          "dimensions": {
+            "width": 640,
+            "height": 500
+          },
+          "format": "SVG"
         }
       ],
+      "title": "Design, prove, hand over",
+      "description": "Three overlapping architectural sheets represent the design, proof and handover of a venture. Each sheet contains an illustrative drawing, not a completed client deliverable.",
+      "visibleLabels": [
+        "Design",
+        "Prove",
+        "Hand over"
+      ],
+      "alt": "Three architectural sheets labeled Design, Prove and Hand over, with illustrative venture drawings.",
+      "caption": "Illustrative commission documents. The scope is shaped around the decision and the venture.",
+      "production": "Use as a same-origin image with provided alt and adjacent caption. When inlining, preserve accessible title/description and prefix IDs if an illustration repeats. Keep line lengths and areas symbolic, not quantitative."
+    },
+    {
+      "id": "options-study",
+      "kind": "editable-svg",
+      "role": "Options brief illustration. These are illustrative directions, not a prescribed list or proprietary scoring method.",
+      "source": "Original conceptual SVG created for the commissions update, 2026-10-01. Not a real commission deliverable or result.",
+      "license": "Original project drawing supplied for this website; no separate third-party asset license is bundled.",
+      "files": [
+        {
+          "path": "public/diagrams/options-study.svg",
+          "bytes": 1613,
+          "sha256": "6a7a49b06cef7213b8c3a3e75b5f6f0e3ec88f82518fa5adf8a6ae050e98d1e0",
+          "publishToSite": true,
+          "viewBox": "0 0 640 360",
+          "dimensions": {
+            "width": 640,
+            "height": 360
+          },
+          "format": "SVG"
+        }
+      ],
+      "title": "An options brief",
+      "description": "One question branches into three possible directions: improve the existing business, build a venture, or acquire capability. The alternatives come back to a decision for the owner. No option is selected.",
+      "visibleLabels": [
+        "The question",
+        "Improve existing business",
+        "Build a venture",
+        "Acquire capability",
+        "Owner decision"
+      ],
+      "alt": "One question branches into improving the existing business, building a venture or acquiring capability, then returns to an owner decision.",
+      "caption": "Illustrative options map. The alternatives depend on the question.",
+      "production": "Use as a same-origin image with provided alt and adjacent caption. When inlining, preserve accessible title/description and prefix IDs if an illustration repeats. Keep line lengths and areas symbolic, not quantitative."
+    },
+    {
+      "id": "diligence-study",
+      "kind": "editable-svg",
+      "role": "AI diligence illustration. Keep claims, evidence and confidence equally explicit; do not add invented scores or assurance badges.",
+      "source": "Original conceptual SVG created for the commissions update, 2026-10-01. Not a real commission deliverable or result.",
+      "license": "Original project drawing supplied for this website; no separate third-party asset license is bundled.",
+      "files": [
+        {
+          "path": "public/diagrams/diligence-study.svg",
+          "bytes": 2034,
+          "sha256": "516c8a0454de8bafcc2e0b247bf443443e911f33998722f80adda4b6afbcaba1",
+          "publishToSite": true,
+          "viewBox": "0 0 640 360",
+          "dimensions": {
+            "width": 640,
+            "height": 360
+          },
+          "format": "SVG"
+        }
+      ],
+      "title": "Claims, evidence and confidence",
+      "description": "An illustrative diligence worksheet separates what is asserted, what can be checked and what remains uncertain. The drawing contains no scores, ratings or assessment of a real business.",
+      "visibleLabels": [
+        "Claims",
+        "Evidence",
+        "Confidence",
+        "What is asserted",
+        "What can be checked",
+        "What remains uncertain"
+      ],
+      "alt": "A three-column diligence worksheet separates claims, evidence and confidence, including what remains uncertain.",
+      "caption": "Illustrative diligence worksheet. No business has been assessed in this drawing.",
+      "production": "Use as a same-origin image with provided alt and adjacent caption. When inlining, preserve accessible title/description and prefix IDs if an illustration repeats. Keep line lengths and areas symbolic, not quantitative."
+    },
+    {
+      "id": "margin-study",
+      "kind": "editable-svg",
+      "role": "AI margin review illustration. All areas and line lengths are compositional, not quantitative. Do not portray them as measured proportions.",
+      "source": "Original conceptual SVG created for the commissions update, 2026-10-01. Not a real commission deliverable or result.",
+      "license": "Original project drawing supplied for this website; no separate third-party asset license is bundled.",
+      "files": [
+        {
+          "path": "public/diagrams/margin-study.svg",
+          "bytes": 1689,
+          "sha256": "a73be7d6f41d32bd63b89a75823bb2ac98494198aa0525ef715d4730542a75c2",
+          "publishToSite": true,
+          "viewBox": "0 0 640 360",
+          "dimensions": {
+            "width": 640,
+            "height": 360
+          },
+          "format": "SVG"
+        }
+      ],
+      "title": "Economics per successful outcome",
+      "description": "Price per outcome minus cost to deliver equals margin per outcome. The delivery-cost breakdown includes models and tools, human review, and other delivery costs. The equation is symbolic and contains no measured values.",
+      "visibleLabels": [
+        "Price per outcome",
+        "Cost to deliver",
+        "Margin per outcome",
+        "Models and tools",
+        "Human review",
+        "Other delivery costs"
+      ],
+      "alt": "A symbolic outcome-economics equation includes models and tools, human review and other delivery costs.",
+      "caption": "Illustrative unit-economics model. The drawing contains no measured values.",
+      "production": "Use as a same-origin image with provided alt and adjacent caption. When inlining, preserve accessible title/description and prefix IDs if an illustration repeats. Keep line lengths and areas symbolic, not quantitative."
+    },
+    {
+      "id": "gate-study",
+      "kind": "editable-svg",
+      "role": "Gate review illustration. Preserve equal visual weight for all three decisions and do not add approval or failure indicators.",
+      "source": "Original conceptual SVG created for the commissions update, 2026-10-01. Not a real commission deliverable or result.",
+      "license": "Original project drawing supplied for this website; no separate third-party asset license is bundled.",
+      "files": [
+        {
+          "path": "public/diagrams/gate-study.svg",
+          "bytes": 1597,
+          "sha256": "a69e545caec4a45af437ebeb0e38b8ae5e864accc2f9f61637432bdfc3f24d83",
+          "publishToSite": true,
+          "viewBox": "0 0 640 360",
+          "dimensions": {
+            "width": 640,
+            "height": 360
+          },
+          "format": "SVG"
+        }
+      ],
+      "title": "Evidence before the next commitment",
+      "description": "Evidence informs a decision at a gate. Release, hold and change are shown as equal possible decisions. The drawing does not recommend an outcome or report a completed review.",
+      "visibleLabels": [
+        "Evidence",
+        "Decision",
+        "Release",
+        "Hold",
+        "Change"
+      ],
+      "alt": "Evidence feeds a gate decision with three equal possible outcomes: release, hold or change.",
+      "caption": "Illustrative gate record. Release, hold and change are all possible decisions.",
+      "production": "Use as a same-origin image with provided alt and adjacent caption. When inlining, preserve accessible title/description and prefix IDs if an illustration repeats. Keep line lengths and areas symbolic, not quantitative."
+    },
+    {
+      "id": "manrope",
       "kind": "font",
-      "purpose": "Self-hosted typography",
+      "role": "Primary headings, body and UI",
+      "source": "Google Fonts; exact source URLs and retrieval date in assets/fonts/sources.json",
       "license": "SIL Open Font License 1.1; bundled license controls use.",
-      "source": "Google Fonts; exact URLs and retrieval date in assets/fonts/sources.json",
-      "weights": "200-800"
+      "weights": "200–800 variable",
+      "files": [
+        {
+          "path": "public/fonts/manrope-latin-variable.woff2",
+          "bytes": 24576,
+          "sha256": "e310b55a7fd9677f5e3555e6c6c4d064fa1f1d24393f0ddbe217cea12a8c432f",
+          "publishToSite": true
+        }
+      ],
+      "production": "Self-host with font-display:swap. Retain license with distributed source. Latin subset only."
     },
     {
       "id": "newsreader",
+      "kind": "font",
+      "role": "Reading prose and personal quotation",
+      "source": "Google Fonts; exact source URLs and retrieval date in assets/fonts/sources.json",
+      "license": "SIL Open Font License 1.1; bundled license controls use.",
+      "weights": "400 regular; variable optical size 6–72",
       "files": [
         {
-          "path": "assets/fonts/newsreader-latin-variable.woff2",
+          "path": "public/fonts/newsreader-latin-variable.woff2",
           "bytes": 57300,
-          "sha256": "e71a3bea5993009ab159b89d52d88ba515efd57e8d9324a94c681bfc72c9ac0f"
-        },
-        {
-          "path": "assets/fonts/newsreader-OFL.txt",
-          "bytes": 4394,
-          "sha256": "fdfad38143ec470553cae82a1e45320bdd1b9ec70415d37bd0171051d8a4ded8"
+          "sha256": "e71a3bea5993009ab159b89d52d88ba515efd57e8d9324a94c681bfc72c9ac0f",
+          "publishToSite": true
         }
       ],
-      "kind": "font",
-      "purpose": "Self-hosted typography",
-      "license": "SIL Open Font License 1.1; bundled license controls use.",
-      "source": "Google Fonts; exact URLs and retrieval date in assets/fonts/sources.json",
-      "weights": "400 only; variable optical size"
+      "production": "Self-host with font-display:swap. Retain license with distributed source. Latin subset only."
     },
     {
-      "id": "existing-favicon",
+      "id": "cobalt-favicon",
+      "kind": "brand",
+      "role": "SVG favicon, WG monogram in selected palette",
+      "source": "Existing website WG monogram adapted to Cobalt Blue; header remains live text and a CSS square.",
+      "license": "Existing project branding; no separate third-party license supplied.",
       "files": [
         {
-          "path": "assets/brand/favicon-16.png",
-          "bytes": 380,
-          "sha256": "15fe7519408c5f317869ef77c1adb674fb43d443b82f1e5f81952c73a2030ce3"
+          "path": "public/icons/favicon.svg",
+          "bytes": 303,
+          "sha256": "9faa8663e171b187dd511bce80a4ab707b056570e564992427a9c981980a4b0b",
+          "publishToSite": true,
+          "viewBox": "0 0 64 64",
+          "dimensions": {
+            "width": 64,
+            "height": 64
+          },
+          "format": "SVG"
         },
         {
-          "path": "assets/brand/favicon-32.png",
-          "bytes": 550,
-          "sha256": "04e41cea24f37609346ff8a9d985dc5d79914052e83f9f92ee76017f5166da34"
+          "path": "public/favicon.ico",
+          "bytes": 2218,
+          "sha256": "32f40f3e84340b6f77466a135916e2b8fdc0e811eb839cdca8043d718aab58d7",
+          "publishToSite": true,
+          "dimensions": {
+            "width": 48,
+            "height": 48
+          },
+          "format": "ICO",
+          "sizes": [
+            16,
+            32,
+            48
+          ]
         },
         {
-          "path": "assets/brand/favicon.ico",
-          "bytes": 15086,
-          "sha256": "2b9431ad843ea82f1b4ab2addf8916f8b2676187ca69181e166b60212baa2dfd"
+          "path": "public/icons/favicon-16.png",
+          "bytes": 351,
+          "sha256": "a68a196281ceccc09174acd926236350a8755db82fc5df82a98b9110d6fd1118",
+          "publishToSite": true,
+          "dimensions": {
+            "width": 16,
+            "height": 16
+          },
+          "format": "PNG"
         },
         {
-          "path": "assets/brand/favicon.svg",
-          "bytes": 301,
-          "sha256": "4845430d21fb44b0269ab033f27947489d041df3c0beac23924c1c67ca17d703"
+          "path": "public/icons/favicon-32.png",
+          "bytes": 728,
+          "sha256": "5f4c472608fd13e5af47985c9f72d2d9160d58cc993116a2ba7eb03d9c4ae6e7",
+          "publishToSite": true,
+          "dimensions": {
+            "width": 32,
+            "height": 32
+          },
+          "format": "PNG"
         }
       ],
-      "kind": "existing-brand",
-      "purpose": "Carry forward favicon files",
-      "source": "Copied unchanged from existing repository public/favicon.ico and public/icons.",
-      "production": "Preserve existing routes and files. The header uses live text and a CSS wine square, not this favicon as a logo."
+      "production": "Use supplied SVG at the existing /icons/favicon.svg route. Regenerate /favicon.ico from this SVG at the existing supported sizes, preserving that compatibility route. The SVG is the editable source for both formats."
     }
   ],
-  "optionalNotRequired": [
+  "supportingFiles": [
     {
-      "asset": "Environmental portrait",
-      "fallback": "Included genuine portrait, limited display size"
+      "role": "Raster artwork source and exact color-edit prompt",
+      "path": "assets/ARTWORK-PROVENANCE.md",
+      "bytes": 1916,
+      "sha256": "0eb278e8bc279b4f530ae748214d1122e72aab024ac93ebb6d76e6586b855869",
+      "publishToSite": false
     },
     {
-      "asset": "Will-owned photography and geospatial captures",
-      "fallback": "Included labeled explanatory SVGs"
+      "role": "Exact accessible and visible text for the five new diagrams",
+      "path": "assets/commission-visuals.json",
+      "bytes": 4662,
+      "sha256": "595c1d2067a9053f01e77f09642df2edbb8afb6a938fb061dad1002812df5b4e",
+      "publishToSite": false
     },
     {
-      "asset": "Approved client interface or decision memo",
-      "fallback": "Included illustrative model and document study"
+      "role": "Font source and license retrieval URLs",
+      "path": "assets/fonts/sources.json",
+      "bytes": 786,
+      "sha256": "2328b7ac561356068b246db63a4e9250abec98cd6786cd6283585d40550070e2",
+      "publishToSite": false
     }
+  ],
+  "fileCountExcludingThisManifest": 28,
+  "totalBytesExcludingThisManifest": 2253867,
+  "notes": [
+    "Dimensions describe the source file or SVG viewBox, not an enforced display size.",
+    "Generated artwork and conceptual diagrams are labeled as illustrations, never evidence of client results.",
+    "Only the two bundled font families carry third-party license files. Other asset provenance is stated without inventing license terms.",
+    "The full production repository remains responsible for existing favicon compatibility routes and social-share metadata."
   ]
 }

@@ -1,20 +1,36 @@
-/* Design tokens from docs/architecture-practice-handoff/design-tokens.json.
-   Light-only palette (no automatic dark scheme). */
 :root {
-  --paper: #fafaf7;
-  --chalk: #ecede9;
-  --ink: #252729;
-  --wine: #622b3d;
-  --muted: #5b6060;
-  --line: #cdd0ca;
-  --work-surface: #e6e9e5;
-  --process-surface: #e9eae5;
-  --on-wine: #fafaf7;
-  --on-wine-soft: #eadce0;
-
+  --accent: #2849B8;
+  --paper: #F8F9FA;
+  --chalk: #E9ECF2;
+  --ink: #242C3B;
+  --muted: #5E6677;
+  --line: #CED4E0;
+  --work-surface: #E5EAF3;
+  --process-surface: #EAEDF4;
+  --hero: #D8DCE2;
+  --hero-background: #D8DCE2;
+  --model-surface: #E5EAF3;
+  --mode-surface: #EEF1F5;
+  --strong-line: #A5ACB8;
+  --sheet-line: #DDE1E9;
+  --on-accent-soft: #E7EBF5;
+  --on-ink-soft: #D8DADD;
+  --accent-mid: #4965C3;
+  --accent-light: #7B8FD2;
+  --diagram-neutral-light: #C9CCD0;
+  --diagram-neutral-mid: #AEB1B7;
+  --diagram-neutral-dark: #7D828B;
+  --diagram-stroke: #92979E;
+  --diagram-grid: #C8D1EB;
+  --alternate-surface: #F1F3F7;
+  --wine: var(--accent);
+  --on-wine: var(--paper);
+  --on-wine-soft: var(--on-accent-soft);
+  --hero-rgb: 216, 220, 226;
+  --ink-rgb: 36, 44, 59;
+  --chalk-rgb: 233, 236, 242;
   --sans: 'Manrope', system-ui, -apple-system, Arial, sans-serif;
   --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
-
   --pad-x: clamp(20px, 5vw, 96px);
   --section-desktop: 104px;
   --section-tablet: 76px;

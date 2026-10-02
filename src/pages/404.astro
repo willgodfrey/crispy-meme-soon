@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import TextLink from '../components/TextLink.astro';
+import AssemblyPicture from '../components/AssemblyPicture.astro';
 import '../styles/inner.css';
 import { notFound } from '../lib/content';
 const h = notFound.hero;
@@ -24,14 +25,7 @@ const h = notFound.hero;
       </div>
     </div>
     <div class="error-art">
-      <img
-        src="/images/architecture-practice/assembly-960.webp"
-        alt=""
-        aria-hidden="true"
-        width="960"
-        height="640"
-        loading="lazy"
-      />
+      <AssemblyPicture sizes="(max-width: 620px) 90vw, 45vw" />
     </div>
   </section>
 </Base>

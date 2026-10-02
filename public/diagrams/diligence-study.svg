@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="diligence-study-title diligence-study-desc">
+<title id="diligence-study-title">Claims, evidence and confidence</title>
+<desc id="diligence-study-desc">An illustrative diligence worksheet separates what is asserted, what can be checked and what remains uncertain. The drawing contains no scores, ratings or assessment of a real business.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif;font-weight:400}.construction{fill:none;stroke:#CED4E0;stroke-width:1}.rule{fill:none;stroke:#242C3B;stroke-width:1.25}.label{fill:#242C3B;font-size:20px}.white{fill:#F8F9FA;font-size:20px}</style>
+<rect width="640" height="360" fill="#E9ECF2"/>
+
+<path d="M24 22H616M28 22V338M612 22V338" class="construction"/>
+<rect x="40" y="35" width="560" height="288" fill="#F8F9FA" stroke="#242C3B" stroke-width="1.25"/>
+<rect x="40" y="35" width="560" height="67" fill="#2849B8"/>
+<path d="M226 102V323M413 102V323" class="construction"/>
+<path d="M226 35V102M413 35V102" stroke="#F8F9FA" stroke-opacity=".35"/>
+<text x="58" y="76" class="white">Claims</text><text x="245" y="76" class="white">Evidence</text><text x="431" y="76" class="white">Confidence</text>
+<g class="rule"><path d="M61 130H195M61 142H163M61 171H195M61 183H177M61 212H195M61 224H151"/><path d="M256 128H359V209H256ZM269 141H372V222H269"/><path d="M281 159H356M281 172H339M281 190H356M281 203H328"/></g>
+<g fill="none" stroke="#242C3B" stroke-width="1.25"><path d="M435 135H513M435 176H496M435 217H523"/><path d="M513 135H577M496 176H577M523 217H577" stroke-dasharray="3 5"/></g>
+<path d="M40 248H600" class="construction"/>
+<g class="label" font-size="18"><text x="58" y="278" style="font-size:18px">What is asserted</text><text x="245" y="278" style="font-size:18px"><tspan x="245">What can be</tspan><tspan x="245" dy="24">checked</tspan></text><text x="431" y="278" style="font-size:18px"><tspan x="431">What remains</tspan><tspan x="431" dy="24">uncertain</tspan></text></g>
+
+</svg>

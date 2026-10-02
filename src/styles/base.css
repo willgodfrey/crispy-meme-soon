@@ -38,7 +38,7 @@ button:hover {
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid var(--wine);
-  outline-offset: 6px;
+  outline-offset: 4px;
 }
 h1,
 h2,
@@ -179,7 +179,7 @@ main:focus {
 .hero {
   position: relative;
   min-height: 650px;
-  background: #d4d4cf;
+  background: var(--hero-background);
   isolation: isolate;
   overflow: hidden;
 }
@@ -199,9 +199,9 @@ main:focus {
   z-index: -1;
   background: linear-gradient(
     90deg,
-    rgba(218, 219, 214, 0.94) 0%,
-    rgba(218, 219, 214, 0.76) 30%,
-    rgba(218, 219, 214, 0) 56%
+    rgba(var(--hero-rgb), 0.94) 0%,
+    rgba(var(--hero-rgb), 0.76) 30%,
+    rgba(var(--hero-rgb), 0) 56%
   );
 }
 .hero-content {
@@ -249,7 +249,7 @@ h1,
   font-size: 11px;
   line-height: 1.6;
   text-align: right;
-  color: #303333;
+  color: var(--ink);
   max-width: 22ch;
 }
 
@@ -386,7 +386,7 @@ h1,
 }
 .phase-controls button {
   padding: 10px 15px;
-  border: 1px solid #aeb3aa;
+  border: 1px solid var(--strong-line);
   font-size: 12px;
   min-height: 44px;
 }
@@ -410,9 +410,9 @@ h1,
   min-height: 445px;
   background: var(--paper);
   padding: 30px 36px;
-  box-shadow: 14px 24px 28px #25272915;
+  box-shadow: 14px 24px 28px rgba(var(--ink-rgb), .0824);
   transform: rotate(-4deg);
-  border: 1px solid #dcdfd7;
+  border: 1px solid var(--sheet-line);
 }
 .sheet-top {
   display: flex;
@@ -443,7 +443,7 @@ h1,
 .sheet-lines i {
   font-style: normal;
   font-size: 12px;
-  border-bottom: 1px solid #dde0d9;
+  border-bottom: 1px solid var(--sheet-line);
   padding: 0 0 4px;
 }
 .sheet-seal {
@@ -563,7 +563,7 @@ h1,
   font-size: 11px;
 }
 .footer p {
-  color: #e4cbd1;
+  color: var(--on-accent-soft);
 }
 .site-footer-quiet {
   border-top: 1px solid var(--line);
@@ -609,7 +609,7 @@ svg text {
     object-position: 62% center;
   }
   .hero::after {
-    background: linear-gradient(90deg, #dadbd6 0%, #dadbd6d9 24%, #dadbd600 70%);
+    background: linear-gradient(90deg, var(--hero-background) 0%, rgba(var(--hero-rgb),.851) 24%, rgba(var(--hero-rgb),0) 70%);
   }
   h1,
   .h1 {
@@ -670,7 +670,7 @@ svg text {
     white-space: nowrap;
   }
   .hero {
-    min-height: 780px;
+    min-height: 850px;
   }
   .hero-content {
     padding-top: 28px;
@@ -699,7 +699,7 @@ svg text {
     object-fit: cover;
   }
   .hero::after {
-    background: linear-gradient(180deg, #dadbd6 0%, #dadbd6 47%, #dadbd600 68%);
+    background: linear-gradient(180deg, var(--hero-background) 0%, var(--hero-background) 47%, rgba(var(--hero-rgb),0) 68%);
   }
   .image-caption {
     bottom: 17px;

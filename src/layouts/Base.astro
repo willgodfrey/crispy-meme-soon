@@ -2,11 +2,15 @@
 import '../styles/fonts.css';
 import '../styles/tokens.css';
 import '../styles/base.css';
+import '../styles/commissions.css';
+import '../styles/accessibility.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ContactBand from '../components/ContactBand.astro';
 import StructuredData from '../components/StructuredData.astro';
-import { common } from '../lib/content';
+import { common, notFound, validateContent } from '../lib/content';
+
+validateContent();
 
 interface Props {
   title: string;
@@ -16,7 +20,7 @@ interface Props {
   bodyClass?: string;
 }
 const { title, description, invitation = true, noindex = false, bodyClass } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const canonical = new URL(noindex ? notFound.route : Astro.url.pathname, Astro.site).href;
 const share = common.share;
 const ogImage = new URL(share.image, Astro.site).href;
 // Analytics runs in production only; local/private review sends nothing.
@@ -51,7 +55,7 @@ const analytics = import.meta.env.PUBLIC_ENABLE_ANALYTICS === 'true';
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={ogImage} />
-    <StructuredData />
+    <StructuredData title={title} description={description} />
   </head>
   <body class:list={[bodyClass]}>
     <a class="skip" href="#main">{common.accessibility.skipLink}</a>

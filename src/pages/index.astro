@@ -35,6 +35,7 @@ const webp = `${AP}-640.webp 640w, ${AP}-960.webp 960w, ${AP}-1536.webp 1536w`;
         <TextLink href={home.hero.primaryLink.href} label={home.hero.primaryLink.label} />
         <TextLink href={home.hero.secondaryLink.href} label={home.hero.secondaryLink.label} />
       </div>
+      <p class="hero-helper">{home.hero.helper}</p>
     </div>
     <p class="image-caption">{home.hero.imageCaption}</p>
   </section>
@@ -139,6 +140,25 @@ const webp = `${AP}-640.webp 640w, ${AP}-960.webp 960w, ${AP}-1536.webp 1536w`;
           ))
         }
       </div>
+    </div>
+  </section>
+
+  <section class="section entry-points wrap">
+    <div class="entry-heading">
+      <h2>{home.entryPoints.title}</h2>
+      <p>{home.entryPoints.body}</p>
+      <TextLink href={home.entryPoints.link.href} label={home.entryPoints.link.label} />
+    </div>
+    <div class="entry-list">
+      {home.entryPoints.items.map((entry) => (
+        <a class="entry-row" href={entry.href}>
+          <div>
+            <h3>{entry.situation}</h3>
+            <p>{entry.body}</p>
+          </div>
+          <span class="entry-label">{entry.label}<span aria-hidden="true">↗</span></span>
+        </a>
+      ))}
     </div>
   </section>
 

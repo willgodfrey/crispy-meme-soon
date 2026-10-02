@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import TextLink from '../components/TextLink.astro';
+import AssemblyPicture from '../components/AssemblyPicture.astro';
 import '../styles/inner.css';
 import { contact, common } from '../lib/content';
 const d = contact.details;
@@ -17,21 +18,14 @@ const d = contact.details;
       <p class="page-kicker">{contact.hero.eyebrow}</p>
       <h1>{contact.hero.titleLines.map((l: string, i: number) => (i ? [<br />, l] : l))}</h1>
       <p class="lead">{contact.hero.body}</p>
-      <p class="availability">{d.emailHelp}</p>
     </div>
     <div class="contact-direct">
-      <img
-        class="contact-detail"
-        src="/images/architecture-practice/assembly-960.webp"
-        alt=""
-        aria-hidden="true"
-        width="960"
-        height="640"
-        loading="lazy"
-      />
-      <p class="email-label">{contact.hero.eyebrow}</p>
+      <AssemblyPicture class="contact-detail" sizes="(max-width: 620px) 100vw, 50vw" />
+      <p class="email-label">{contact.expectations.title}</p>
       <a class="email-link" href={contact.hero.primaryLink.href}>{contact.hero.primaryLink.label}</a>
       <p class="contact-expectation">{contact.expectations.paragraphs[0]}</p>
+      <p class="availability">{contact.expectations.paragraphs[1]}</p>
+      <p class="email-help">{d.emailHelp}</p>
     </div>
   </section>
 
@@ -40,20 +34,14 @@ const d = contact.details;
       <p class="page-kicker">{contact.prompts.eyebrow}</p>
       <h2>{contact.prompts.title}</h2>
       <p>{contact.prompts.body}</p>
-      <p class="location-info">{d.locationLabel}: {d.location}. {d.working}</p>
-      <TextLink href={common.linkedin.href} label={d.linkedinLabel} />
     </div>
     <div>
       <ul class="contact-prompts">
         {contact.prompts.items.map((p: string) => <li>{p}</li>)}
       </ul>
-      <p class="contact-expectation">{contact.expectations.paragraphs[1]}</p>
+      <p class="location-info">{d.locationLabel}: {d.location}. {d.working}</p>
+      <TextLink href={common.linkedin.href} label={d.linkedinLabel} />
     </div>
   </section>
 
-  <div class="compact-footer wrap">
-    <p>{common.footer.identity}</p>
-    <p>{common.location}</p>
-    <p><a href={common.linkedin.href} rel="noopener">{common.linkedin.label}</a></p>
-  </div>
 </Base>

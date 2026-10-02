@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="options-study-title options-study-desc">
+<title id="options-study-title">An options brief</title>
+<desc id="options-study-desc">One question branches into three possible directions: improve the existing business, build a venture, or acquire capability. The alternatives come back to a decision for the owner. No option is selected.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif;font-weight:400}.construction{fill:none;stroke:#CED4E0;stroke-width:1}.rule{fill:none;stroke:#242C3B;stroke-width:1.25}.label{fill:#242C3B;font-size:20px}.white{fill:#F8F9FA;font-size:20px}</style>
+<rect width="640" height="360" fill="#E9ECF2"/>
+
+<path d="M24 26H616M24 334H616" class="construction"/>
+<rect x="40" y="129" width="159" height="82" fill="#2849B8"/>
+<text x="61" y="177" class="white">The question</text>
+<g class="rule"><path d="M199 170H230M230 64V260M230 64H263M230 162H263M230 260H263"/><path d="M562 81H596V309H333M562 178H596M562 276H596"/></g>
+<text x="277" y="58" class="label"><tspan x="277">Improve existing</tspan><tspan x="277" dy="25">business</tspan></text>
+<path d="M277 96H551" class="construction"/>
+<text x="277" y="170" class="label">Build a venture</text>
+<path d="M277 193H551" class="construction"/>
+<text x="277" y="268" class="label">Acquire capability</text>
+<path d="M277 290H551" class="construction"/>
+<path d="M344 303L333 309L344 315" fill="none" stroke="#242C3B" stroke-width="1.25"/>
+<text x="40" y="316" class="label">Owner decision</text>
+<path d="M193 309H322" class="rule"/>
+
+</svg>

@@ -20,7 +20,7 @@ const layers = practice.layers.items as {
 <Base title={practice.seo.title} description={practice.seo.description}>
   <section class="practice-hero wrap">
     <div class="practice-title">
-      <p class="page-kicker">{practice.hero.eyebrow}</p>
+      <p class="intro">{practice.hero.eyebrow}</p>
       <h1>{practice.hero.titleLines.map((l: string, i: number) => (i ? [<br />, l] : l))}</h1>
       <p class="practice-summary">{practice.hero.body}</p>
       <div class="hero-links">
@@ -130,6 +130,21 @@ const layers = practice.layers.items as {
     <div>
       <h3>{practice.standards.boundaryTitle}</h3>
       <ul>{practice.standards.boundaries.map((b: string) => <li>{b}</li>)}</ul>
+    </div>
+  </section>
+
+  <section class="section scope-standards wrap">
+    <div class="section-heading">
+      <h2>{practice.scopedStandards.title}</h2>
+      <TextLink href={practice.commissionsLink.href} label={practice.commissionsLink.label} />
+    </div>
+    <div class="scope-grid">
+      {practice.scopedStandards.items.map((item) => (
+        <article>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </article>
+      ))}
     </div>
   </section>
 

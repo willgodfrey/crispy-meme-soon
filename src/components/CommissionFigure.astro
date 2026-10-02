@@ -1,0 +1,17 @@
+---
+import { diagramSrc, diagramDimensions } from '../lib/content';
+
+interface Props {
+  visualId: string;
+  visualAlt: string;
+  visualCaption: string;
+  hero?: boolean;
+}
+const { visualId, visualAlt, visualCaption, hero = false } = Astro.props;
+const { width, height } = diagramDimensions(visualId);
+---
+
+<figure class={hero ? 'commission-hero-art' : 'commission-study'}>
+  <img src={diagramSrc(visualId)} alt={visualAlt} width={width} height={height} loading={hero ? 'eager' : 'lazy'} />
+  <figcaption>{visualCaption}</figcaption>
+</figure>
