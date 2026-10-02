@@ -1,0 +1,39 @@
+---
+import TextLink from './TextLink.astro';
+import '../styles/method-preview.css';
+
+interface Props {
+  content: {
+    label: string;
+    title: string;
+    intro: string;
+    fields: { label: string; body: string }[];
+    caption: string;
+    link?: { label: string; href: string };
+  };
+}
+
+const { content } = Astro.props;
+---
+
+<article class="method-preview" aria-labelledby="method-preview-title">
+  <header class="method-preview-header">
+    <div>
+      <p class="method-preview-label">{content.label}</p>
+      <h3 id="method-preview-title">{content.title}</h3>
+    </div>
+    <p class="method-preview-intro">{content.intro}</p>
+  </header>
+  <dl class="method-preview-fields">
+    {content.fields.map((field) => (
+      <div class="method-preview-field">
+        <dt>{field.label}</dt>
+        <dd>{field.body}</dd>
+      </div>
+    ))}
+  </dl>
+  <footer class="method-preview-footer">
+    <p>{content.caption}</p>
+    {content.link && <TextLink href={content.link.href} label={content.link.label} />}
+  </footer>
+</article>

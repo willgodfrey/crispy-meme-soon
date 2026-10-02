@@ -1,0 +1,132 @@
+/* A readable public decision-record template, nested within the written-method case. */
+.inner-page .method-preview {
+  margin-top: 2.5rem;
+  border: 1px solid var(--strong-line);
+  background: var(--paper);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.inner-page .method-preview-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: 1.5rem 3rem;
+  padding: 2rem;
+  border-bottom: 1px solid var(--strong-line);
+}
+
+.inner-page .method-preview-label {
+  margin: 0 0 0.75rem;
+  color: var(--wine);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.inner-page .method-preview h3 {
+  margin: 0;
+  max-width: 23ch;
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  line-height: 1.18;
+}
+
+.inner-page .method-preview-intro {
+  margin: 0;
+  max-width: 58ch;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.inner-page .method-preview-fields {
+  margin: 0;
+  padding: 0 2rem;
+}
+
+.inner-page .method-preview-field {
+  display: grid;
+  grid-template-columns: minmax(0, 0.65fr) minmax(0, 2fr);
+  gap: 0.5rem 3rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.inner-page .method-preview-field:last-child {
+  border-bottom: 0;
+}
+
+.inner-page .method-preview-field dt {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.inner-page .method-preview-field dd {
+  margin: 0;
+  max-width: 70ch;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.inner-page .method-preview-footer {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  padding: 1.25rem 2rem;
+  background: var(--chalk);
+  border-top: 1px solid var(--strong-line);
+}
+
+.inner-page .method-preview-footer p {
+  max-width: 64ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.inner-page .case-study .method-preview-footer .text-link {
+  margin-top: 0;
+}
+
+@media (max-width: 47.5em) {
+  .inner-page .method-preview-header {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 1.5rem 1.25rem;
+  }
+
+  .inner-page .method-preview-fields {
+    padding: 0 1.25rem;
+  }
+
+  .inner-page .method-preview-field {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .inner-page .method-preview-footer {
+    padding: 1.25rem;
+  }
+}
+
+@media (forced-colors: active) {
+  .inner-page .method-preview,
+  .inner-page .method-preview-header,
+  .inner-page .method-preview-field,
+  .inner-page .method-preview-footer {
+    border-color: CanvasText;
+  }
+}
+
+@media print {
+  .inner-page .method-preview {
+    border-color: currentColor;
+    background: none;
+  }
+
+  .inner-page .method-preview-field {
+    break-inside: avoid;
+  }
+}

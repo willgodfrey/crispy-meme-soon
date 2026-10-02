@@ -147,6 +147,10 @@ export function validateContent(): void {
   };
   uniqueIds(common.stages, 'stage');
   uniqueIds(work.cases, 'case');
+  requireText(work.methodPreview, ['label', 'title', 'intro', 'caption'], 'work.methodPreview');
+  if (!work.methodPreview.fields.length) throw new Error('Missing method preview fields');
+  for (const field of work.methodPreview.fields) requireText(field, ['label', 'body'], 'method preview field');
+  if (work.methodPreview.link.href !== contact.route) throw new Error('Invalid method conversation destination');
   uniqueIds(practice.layers.items, 'layer');
   uniqueIds([commissions.overview, commissions.flagship, commissions.focused, ...commissions.focused.items, commissions.portfolio, commissions.conversation], 'commission');
   requireText(commissions.hero, ['title', 'eyebrow', 'helper'], 'commissions.hero');

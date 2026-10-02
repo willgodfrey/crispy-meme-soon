@@ -133,8 +133,8 @@
       "files": [
         {
           "path": "public/diagrams/parent-and-venture.svg",
-          "bytes": 968,
-          "sha256": "28cab6916bce6d4605a3e83a1735521dbebfae2b6a3fcc9ccb8c6bd1cd477ca4",
+          "bytes": 1164,
+          "sha256": "5c8af329cb4b07b62f20389a9d9da8822d150f97a9673b5936dcaa21b7e2c462",
           "publishToSite": true,
           "viewBox": "0 0 520 300",
           "dimensions": {
@@ -157,8 +157,8 @@
       "files": [
         {
           "path": "public/diagrams/agent-workflow.svg",
-          "bytes": 915,
-          "sha256": "eea8427503c399fc4342cc76be58ec80b43c154e6bc61712fe57af467bc14954",
+          "bytes": 987,
+          "sha256": "b1b74774a30225466066041398ac2cea02a9504cd23d91c472a77a8557cc44b4",
           "publishToSite": true,
           "viewBox": "0 0 520 300",
           "dimensions": {
@@ -182,7 +182,7 @@
         {
           "path": "public/diagrams/terrain-study.svg",
           "bytes": 948,
-          "sha256": "160436b4aefb28f8d96e5ae73a9c239e2403eae44d7fb99ce8112fbb365a2c14",
+          "sha256": "2e1b440b5e9adb8a7e7abef41994478464b8c43b0dbf882afa24322939a16209",
           "publishToSite": true,
           "viewBox": "0 0 520 300",
           "dimensions": {
@@ -205,8 +205,8 @@
       "files": [
         {
           "path": "public/diagrams/payload-study.svg",
-          "bytes": 867,
-          "sha256": "05c289d76988abf1b085687c4526103c55d04b8d47010ced3001fe63e86fc737",
+          "bytes": 1066,
+          "sha256": "80c497bfbf71a939f7a15e4805c729f1e8222f5a1067a809b035c46afa52e2ee",
           "publishToSite": true,
           "viewBox": "0 0 520 300",
           "dimensions": {
@@ -230,7 +230,7 @@
         {
           "path": "public/diagrams/method-study.svg",
           "bytes": 1123,
-          "sha256": "fe62b3a120469eb6e694590fc448d2a41c238cfe618124b347b0da7a45bd60d9",
+          "sha256": "a3cdc827e4e779f0f1566954dfd1b46b254f91eef6daee65a6329ed7a122329c",
           "publishToSite": true,
           "viewBox": "0 0 520 300",
           "dimensions": {
@@ -253,8 +253,8 @@
       "files": [
         {
           "path": "public/diagrams/venture-layers.svg",
-          "bytes": 5266,
-          "sha256": "77c90fc80c1c76fa83fb56bca727b70a6fef14fea9c75e48d954a9ea11f0cdae",
+          "bytes": 5264,
+          "sha256": "cae6e8ca4488968d4218622ccadf537469b17b35e78563a305955773145a93b3",
           "publishToSite": true,
           "viewBox": "0 0 680 595",
           "dimensions": {

@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import TextLink from '../components/TextLink.astro';
+import MethodPreview from '../components/MethodPreview.astro';
 import '../styles/inner.css';
 import { work, common, diagramSrc } from '../lib/content';
 import type { WorkCase } from '../lib/content';
@@ -49,7 +50,8 @@ const cases = work.cases as WorkCase[];
             <p>{c.evidence}</p>
           </div>
         </div>
-        {c.link && <TextLink href={c.link.href} label={c.link.label} />}
+        {c.id === 'written-method' && <MethodPreview content={work.methodPreview} />}
+        {c.id !== 'written-method' && c.link && <TextLink href={c.link.href} label={c.link.label} />}
       </section>
     ))
   }

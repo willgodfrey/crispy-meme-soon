@@ -22,7 +22,7 @@
 }
 
 .inner-page .contact-direct .email-help {
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: var(--muted);
   margin-top: 16px;
 }
@@ -203,8 +203,7 @@ footer {
     outline-offset: 4px;
   }
 
-  .hero::after,
-  .inner-page .contact-direct::after {
+  .hero::after {
     background: Canvas;
   }
 }

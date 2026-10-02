@@ -21,11 +21,13 @@ const d = contact.details;
     </div>
     <div class="contact-direct">
       <AssemblyPicture class="contact-detail" sizes="(max-width: 620px) 100vw, 50vw" />
-      <p class="email-label">{contact.expectations.title}</p>
-      <a class="email-link" href={contact.hero.primaryLink.href}>{contact.hero.primaryLink.label}</a>
-      <p class="contact-expectation">{contact.expectations.paragraphs[0]}</p>
-      <p class="availability">{contact.expectations.paragraphs[1]}</p>
-      <p class="email-help">{d.emailHelp}</p>
+      <div class="contact-copy">
+        <p class="email-label">{contact.expectations.title}</p>
+        <a class="email-link" href={contact.hero.primaryLink.href}>{contact.hero.primaryLink.label}</a>
+        <p class="contact-expectation">{contact.expectations.paragraphs[0]}</p>
+        <p class="availability">{contact.expectations.paragraphs[1]}</p>
+        <p class="email-help">{d.emailHelp}</p>
+      </div>
     </div>
   </section>
 

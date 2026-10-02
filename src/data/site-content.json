@@ -65,7 +65,7 @@
       "currentPage": "Current page",
       "tableOfContents": "On this page",
       "sectionNavigation": "Page sections",
-      "commissionsNavigation": "Services on this page"
+      "commissionsNavigation": "Service details"
     },
     "caseLabels": {
       "context": "The context",
@@ -565,7 +565,7 @@
             ]
           }
         ],
-        "alt": "A symbolic outcome-economics equation includes models and tools, human review and other delivery costs.",
+        "alt": "Price per outcome minus cost to deliver equals margin per outcome. Delivery costs include models and tools, human review, and other delivery costs. Illustrative model; no measured values.",
         "caption": "Illustrative unit-economics model. The drawing contains no measured values."
       },
       "gate-study": {
@@ -898,7 +898,7 @@
         {
           "title": "Where the practice comes from",
           "paragraphs": [
-            "My work has moved from applications to enterprises to whole ventures. During nine years at McKinsey, I served as CTO of North America's first large-scale digital business build, stood up next to an industrial parent.",
+            "My work has moved from applications to enterprises to whole ventures. During nine years at McKinsey, I served as CTO of a large-scale digital business build, stood up next to an industrial parent.",
             "I have built AI systems hands-on since 2021, written my own method for standing up an AI-native venture next to a PE-backed services firm, and run two ventures of my own. The work keeps the design accountable to what it costs to live with."
           ]
         }
@@ -1112,7 +1112,7 @@
           ],
           "scopeNote": "You provide available cost and usage data, a usable quality benchmark and engineering support. We agree the testing; your team runs production changes.",
           "visualId": "margin-study",
-          "visualAlt": "A symbolic outcome-economics equation includes models and tools, human review and other delivery costs.",
+          "visualAlt": "Price per outcome minus cost to deliver equals margin per outcome. Delivery costs include models and tools, human review, and other delivery costs. Illustrative model; no measured values.",
           "visualCaption": "Illustrative unit-economics model. The drawing contains no measured values.",
           "link": {
             "label": "Start a conversation",
@@ -1188,6 +1188,18 @@
           "question": "Do I need to choose a service first?",
           "answer": [
             "No. Tell me the decision you are facing. Shaping the engagement is part of the conversation."
+          ]
+        },
+        {
+          "question": "Who is this work for?",
+          "answer": [
+            "Owners and founders creating a new business, investors evaluating an acquisition or a funding decision, and leadership teams deciding what to do with AI. My venture work focuses on businesses where AI is central to the offer or how it is delivered."
+          ]
+        },
+        {
+          "question": "What needs to be in place?",
+          "answer": [
+            "For a full venture engagement, you provide the decision-making authority, build team, access and funding. For a focused review, start with the question and the information you have; we agree the evidence and specialist support the work needs. You do not need a finished brief before we talk."
           ]
         },
         {
@@ -1273,7 +1285,7 @@
         "subtitle": "A digital business next to an industrial parent",
         "role": "Venture CTO at McKinsey",
         "summary": "A digital business stood up alongside an industrial parent. One technical seat, held through the first build.",
-        "context": "During nine years at McKinsey, I served as CTO of North America's first large-scale digital business build. I was brought in for two weeks as product owner and stayed as CTO.",
+        "context": "During nine years at McKinsey, I served as CTO of a large-scale digital business build. I was brought in for two weeks as product owner and stayed as CTO.",
         "design": "I designed the new company's technology from scratch: its architecture, enterprise security posture, engineering environment and the boundary between the parent's legacy systems and the new company's stack.",
         "evidence": "I have held the technical seat in a venture built next to a parent, and worked the boundary with the parent's CIO.",
         "visualId": "venture-boundary",
@@ -1374,11 +1386,11 @@
         "subtitle": "The method I work from",
         "role": "Author",
         "summary": "A written method for standing up an AI-native venture next to a PE-backed services firm.",
-        "context": "My practice is written down. The method runs in gated phases, with a written way to stop at each gate and a full practitioner's guide behind it.",
+        "context": "My practice is written down. The method runs in phases, each with a funding decision, evidence to review and conditions for stopping. A full practitioner's guide supports the work.",
         "design": "The method sets out how to make the design decisions, identify the evidence each phase requires and decide whether to proceed.",
-        "evidence": "The standards of the engagement are explicit. A short introduction to the method is available on request.",
+        "evidence": "The sample below illustrates the questions behind a decision record: what to decide, what supports the recommendation and what happens next.",
         "visualId": "method-study",
-        "visualCaption": "Illustrative decision record. An introduction is available on request.",
+        "visualCaption": "Illustrative decision sequence. A sample decision record follows below.",
         "visualAlt": "Three connected decision gates form a sequence, with a stopping route at each gate.",
         "labels": [
           "Decision",
@@ -1391,7 +1403,7 @@
           "Written method"
         ],
         "link": {
-          "label": "Ask about the method",
+          "label": "Discuss your decision",
           "href": "/contact/"
         }
       }
@@ -1407,6 +1419,42 @@
     },
     "invitation": {
       "ref": "common.invitation"
+    },
+    "methodPreview": {
+      "label": "Illustrative decision record",
+      "title": "Make the decision explicit.",
+      "intro": "A record connects the business question to the evidence, the recommendation and what happens next. These are the questions it needs to answer.",
+      "fields": [
+        {
+          "label": "Decision and owner",
+          "body": "What are we deciding, who owns the decision and when is it needed?"
+        },
+        {
+          "label": "Options and tradeoffs",
+          "body": "What are the credible options, including waiting? What does each require us to buy, build or inherit?"
+        },
+        {
+          "label": "Evidence and gaps",
+          "body": "What do we know about customer demand, delivery cost and quality? What is still an assumption, and how will we test it?"
+        },
+        {
+          "label": "Recommendation",
+          "body": "Which option do we recommend, and why? What evidence would change that recommendation?"
+        },
+        {
+          "label": "Conditions for proceeding",
+          "body": "What must be true before we commit more money or work? What would make us hold, change the plan or stop?"
+        },
+        {
+          "label": "Next action and review",
+          "body": "Who owns the next action? What evidence will they bring back, and when will we review the decision?"
+        }
+      ],
+      "caption": "An illustrative template based on the approach described here. It contains no client information.",
+      "link": {
+        "label": "Discuss your decision",
+        "href": "/contact/"
+      }
     }
   },
   "about": {
@@ -1457,7 +1505,7 @@
       "eyebrow": "The technical seat",
       "title": "I went in for two weeks. I stayed as CTO.",
       "paragraphs": [
-        "At McKinsey, the work that shaped me most was serving as CTO of North America's first large-scale digital business build: a new company stood up from scratch next to an industrial parent.",
+        "At McKinsey, the work that shaped me most was serving as CTO of a large-scale digital business build: a new company stood up from scratch next to an industrial parent.",
         "I also spent two years as lead faculty for the firm's experienced-hire program. That taught me that a design is only finished when someone else can run it."
       ],
       "link": {
