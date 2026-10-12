@@ -1,0 +1,8 @@
+{
+  "name": "willgodfrey-com-single-page",
+  "private": true,
+  "description": "Build shim for the single-page site: copies the static files into dist/ so it deploys under the Pages project's npm build settings. The Astro redesign replaces this file at launch.",
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cp -R index.html favicon.ico icons images llms.txt robots.txt sitemap.xml dist/"
+  }
+}
